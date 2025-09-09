@@ -1,136 +1,202 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Sparkles, Zap, Target } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowRight, Play, Sparkles, Zap, Target, Code, Database, Cloud, Cpu } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 300], [0, -50]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0.3]);
+
+  const dynamicTexts = [
+    "Công nghệ Thông tin",
+    "Trí tuệ Nhân tạo", 
+    "Khoa học Dữ liệu",
+    "An ninh Mạng",
+    "Phát triển Phần mềm",
+    "Internet of Things"
+  ];
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const fullText = dynamicTexts[currentTextIndex];
+      
+      if (isDeleting) {
+        setCurrentText(fullText.substring(0, currentText.length - 1));
+        if (currentText === "") {
+          setIsDeleting(false);
+          setCurrentTextIndex((prev) => (prev + 1) % dynamicTexts.length);
+        }
+      } else {
+        setCurrentText(fullText.substring(0, currentText.length + 1));
+        if (currentText === fullText) {
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      }
+    }, isDeleting ? 50 : 100);
+
+    return () => clearTimeout(timeout);
+  }, [currentText, isDeleting, currentTextIndex, dynamicTexts]);
+
+  const techIcons = [
+    { icon: Code, delay: 0 },
+    { icon: Database, delay: 0.2 },
+    { icon: Cloud, delay: 0.4 },
+    { icon: Cpu, delay: 0.6 },
+  ];
+
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background with Orange Gradient Overlay */}
-      <motion.div 
-        initial={{ scale: 1.1, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.5 }}
-        className="absolute inset-0"
-      >
-        <img
-          src={'/assets/banner-KT2.png'}
-          alt="Tan Tao University Campus"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-primary/40 to-primary/50"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/30 to-transparent"></div>
-      </motion.div>
-
-      {/* Floating Elements */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute inset-0 pointer-events-none"
-      >
-        <motion.div
-          animate={{ 
-            y: [0, -20, 0],
-            rotate: [0, 5, 0]
-          }}
-          transition={{ 
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-20 left-10 w-16 h-16 bg-primary/20 rounded-full blur-sm"
-        />
-        <motion.div
-          animate={{ 
-            y: [0, 15, 0],
-            rotate: [0, -5, 0]
-          }}
-          transition={{ 
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-          className="absolute top-40 right-20 w-12 h-12 bg-primary/30 rounded-full blur-sm"
-        />
-        <motion.div
-          animate={{ 
-            y: [0, -10, 0],
-            x: [0, 10, 0]
-          }}
-          transition={{ 
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2
-          }}
-          className="absolute bottom-40 left-1/4 w-8 h-8 bg-primary/25 rounded-full blur-sm"
-        />
-      </motion.div>
-
-      {/* Content */}
-      <div className="relative z-10 w-full px-10 flex items-center justify-center">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ staggerChildren: 0.2, delayChildren: 0.3 }}
-          className="max-w-6xl text-center"
-        >
-          <motion.div 
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
+    <section className="relative min-h-screen flex pt-12 justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-orange-50">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {techIcons.map(({ icon: Icon, delay }, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, scale: 0, rotate: -180 }}
+            animate={{ opacity: 0.1, scale: 1, rotate: 0 }}
+            transition={{ duration: 1, delay: delay + 0.5 }}
+            className="absolute"
+            style={{
+              top: `${20 + index * 20}%`,
+              left: `${10 + index * 25}%`,
+            }}
           >
-            <motion.span 
-              whileHover={{ scale: 1.05 }}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary/20 text-primary font-semibold rounded-full text-sm backdrop-blur-md border border-primary/30 shadow-glow"
-            >
-              <Sparkles className="w-4 h-4" />
-              Chào mừng đến với TTU
-            </motion.span>
+            <Icon className="w-32 h-32 text-primary/10" />
           </motion.div>
-          
-          <motion.h1 
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight"
+        ))}
+      </div>
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-primary/20 rounded-full"
+            animate={{
+              y: [0, -100, 0],
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: 3 + i * 0.2,
+              repeat: Infinity,
+              delay: i * 0.1,
+            }}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Main Content */}
+      <motion.div 
+        style={{ y, opacity }}
+        className="relative z-10 w-full max-w-6xl px-6 text-center"
+      >
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="space-y-8"
+        >
+          {/* Welcome Badge */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="pt-4"
           >
-            <motion.span
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="block"
-            >
-              Đồng hành cùng
-            </motion.span>
-            <motion.span
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="block text-primary-glow"
-            >
-              Cách mạng 4.0
-            </motion.span>
+            <span className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-orange text-white font-medium rounded-full text-sm shadow-glow font-sans">
+              <Sparkles className="w-4 h-4" />
+              Chào mừng đến với SIT
+            </span>
+          </motion.div>
+
+          {/* Main Title with Typewriter Effect */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight font-sans"
+          >
+            <span className="block mb-4">Đồng hành cùng</span>
+            <span className="block text-primary-glow">
+              {currentText}
+              <motion.span
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{ duration: 1, repeat: Infinity }}
+                className="ml-1"
+              >
+                |
+              </motion.span>
+            </span>
           </motion.h1>
           
+          {/* Subtitle */}
           <motion.p 
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-lg md:text-xl lg:text-2xl text-white/95 mb-8 max-w-4xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light font-sans"
           >
             Khoa Công nghệ Thông tin TTU tiên phong trong đào tạo nguồn nhân lực chất lượng cao, 
             nghiên cứu đột phá và ứng dụng công nghệ tiên tiến vào thực tiễn.
           </motion.p>
 
+          {/* Action Buttons */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
+          >
+            <Button 
+              size="lg" 
+              className="bg-gradient-orange hover:shadow-glow transition-all duration-300 font-sans"
+            >
+              Khám phá ngay
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-sans"
+            >
+              <Play className="mr-2 w-4 h-4" />
+              Xem video giới thiệu
+            </Button>
+          </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-20 left-1/2 transform -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="w-6 h-10 border-2 border-primary rounded-full flex justify-center"
+        >
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-1 h-3 bg-primary rounded-full mt-2"
+          />
+        </motion.div>
+      </motion.div>
     </section>
   );
-};
+};      
 
 export default Hero;

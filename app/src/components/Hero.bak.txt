@@ -1,0 +1,74 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Play, Sparkles, Zap, Target } from "lucide-react";
+import { motion } from "framer-motion";
+
+const Hero = () => {
+  return (
+    <section className="relative h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden">
+      {/* Background Image with Subtle Overlay */}
+      <motion.div 
+        initial={{ scale: 1.05, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        className="absolute inset-0"
+      >
+        <img
+          src={'/assets/banner-KT2.png'}
+          alt="Tan Tao University Campus"
+          className="w-full h-full object-cover"
+        />
+        {/* Subtle overlay similar to Harvard's style */}
+        <div className="absolute inset-0 bg-black/40"></div>
+      </motion.div>
+
+      {/* Content - Centered like Harvard */}
+      <div className="relative z-10 w-full max-w-6xl px-6 text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="space-y-8"
+        >
+          {/* Main Title - Large and Bold */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+          >
+            <span className="block mb-2">Đồng hành cùng</span>
+            <span className="block text-primary">Cách mạng 4.0</span>
+          </motion.h1>
+          
+          {/* Subtitle - Clean and Readable */}
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="text-lg md:text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-light"
+          >
+            Khoa Công nghệ Thông tin TTU tiên phong trong đào tạo nguồn nhân lực chất lượng cao, 
+            nghiên cứu đột phá và ứng dụng công nghệ tiên tiến vào thực tiễn.
+          </motion.p>
+
+          {/* Welcome Badge */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="pt-4"
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 text-white font-medium rounded-full text-sm backdrop-blur-sm border border-orange-300/70">
+              <Sparkles className="w-4 h-4" />
+              Chào mừng đến với SIT
+            </span>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};      
+
+export default Hero;

@@ -48,13 +48,13 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-8">
               <img src="/assets/logo.png" alt="SIT" className="w-14 h-14" />
               <div className="flex flex-col gap-1">
-                <h1 className="font-display text-xl font-bold">
+                <h1 className="font-sans text-xl font-bold">
                   Trường Đại học Tân Tạo
                 </h1>
                 <p className="text-xs text-primary font-medium">Khoa Công nghệ Thông tin</p>
               </div>
             </div>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-muted-foreground mb-8 leading-relaxed font-sans">
               Đồng hành cùng cách mạng công nghệ 4.0, TTU cam kết cung cấp giáo dục chất lượng cao 
               trong lĩnh vực công nghệ thông tin với triết lí "Khai phóng - học suốt đời".
             </p>
@@ -84,7 +84,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold text-xl mb-8 flex items-center gap-2">
+            <h4 className="font-semibold text-xl mb-8 flex items-center gap-2 font-sans">
               <Sparkles className="h-5 w-5 text-primary" />
               Liên kết nhanh
             </h4>
@@ -122,7 +122,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold text-xl mb-8 flex items-center gap-2">
+            <h4 className="font-semibold text-xl mb-8 flex items-center gap-2 font-sans">
               <Zap className="h-5 w-5 text-primary" />
               Chương trình học
             </h4>
@@ -160,7 +160,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold text-xl mb-8 flex items-center gap-2">
+            <h4 className="font-semibold text-xl mb-8 flex items-center gap-2 font-sans">
               <Target className="h-5 w-5 text-primary" />
               Liên hệ
             </h4>
@@ -179,7 +179,7 @@ const Footer = () => {
                   <MapPin className="h-5 w-5 text-primary" />
                 </motion.div>
                 <div>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed font-sans">
                     Lô E2a-7, Đường D1, Khu Công nghệ cao,
                     <br />
                     Phường Long Thạnh Mỹ, TP. Thủ Đức,
@@ -201,7 +201,7 @@ const Footer = () => {
                 >
                   <Phone className="h-5 w-5 text-primary" />
                 </motion.div>
-                <span className="text-muted-foreground font-medium">+84 27 2376 9216</span>
+                <span className="text-muted-foreground font-medium font-sans">+84 27 2376 9216</span>
               </motion.div>
               <motion.div 
                 initial={{ opacity: 0, x: -20 }}
@@ -216,7 +216,7 @@ const Footer = () => {
                 >
                   <Mail className="h-5 w-5 text-primary" />
                 </motion.div>
-                <span className="text-muted-foreground font-medium">sit@ttu.edu.vn</span>
+                <span className="text-muted-foreground font-medium font-sans">sit@ttu.edu.vn</span>
               </motion.div>
             </div>
           </motion.div>
@@ -231,10 +231,10 @@ const Footer = () => {
         >
           <div className="flex items-center justify-center gap-2 mb-4">
             <Sparkles className="h-5 w-5 text-primary" />
-            <span className="text-muted-foreground font-medium">Đồng hành cùng cách mạng công nghệ 4.0</span>
+            <span className="text-muted-foreground font-medium font-sans">Đồng hành cùng cách mạng công nghệ 4.0</span>
             <Sparkles className="h-5 w-5 text-primary" />
           </div>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground font-sans">
             © 2024 Trường Đại học Tân Tạo - Khoa Công nghệ Thông tin. Tất cả quyền được bảo lưu.
           </p>
         </motion.div>

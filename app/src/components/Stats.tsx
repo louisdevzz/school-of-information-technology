@@ -2,6 +2,7 @@
 
 import { Target, Zap, Sparkles, GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
+import TextRibbon from "./TextRibbon";
 
 const Stats = () => {
   const stats = [
@@ -12,8 +13,8 @@ const Stats = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-subtle">
-      <div className="w-full px-10">
+    <section className="bg-gradient-subtle">
+      <div className="w-full px-10 py-10">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +27,7 @@ const Stats = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6"
+            className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-6"
           >
             Thành tựu của chúng tôi
           </motion.h2>
@@ -35,7 +36,7 @@ const Stats = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-sans"
           >
             Với hơn 19 năm kinh nghiệm trong giáo dục, TTU đã đạt được những thành tựu đáng tự hào
           </motion.p>
@@ -83,7 +84,7 @@ const Stats = () => {
                 >
                   {stat.number}
                 </motion.div>
-                <div className="text-muted-foreground text-lg font-medium">{stat.label}</div>
+                <div className="text-muted-foreground text-lg font-medium font-sans">{stat.label}</div>
               </motion.div>
             );
           })}

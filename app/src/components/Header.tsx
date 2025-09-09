@@ -10,7 +10,7 @@ const Header = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="bg-background/95 backdrop-blur-xl border-b border-primary/20 sticky top-0 z-50 shadow-elegant"
+      className="bg-background/80 backdrop-blur-xl border-b border-primary/20 sticky top-0 z-50 shadow-elegant"
     >
       <div className="w-full px-10">
         {/* Top Info Bar */}
@@ -62,7 +62,7 @@ const Header = () => {
             <Link href={"/"} className="flex items-center gap-2">
               <img src="/assets/logo.png" alt="SIT" className="w-16 h-16" />
               <div>
-                <h1 className="font-display text-2xl font-bold">
+                <h1 className="font-sans text-2xl font-bold">
                   Trường Đại học Tân Tạo
                 </h1>
                 <p className="text-sm text-primary font-medium">Khoa Công nghệ Thông tin</p>

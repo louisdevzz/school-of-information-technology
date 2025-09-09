@@ -93,7 +93,7 @@ const Programs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="font-display text-5xl md:text-6xl font-bold text-foreground mb-8"
+            className="font-sans text-5xl md:text-6xl font-bold text-foreground mb-8"
           >
             Khám phá các chương trình
             <br />
@@ -104,7 +104,7 @@ const Programs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed"
+            className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-sans"
           >
             Khoa Công nghệ Thông tin TTU áp dụng triết lí giáo dục "Khai phóng - học suốt đời" với chương trình học 
             được xây dựng dựa trên chương trình của Đại học Duke, Hoa Kỳ.
@@ -165,7 +165,7 @@ const Programs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="font-display text-4xl font-bold text-foreground mb-8"
+              className="font-sans text-4xl font-bold text-foreground mb-8"
             >
               Tại sao chọn SIT?
             </motion.h3>
@@ -181,8 +181,8 @@ const Programs = () => {
                   <Target className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-foreground mb-2">Mô hình giáo dục</h4>
-                  <p className="text-muted-foreground">Áp dụng triết lí giáo dục "Khai phóng - học suốt đời" với chương trình học được xây dựng dựa trên chương trình của Đại học Duke, Hoa Kỳ.</p>
+                  <h4 className="font-semibold text-lg text-foreground mb-2 font-sans">Mô hình giáo dục</h4>
+                  <p className="text-muted-foreground font-sans">Áp dụng triết lí giáo dục "Khai phóng - học suốt đời" với chương trình học được xây dựng dựa trên chương trình của Đại học Duke, Hoa Kỳ.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -190,8 +190,8 @@ const Programs = () => {
                   <Zap className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-foreground mb-2">Đội ngũ giảng viên</h4>
-                  <p className="text-muted-foreground">Đa số giảng viên có bằng tiến sĩ từ các trường Đại học uy tín trong và ngoài nước với hồ sơ nghiên cứu mạnh.</p>
+                  <h4 className="font-semibold text-lg text-foreground mb-2 font-sans">Đội ngũ giảng viên</h4>
+                  <p className="text-muted-foreground font-sans">Đa số giảng viên có bằng tiến sĩ từ các trường Đại học uy tín trong và ngoài nước với hồ sơ nghiên cứu mạnh.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -199,18 +199,19 @@ const Programs = () => {
                   <Sparkles className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-foreground mb-2">Nghiên cứu</h4>
-                  <p className="text-muted-foreground">100% sinh viên được tham gia vào các dự án nghiên cứu và có thể thực tập trong ngành công nghiệp.</p>
+                  <h4 className="font-semibold text-lg text-foreground mb-2 font-sans">Nghiên cứu</h4>
+                  <p className="text-muted-foreground font-sans">100% sinh viên được tham gia vào các dự án nghiên cứu và có thể thực tập trong ngành công nghiệp.</p>
                 </div>
               </div>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="flex justify-start"
             >
               <Button 
                 variant="default" 
-                className="bg-gradient-orange hover:shadow-glow"
+                className="bg-gradient-orange hover:shadow-glow border-2 border-primary/20 hover:border-primary/40"
                 size="lg"
               >
                 <Zap className="mr-2 h-5 w-5" />
@@ -240,22 +241,24 @@ const Programs = () => {
                 whileHover={{ y: -12, scale: 1.02 }}
                 className="group"
               >
-                <Card className="h-full group hover:shadow-elegant transition-all duration-500 bg-card/80 backdrop-blur-sm border-border/50 overflow-hidden relative">
+                <Card className="h-full group hover:shadow-elegant transition-all duration-500 bg-card/80 backdrop-blur-sm border-border/50 overflow-hidden relative flex flex-col">
                   {/* Gradient overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${program.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
                   
                   <CardHeader className="relative z-10">
-                    <motion.div 
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.6 }}
-                      className="w-16 h-16 bg-gradient-orange rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-glow transition-all duration-300"
-                    >
-                      <Icon className="h-8 w-8 text-white" />
-                    </motion.div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full border border-primary/30">
-                        {program.code}
-                      </span>
+                    <div className="flex items-start justify-between">
+                      <motion.div 
+                        whileHover={{ rotate: 360, scale: 1.1 }}
+                        transition={{ duration: 0.6 }}
+                        className="w-16 h-16 bg-gradient-orange rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-glow transition-all duration-300"
+                      >
+                        <Icon className="h-8 w-8 text-white" />
+                      </motion.div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full border border-primary/30">
+                          {program.code}
+                        </span>
+                      </div>
                     </div>
                     <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300 leading-tight">
                       {program.title}
@@ -264,8 +267,8 @@ const Programs = () => {
                       {program.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="relative z-10">
-                    <ul className="space-y-3 mb-6">
+                  <CardContent className="relative z-10 flex flex-col flex-grow">
+                    <ul className="space-y-3 mb-6 flex-grow">
                       {program.features.map((feature, featureIndex) => (
                         <motion.li 
                           key={featureIndex} 
@@ -289,7 +292,7 @@ const Programs = () => {
                     >
                       <Button 
                         variant="ghost" 
-                        className="w-full group-hover:bg-primary/10 group-hover:text-primary transition-all duration-300 border border-transparent group-hover:border-primary/20"
+                        className="w-full group-hover:bg-primary/10 group-hover:text-primary transition-all duration-300 border-2 border-primary/20 group-hover:border-primary/40"
                       >
                         <Sparkles className="mr-2 h-4 w-4" />
                         Xem chi tiết
@@ -313,11 +316,12 @@ const Programs = () => {
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            className="flex justify-center"
           >
             <Button 
               variant="default" 
               size="lg"
-              className="bg-gradient-orange hover:shadow-glow px-12 py-6 text-lg"
+              className="bg-gradient-orange hover:shadow-glow px-12 py-6 text-lg border-2 border-primary/20 hover:border-primary/40"
             >
               <Zap className="mr-3 h-6 w-6" />
               Xem tất cả chương trình
