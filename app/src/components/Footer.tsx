@@ -3,8 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { Facebook, Youtube, Mail, Phone, MapPin, Sparkles, Zap, Target } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const Footer = () => {
+  const t = useTranslations("header");
+  const tFooter = useTranslations("footer");
+  
   return (
     <footer className="bg-gradient-to-br from-background via-background to-primary/10 text-foreground relative overflow-hidden border-t border-primary/20">
       {/* Background Elements */}
@@ -45,17 +50,18 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center gap-2 mb-8">
+            <Link href={"/"} className="flex items-center gap-2">
               <img src="/assets/logo.png" alt="SIT" className="w-14 h-14" />
-              <div className="flex flex-col gap-1">
-                <h1 className="font-sans text-xl font-bold">
-                  Trường Đại học Tân Tạo
-                </h1>
-                <p className="text-xs text-primary font-medium">Khoa Công nghệ Thông tin</p>
+              <div className="flex flex-col items-start gap-1">
+                <p className="text-primary text-xl font-bold">
+                  {t("university")}
+                </p>
+                <div className="h-0.5 w-40 bg-primary"/>
+                <p className="text-lg text-primary font-bold">{t("faculty")}</p>
               </div>
-            </div>
-            <p className="text-muted-foreground mb-8 leading-relaxed font-sans">
-              Đồng hành cùng cách mạng công nghệ 4.0, TTU cam kết cung cấp giáo dục chất lượng cao 
+            </Link>
+            <p className="text-muted-foreground mb-8 leading-relaxed font-sans mt-4">
+              {t("slogan")}, TTU cam kết cung cấp giáo dục chất lượng cao 
               trong lĩnh vực công nghệ thông tin với triết lí "Khai phóng - học suốt đời".
             </p>
             <div className="flex gap-4">
@@ -86,17 +92,12 @@ const Footer = () => {
           >
             <h4 className="font-semibold text-xl mb-8 flex items-center gap-2 font-sans">
               <Sparkles className="h-5 w-5 text-primary" />
-              Liên kết nhanh
+              {tFooter("quickLinks")}
             </h4>
             <ul className="space-y-4">
-              {[
-                { name: "Giới thiệu", icon: Target },
-                { name: "Chương trình đào tạo", icon: Zap },
-                { name: "Tuyển sinh", icon: Target },
-                { name: "Nghiên cứu", icon: Zap },
-                { name: "Sinh viên", icon: Target }
-              ].map((item, index) => {
-                const Icon = item.icon;
+              {tFooter.raw("links").map((name: string, index: number) => {
+                const icons = [Target, Zap, Target, Zap, Target];
+                const Icon = icons[index];
                 return (
                   <motion.li
                     key={index}
@@ -107,7 +108,7 @@ const Footer = () => {
                   >
                     <a href="#" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-all duration-300 group">
                       <Icon className="h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
-                      {item.name}
+                      {name}
                     </a>
                   </motion.li>
                 );
@@ -124,17 +125,12 @@ const Footer = () => {
           >
             <h4 className="font-semibold text-xl mb-8 flex items-center gap-2 font-sans">
               <Zap className="h-5 w-5 text-primary" />
-              Chương trình học
+              {tFooter("academicPrograms")}
             </h4>
             <ul className="space-y-4">
-              {[
-                { name: "Cử nhân Khoa học Máy tính", icon: Target },
-                { name: "Cử nhân Trí tuệ Nhân tạo", icon: Zap },
-                { name: "Cử nhân Khoa học Dữ liệu", icon: Target },
-                { name: "Thạc sĩ Khoa học Máy tính", icon: Zap },
-                { name: "Khóa học trực tuyến", icon: Target }
-              ].map((item, index) => {
-                const Icon = item.icon;
+              {tFooter.raw("programs").map((name: string, index: number) => {
+                const icons = [Target, Zap, Target, Zap, Target];
+                const Icon = icons[index];
                 return (
                   <motion.li
                     key={index}
@@ -145,7 +141,7 @@ const Footer = () => {
                   >
                     <a href="#" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-all duration-300 group">
                       <Icon className="h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
-                      {item.name}
+                      {name}
                     </a>
                   </motion.li>
                 );
@@ -162,7 +158,7 @@ const Footer = () => {
           >
             <h4 className="font-semibold text-xl mb-8 flex items-center gap-2 font-sans">
               <Target className="h-5 w-5 text-primary" />
-              Liên hệ
+              {tFooter("contact")}
             </h4>
             <div className="space-y-6">
               <motion.div 
@@ -179,12 +175,8 @@ const Footer = () => {
                   <MapPin className="h-5 w-5 text-primary" />
                 </motion.div>
                 <div>
-                  <p className="text-muted-foreground leading-relaxed font-sans">
-                    Lô E2a-7, Đường D1, Khu Công nghệ cao,
-                    <br />
-                    Phường Long Thạnh Mỹ, TP. Thủ Đức,
-                    <br />
-                    TP. Hồ Chí Minh
+                  <p className="text-muted-foreground leading-relaxed font-sans whitespace-pre-line">
+                    {tFooter("address")}
                   </p>
                 </div>
               </motion.div>
@@ -201,7 +193,7 @@ const Footer = () => {
                 >
                   <Phone className="h-5 w-5 text-primary" />
                 </motion.div>
-                <span className="text-muted-foreground font-medium font-sans">+84 27 2376 9216</span>
+                <span className="text-muted-foreground font-medium font-sans">{tFooter("phone")}</span>
               </motion.div>
               <motion.div 
                 initial={{ opacity: 0, x: -20 }}
@@ -216,7 +208,7 @@ const Footer = () => {
                 >
                   <Mail className="h-5 w-5 text-primary" />
                 </motion.div>
-                <span className="text-muted-foreground font-medium font-sans">sit@ttu.edu.vn</span>
+                <span className="text-muted-foreground font-medium font-sans">{tFooter("email")}</span>
               </motion.div>
             </div>
           </motion.div>
@@ -235,7 +227,7 @@ const Footer = () => {
             <Sparkles className="h-5 w-5 text-primary" />
           </div>
           <p className="text-muted-foreground font-sans">
-            © 2024 Trường Đại học Tân Tạo - Khoa Công nghệ Thông tin. Tất cả quyền được bảo lưu.
+            {tFooter("copyright")}
           </p>
         </motion.div>
       </div>

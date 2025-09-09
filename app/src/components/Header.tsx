@@ -3,8 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Menu, Search, Phone, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
+  const t = useTranslations("header");
+  
+  // Debug: Log translations
+  console.log('Header - University:', t("university"));
+  console.log('Header - Faculty:', t("faculty"));
+  
   return (
     <motion.header 
       initial={{ y: -100, opacity: 0 }}
@@ -27,23 +35,24 @@ const Header = () => {
                 className="flex items-center gap-2 text-primary font-medium"
               >
                 <Phone className="h-4 w-4" />
-                <span>+84 27 2376 9216</span>
+                <span>{t("phone")}</span>
               </motion.div>
               <motion.div 
                 whileHover={{ scale: 1.05 }}
                 className="flex items-center gap-2 text-primary font-medium"
               >
                 <Mail className="h-4 w-4" />
-                <span>sit@ttu.edu.vn</span>
+                <span>{t("email")}</span>
               </motion.div>
             </div>
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="hidden md:flex items-center gap-2 text-muted-foreground"
+              className="hidden md:flex items-center gap-4 text-muted-foreground"
             >
-              <span>Đồng hành cùng cách mạng công nghệ 4.0</span>
+              <span>{t("slogan")}</span>
+              <LanguageSwitcher />
             </motion.div>
           </div>
         </motion.div>
@@ -61,30 +70,31 @@ const Header = () => {
           >
             <Link href={"/"} className="flex items-center gap-2">
               <img src="/assets/logo.png" alt="SIT" className="w-16 h-16" />
-              <div>
-                <h1 className="font-sans text-2xl font-bold">
-                  Trường Đại học Tân Tạo
-                </h1>
-                <p className="text-sm text-primary font-medium">Khoa Công nghệ Thông tin</p>
+              <div className="flex flex-col items-start gap-1">
+                <p className="text-primary text-2xl font-bold">
+                  {t("university")}
+                </p>
+                <div className="h-0.5 w-48 bg-primary"/>
+                <p className="text-2xl text-primary font-bold">{t("faculty")}</p>
               </div>
             </Link>
           </motion.div>
 
           <nav className="hidden lg:flex items-center gap-8">
             {[
-              "Giới thiệu",
-              "Chương trình đào tạo", 
-              "Sinh viên",
-              "Nghiên cứu",
-              "Tin tức"
+              { key: "about", href: "#" },
+              { key: "programs", href: "#" },
+              { key: "students", href: "#" },
+              { key: "research", href: "#" },
+              { key: "news", href: "#" }
             ].map((item, index) => (
               <motion.a 
                 key={index}
-                href="#" 
+                href={item.href} 
                 whileHover={{ scale: 1.05, y: -2 }}
                 className="text-foreground hover:text-primary transition-all duration-300 font-medium"
               >
-                {item}
+                {t(`navigation.${item.key}`)}
               </motion.a>
             ))}
           </nav>
@@ -101,7 +111,7 @@ const Header = () => {
                 className="hidden md:inline-flex bg-gradient-orange hover:shadow-glow"
               >
                 <Phone className="mr-2 h-4 w-4" />
-                Liên hệ tư vấn
+                {t("contact")}
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>

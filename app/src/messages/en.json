@@ -1,0 +1,134 @@
+{
+  "metadata": {
+    "title": "School of Information Technology - Tan Tao University",
+    "description": "School of Information Technology - Tan Tao University trains high-quality human resources in Information Technology and Computer Science. Partnering with the 4.0 technology revolution.",
+    "keywords": "School of Information Technology, Tan Tao University, SIT, Information Technology, Computer Science, Education, Training, Technology 4.0"
+  },
+  "header": {
+    "phone": "+84 27 2376 9216",
+    "email": "sit@ttu.edu.vn",
+    "slogan": "Partnering with the 4.0 technology revolution",
+    "university": "Tan Tao University",
+    "faculty": "School of Information Technology",
+    "navigation": {
+      "about": "About",
+      "programs": "Academic Programs",
+      "students": "Students",
+      "research": "Research",
+      "news": "News"
+    },
+    "contact": "Contact Us",
+    "language": {
+      "vi": "Tiếng Việt",
+      "en": "English"
+    }
+  },
+  "textRibbon": {
+    "messages": [
+      "2024-2025 Academic Year Admissions Now Open - Apply Now!",
+      "Information Technology programs internationally recognized",
+      "SIT students achieve high rankings in national programming competitions",
+      "Career opportunities at leading technology companies",
+      "Scientific research in AI and Machine Learning",
+      "International cooperation with prestigious universities"
+    ]
+  },
+  "hero": {
+    "welcome": "Welcome to SIT",
+    "title": "Partnering with",
+    "dynamicTexts": [
+      "Information Technology",
+      "Artificial Intelligence",
+      "Data Science",
+      "Cybersecurity",
+      "Software Development",
+      "Internet of Things"
+    ],
+    "subtitle": "Tan Tao University's School of Information Technology leads in training high-quality human resources, breakthrough research, and applying advanced technology to practice.",
+    "explore": "Explore Now",
+    "watchVideo": "Watch Introduction Video"
+  },
+  "stats": {
+    "title": "Our Achievements",
+    "subtitle": "With over 19 years of experience in education, TTU has achieved remarkable accomplishments",
+    "items": [
+      { "number": "2005", "label": "Founded" },
+      { "number": "15,000+", "label": "Students" },
+      { "number": "500+", "label": "Faculty" },
+      { "number": "50+", "label": "Academic Programs" }
+    ]
+  },
+  "programs": {
+    "badge": "Academic Programs",
+    "title": "Explore our",
+    "titleHighlight": "Information Technology Programs",
+    "subtitle": "Tan Tao University's School of Information Technology applies the educational philosophy of \"Liberal Arts - Lifelong Learning\" with curricula based on Duke University, USA programs.",
+    "whyChoose": "Why Choose SIT?",
+    "features": [
+      {
+        "title": "Educational Model",
+        "description": "Applies the educational philosophy of \"Liberal Arts - Lifelong Learning\" with curricula based on Duke University, USA programs."
+      },
+      {
+        "title": "Faculty Team",
+        "description": "Most faculty members hold PhD degrees from prestigious universities domestically and internationally with strong research profiles."
+      },
+      {
+        "title": "Research",
+        "description": "100% of students participate in research projects and can intern in the industry."
+      }
+    ],
+    "financialSupport": "Learn about Financial Support",
+    "viewAll": "View All Programs",
+    "viewDetails": "View Details",
+    "programs": [
+      {
+        "title": "Bachelor of Computer Science",
+        "code": "7480101",
+        "description": "Develop programming skills and design modern software systems with focus on Data Engineering and Software Engineering",
+        "features": "Java, Python, C++, Web Development, Mobile Apps, Software Architecture, Data Engineering"
+      },
+      {
+        "title": "Bachelor of Artificial Intelligence",
+        "code": "7480109",
+        "description": "Research and apply AI, Machine Learning with focus on Computer Vision and Natural Language Processing",
+        "features": "Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Neural Networks"
+      },
+      {
+        "title": "Bachelor of Data Science",
+        "code": "7480104",
+        "description": "Analyze and extract data with focus on Bioinformatics and Business Analytics",
+        "features": "Data Analytics, Business Intelligence, Bioinformatics, Statistical Modeling, Big Data"
+      },
+      {
+        "title": "Master of Computer Science",
+        "code": "7480102",
+        "description": "Graduate program specializing in advanced technology research and development",
+        "features": "Advanced Algorithms, Research Methods, Thesis Project, Industry Collaboration, Innovation"
+      }
+    ]
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "academicPrograms": "Academic Programs",
+    "contact": "Contact",
+    "links": [
+      "About",
+      "Academic Programs",
+      "Admissions",
+      "Research",
+      "Students"
+    ],
+    "programs": [
+      "Bachelor of Computer Science",
+      "Bachelor of Artificial Intelligence",
+      "Bachelor of Data Science",
+      "Master of Computer Science",
+      "Online Courses"
+    ],
+    "address": "Lot E2a-7, D1 Road, High-Tech Zone,\nLong Thanh My Ward, Thu Duc City,\nHo Chi Minh City",
+    "phone": "+84 27 2376 9216",
+    "email": "sit@ttu.edu.vn",
+    "copyright": "© 2024 Tan Tao University - School of Information Technology. All rights reserved."
+  }
+}

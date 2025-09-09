@@ -1,24 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "BẢN TIN & SỰ KIỆN – TAN TAO UNIVERSITY",
-  description: "Đại học Tân Tạo - Khoa Công nghệ Thông tin đào tạo nguồn nhân lực chất lượng cao trong lĩnh vực Công nghệ Thông tin và Máy tính",
-  keywords: "Đại học Tân Tạo, Tan Tao University, Công nghệ Thông tin, IT, Computer Science, Đào tạo, Giáo dục",
-  authors: [{ name: "Tan Tao University" }],
-  creator: "Tan Tao University",
-  publisher: "Tan Tao University",
+  title: "Khoa Công nghệ Thông tin - Đại học Tân Tạo",
+  description: "Khoa Công nghệ Thông tin - Đại học Tân Tạo đào tạo nguồn nhân lực chất lượng cao trong lĩnh vực Công nghệ Thông tin và Máy tính. Đồng hành cùng cách mạng công nghệ 4.0.",
+  keywords: "Khoa Công nghệ Thông tin, Đại học Tân Tạo, Tan Tao University, SIT, School of Information Technology, IT, Computer Science, Đào tạo, Giáo dục, Công nghệ 4.0",
+  authors: [{ name: "Khoa Công nghệ Thông tin - Đại học Tân Tạo" }],
+  creator: "Khoa Công nghệ Thông tin - Đại học Tân Tạo",
+  publisher: "Khoa Công nghệ Thông tin - Đại học Tân Tạo",
   robots: {
     index: true,
     follow: true,
@@ -34,9 +29,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "vi_VN",
     url: "https://sit.ttu.edu.vn",
-    siteName: "Tan Tao University",
-    title: "BẢN TIN & SỰ KIỆN – TAN TAO UNIVERSITY",
-    description: "Đại học Tân Tạo - Khoa Công nghệ Thông tin đào tạo nguồn nhân lực chất lượng cao trong lĩnh vực Công nghệ Thông tin và Máy tính",
+    siteName: "Khoa Công nghệ Thông tin - Đại học Tân Tạo",
+    title: "Khoa Công nghệ Thông tin - Đại học Tân Tạo",
+    description: "Khoa Công nghệ Thông tin - Đại học Tân Tạo đào tạo nguồn nhân lực chất lượng cao trong lĩnh vực Công nghệ Thông tin và Máy tính. Đồng hành cùng cách mạng công nghệ 4.0.",
     images: [
       {
         url: "https://sit.ttu.edu.vn/wp-content/uploads/2025/01/cropped-orange_logo-01-1-192x192.png",
@@ -48,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BẢN TIN & SỰ KIỆN – TAN TAO UNIVERSITY",
-    description: "Đại học Tân Tạo - Khoa Công nghệ Thông tin đào tạo nguồn nhân lực chất lượng cao trong lĩnh vực Công nghệ Thông tin và Máy tính",
+    title: "Khoa Công nghệ Thông tin - Đại học Tân Tạo",
+    description: "Khoa Công nghệ Thông tin - Đại học Tân Tạo đào tạo nguồn nhân lực chất lượng cao trong lĩnh vực Công nghệ Thông tin và Máy tính. Đồng hành cùng cách mạng công nghệ 4.0.",
     images: ["https://sit.ttu.edu.vn/wp-content/uploads/2025/01/cropped-orange_logo-01-1-192x192.png"],
   },
   alternates: {
@@ -80,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${openSans.variable} antialiased`}
       >
         {children}
       </body>

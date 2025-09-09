@@ -3,13 +3,15 @@
 import { Target, Zap, Sparkles, GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
 import TextRibbon from "./TextRibbon";
+import { useTranslations } from "next-intl";
 
 const Stats = () => {
+  const t = useTranslations("stats");
   const stats = [
-    { number: "2005", label: "Năm thành lập", icon: Target },
-    { number: "15,000+", label: "Sinh viên", icon: Zap },
-    { number: "500+", label: "Giảng viên", icon: Sparkles },
-    { number: "50+", label: "Chương trình đào tạo", icon: GraduationCap }
+    { number: "2005", label: t("items.0.label") },
+    { number: "15,000+", label: t("items.1.label") },
+    { number: "500+", label: t("items.2.label") },
+    { number: "50+", label: t("items.3.label") }
   ];
 
   return (
@@ -29,7 +31,7 @@ const Stats = () => {
             viewport={{ once: true }}
             className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-6"
           >
-            Thành tựu của chúng tôi
+            {t("title")}
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
@@ -38,7 +40,7 @@ const Stats = () => {
             viewport={{ once: true }}
             className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-sans"
           >
-            Với hơn 19 năm kinh nghiệm trong giáo dục, TTU đã đạt được những thành tựu đáng tự hào
+            {t("subtitle")}
           </motion.p>
         </motion.div>
 
@@ -50,7 +52,8 @@ const Stats = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {stats.map((stat, index) => {
-            const Icon = stat.icon;
+            const icons = [Target, Zap, Sparkles, GraduationCap];
+            const Icon = icons[index];
             return (
               <motion.div
                 key={index}

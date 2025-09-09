@@ -1,0 +1,133 @@
+{
+  "metadata": {
+    "title": "Khoa Công nghệ Thông tin - Đại học Tân Tạo",
+    "description": "Khoa Công nghệ Thông tin - Đại học Tân Tạo đào tạo nguồn nhân lực chất lượng cao trong lĩnh vực Công nghệ Thông tin và Máy tính. Đồng hành cùng cách mạng công nghệ 4.0.",
+    "keywords": "Khoa Công nghệ Thông tin, Đại học Tân Tạo, Tan Tao University, SIT, School of Information Technology, IT, Computer Science, Đào tạo, Giáo dục, Công nghệ 4.0"
+  },
+  "header": {
+    "phone": "+84 27 2376 9216",
+    "email": "sit@ttu.edu.vn",
+    "slogan": "Đồng hành cùng cách mạng công nghệ 4.0",
+    "university": "Đại Học Tân Tạo",
+    "faculty": "Khoa Công nghệ Thông tin",
+    "navigation": {
+      "about": "Giới thiệu",
+      "programs": "Chương trình đào tạo",
+      "students": "Sinh viên",
+      "research": "Nghiên cứu",
+      "news": "Tin tức"
+    },
+    "contact": "Liên hệ tư vấn",
+    "language": {
+      "vi": "Tiếng Việt",
+      "en": "English"
+    }
+  },
+  "textRibbon": {
+    "messages": [
+      "Tuyển sinh năm học 2024-2025 đã bắt đầu - Đăng ký ngay!",
+      "Chương trình đào tạo Công nghệ Thông tin được công nhận quốc tế",
+      "Sinh viên SIT đạt giải cao trong cuộc thi lập trình quốc gia",
+      "Cơ hội việc làm tại các công ty công nghệ hàng đầu",
+      "Nghiên cứu khoa học về AI và Machine Learning",
+      "Hợp tác quốc tế với các trường đại học danh tiếng"
+    ]
+  },
+  "hero": {
+    "welcome": "Chào mừng đến với SIT",
+    "title": "Đồng hành cùng",
+    "dynamicTexts": [
+      "Công nghệ Thông tin",
+      "Trí tuệ Nhân tạo",
+      "Khoa học Dữ liệu",
+      "An ninh Mạng",
+      "Phát triển Phần mềm"
+    ],
+    "subtitle": "Khoa Công nghệ Thông tin TTU tiên phong trong đào tạo nguồn nhân lực chất lượng cao, nghiên cứu đột phá và ứng dụng công nghệ tiên tiến vào thực tiễn.",
+    "explore": "Khám phá ngay",
+    "watchVideo": "Xem video giới thiệu"
+  },
+  "stats": {
+    "title": "Thành tựu của chúng tôi",
+    "subtitle": "Với hơn 19 năm kinh nghiệm trong giáo dục, TTU đã đạt được những thành tựu đáng tự hào",
+    "items": [
+      { "number": "2005", "label": "Năm thành lập" },
+      { "number": "15,000+", "label": "Sinh viên" },
+      { "number": "500+", "label": "Giảng viên" },
+      { "number": "50+", "label": "Chương trình đào tạo" }
+    ]
+  },
+  "programs": {
+    "badge": "Chương trình đào tạo",
+    "title": "Khám phá các chương trình",
+    "titleHighlight": "Công nghệ Thông tin",
+    "subtitle": "Khoa Công nghệ Thông tin TTU áp dụng triết lí giáo dục \"Khai phóng - học suốt đời\" với chương trình học được xây dựng dựa trên chương trình của Đại học Duke, Hoa Kỳ.",
+    "whyChoose": "Tại sao chọn SIT?",
+    "features": [
+      {
+        "title": "Mô hình giáo dục",
+        "description": "Áp dụng triết lí giáo dục \"Khai phóng - học suốt đời\" với chương trình học được xây dựng dựa trên chương trình của Đại học Duke, Hoa Kỳ."
+      },
+      {
+        "title": "Đội ngũ giảng viên",
+        "description": "Đa số giảng viên có bằng tiến sĩ từ các trường Đại học uy tín trong và ngoài nước với hồ sơ nghiên cứu mạnh."
+      },
+      {
+        "title": "Nghiên cứu",
+        "description": "100% sinh viên được tham gia vào các dự án nghiên cứu và có thể thực tập trong ngành công nghiệp."
+      }
+    ],
+    "financialSupport": "Tìm hiểu về hỗ trợ tài chính",
+    "viewAll": "Xem tất cả chương trình",
+    "viewDetails": "Xem chi tiết",
+    "programs": [
+      {
+        "title": "Cử nhân Khoa học Máy tính",
+        "code": "7480101",
+        "description": "Phát triển kỹ năng lập trình và thiết kế hệ thống phần mềm hiện đại với định hướng Kỹ thuật Dữ liệu và Kỹ thuật phần mềm",
+        "features": "Java, Python, C++, Web Development, Mobile Apps, Software Architecture, Data Engineering"
+      },
+      {
+        "title": "Cử nhân Trí tuệ Nhân tạo",
+        "code": "7480109",
+        "description": "Nghiên cứu và ứng dụng AI, Machine Learning với định hướng Thị giác máy tính và Xử lý ngôn ngữ tự nhiên",
+        "features": "Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Neural Networks"
+      },
+      {
+        "title": "Cử nhân Khoa học Dữ liệu",
+        "code": "7480104",
+        "description": "Phân tích và khai thác dữ liệu với định hướng Tin Sinh học và Phân tích kinh doanh",
+        "features": "Data Analytics, Business Intelligence, Bioinformatics, Statistical Modeling, Big Data"
+      },
+      {
+        "title": "Thạc sĩ Khoa học Máy tính",
+        "code": "7480102",
+        "description": "Chương trình sau đại học chuyên sâu về nghiên cứu và phát triển công nghệ tiên tiến",
+        "features": "Advanced Algorithms, Research Methods, Thesis Project, Industry Collaboration, Innovation"
+      }
+    ]
+  },
+  "footer": {
+    "quickLinks": "Liên kết nhanh",
+    "academicPrograms": "Chương trình học",
+    "contact": "Liên hệ",
+    "links": [
+      "Giới thiệu",
+      "Chương trình đào tạo",
+      "Tuyển sinh",
+      "Nghiên cứu",
+      "Sinh viên"
+    ],
+    "programs": [
+      "Cử nhân Khoa học Máy tính",
+      "Cử nhân Trí tuệ Nhân tạo",
+      "Cử nhân Khoa học Dữ liệu",
+      "Thạc sĩ Khoa học Máy tính",
+      "Khóa học trực tuyến"
+    ],
+    "address": "Lô E2a-7, Đường D1, Khu Công nghệ cao,\nPhường Long Thạnh Mỹ, TP. Thủ Đức,\nTP. Hồ Chí Minh",
+    "phone": "+84 27 2376 9216",
+    "email": "sit@ttu.edu.vn",
+    "copyright": "© 2024 Trường Đại học Tân Tạo - Khoa Công nghệ Thông tin. Tất cả quyền được bảo lưu."
+  }
+}

@@ -4,24 +4,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Sparkles, Zap, Target, Code, Database, Cloud, Cpu } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 const Hero = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const t = useTranslations("hero");
   
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 300], [0, -50]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0.3]);
 
-  const dynamicTexts = [
-    "Công nghệ Thông tin",
-    "Trí tuệ Nhân tạo", 
-    "Khoa học Dữ liệu",
-    "An ninh Mạng",
-    "Phát triển Phần mềm",
-    "Internet of Things"
-  ];
+  const dynamicTexts = t.raw("dynamicTexts");
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -115,7 +110,7 @@ const Hero = () => {
           >
             <span className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-orange text-white font-medium rounded-full text-sm shadow-glow font-sans">
               <Sparkles className="w-4 h-4" />
-              Chào mừng đến với SIT
+              {t("welcome")}
             </span>
           </motion.div>
 
@@ -126,7 +121,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight font-sans"
           >
-            <span className="block mb-4">Đồng hành cùng</span>
+            <span className="block mb-4">{t("title")}</span>
             <span className="block text-primary-glow">
               {currentText}
               <motion.span
@@ -146,8 +141,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light font-sans"
           >
-            Khoa Công nghệ Thông tin TTU tiên phong trong đào tạo nguồn nhân lực chất lượng cao, 
-            nghiên cứu đột phá và ứng dụng công nghệ tiên tiến vào thực tiễn.
+            {t("subtitle")}
           </motion.p>
 
           {/* Action Buttons */}
@@ -161,7 +155,7 @@ const Hero = () => {
               size="lg" 
               className="bg-gradient-orange hover:shadow-glow transition-all duration-300 font-sans"
             >
-              Khám phá ngay
+              {t("explore")}
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
             <Button 
@@ -170,7 +164,7 @@ const Hero = () => {
               className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-sans"
             >
               <Play className="mr-2 w-4 h-4" />
-              Xem video giới thiệu
+              {t("watchVideo")}
             </Button>
           </motion.div>
         </motion.div>
