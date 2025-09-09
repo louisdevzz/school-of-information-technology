@@ -108,6 +108,223 @@
       }
     ]
   },
+  "about": {
+    "title": "About SIT",
+    "subtitle": "Leading the Future of Information Technology Education",
+    "description": "Tan Tao University's School of Information Technology is committed to training high-quality human resources in Information Technology and Computer Science, partnering with the 4.0 technology revolution.",
+    "whatWeDo": "WHAT WE DO",
+    "ourApproach": "OUR APPROACH",
+    "howWeDoIt": "HOW WE DO IT",
+    "howWeEducate": "HOW WE EDUCATE",
+    "howWeOperate": "HOW WE OPERATE",
+    "ourPhilosophy": "OUR PHILOSOPHY",
+    "liberalArtsTitle": "Liberal Arts Education",
+    "liberalArtsDescription": "Our educational philosophy is based on comprehensive and multi-dimensional knowledge in social sciences, humanities, and natural sciences before specializing in a specific field. This approach helps students develop self-learning ability, self-adaptation, and self-improvement in new environments.",
+    "lifelongLearningTitle": "Lifelong Learning",
+    "lifelongLearningDescription": "TTU graduates will be active learners and lifelong learners, aiming to enhance knowledge and professional skills to meet career requirements and improve themselves to work throughout their lives. They adapt to continuous learning to complete different tasks and build learning goals proactively.",
+    "qualityAssuranceTitle": "Quality Assurance",
+    "qualityAssuranceDescription": "We commit to training that meets output standards, teaching-learning methods and training management oriented towards approaching regional and world education. We enhance faculty capacity and implement teaching method improvements, evaluation oriented towards learner-centered approach.",
+    "founded": "Founded",
+    "facultyLevel": "Faculty Level",
+    "programs": "Programs",
+    "visionYear": "Vision Year",
+    "organizationalStructureTitle": "Organizational Structure",
+    "facultyExcellenceTitle": "Faculty Excellence",
+    "technologyIntegrationTitle": "Technology Integration",
+    "technologyIntegrationDescription": "We apply foreign languages and technology in teaching-learning and management towards learner, employer and social requirements. We provide high-level human resources with solid professional skills and progressive thinking.",
+    "transparentEnvironmentTitle": "Transparent Environment",
+    "transparentEnvironmentDescription": "We build an open, transparent working environment, always creating opportunities for all faculty members to maximize their potential. We maintain a trustworthy educational environment with students at the center.",
+    "readyToStart": "Let's build the bridges to a better future.",
+    "joinEcosystem": "Join SIT's Educational Ecosystem. Get In Touch",
+    "explorePrograms": "Explore Programs",
+    "contactUs": "Contact Us",
+    "history": "Our History",
+    "historyText": "The School of Information Technology, formerly the Faculty of Engineering, was established on January 4, 2012, under Decision No. 82/QD.TTU.12, to train Computer Science majors to meet society's human resource needs and expand Information Technology fields. The School of Information Technology became the official name from June 1, 2023, under Decision No. 70/QD-TTU.23.",
+    "faculty": "Faculty Team",
+    "facultyText": "Our faculty team consists of full-time and part-time lecturers. All full-time faculty members hold PhD degrees from prestigious universities domestically and internationally (Australia, France, USA, etc.).",
+    "mission": "Our Mission",
+    "missionText": "To train and develop high-quality human resources in Information Technology and Computer Science at the undergraduate level; conduct in-depth research and apply Computer Science, Information Technology, and Communications to various industries in society; pioneer in approaching regional and world university education standards based on the liberal arts education model and lifelong learning.",
+    "vision": "Our Vision",
+    "visionText": "By 2030, Information Technology will be a high-quality human resource training institution that meets labor market requirements and be a top national unit in training, research, and technology transfer related to Information Technology and Computer Science fields serving the community. Training programs will be quality-accredited with extensive cooperation with domestic and international organizations.",
+    "values": "Core Values",
+    "valuesText": "Maintain a trustworthy educational environment, good learning and teaching, with students at the center.",
+    "valuesList": [
+      "Innovation and Creativity",
+      "Academic Excellence",
+      "Industry Partnership",
+      "Student-Centered Learning",
+      "Research and Development"
+    ],
+    "philosophy": "Educational Philosophy",
+    "philosophyText": "Liberal Arts - Lifelong Learning",
+    "philosophyDetails": {
+      "liberalArts": {
+        "title": "Liberal Arts",
+        "description": "Liberal arts education philosophy is based on comprehensive and multi-dimensional knowledge in many fields of social sciences, humanities, and natural sciences before specializing in a specific field. Liberal arts subjects are researched, selected, and synthesized from different disciplines throughout the entire program, with the spirit of free thinking - free thought to freely choose, helping students develop self-learning ability, self-adaptation, and self-improvement in new environments."
+      },
+      "lifelongLearning": {
+        "title": "Lifelong Learning",
+        "description": "TTU graduates will be active learners and lifelong learners, aiming to enhance knowledge and professional skills to meet career requirements and improve themselves to work throughout their lives."
+      }
+    },
+    "organization": "Organizational Structure",
+    "organizationText": "The organizational structure of the School of Information Technology includes: (1) Faculty Council, (2) Faculty Leadership Board, (3) Office Department, (4) Professional Department.",
+    "qualityPolicy": "Quality Policy",
+    "qualityPolicyText": "The School of Information Technology commits to: (1) Training that meets output standards, teaching-learning methods and training management oriented towards approaching regional and world education; (2) Enhancing faculty capacity, implementing teaching method improvements, evaluation oriented towards learner-centered approach; (3) Applying foreign languages and technology in teaching-learning and management towards learner, employer and social requirements; (4) Providing high-level human resources with solid professional skills, sense of responsibility to individuals, organizations and community, progressive thinking, effective independent or team communication and work; (5) Building an open, transparent working environment, always creating opportunities for all faculty members to maximize their potential.",
+    "dean": "Dean",
+    "deanName": "Dr. Cao Tien Dung",
+    "contact": "Contact Information",
+    "phone": "+84 27 2376 9216",
+    "email": "sit@ttu.edu.vn"
+  },
+  "students": {
+    "title": "Student Life",
+    "subtitle": "Empowering Future Technology Leaders",
+    "description": "Our students are at the heart of everything we do. We provide comprehensive support, opportunities, and resources to help them succeed academically and professionally.",
+    "studentSupport": "Student Support Services",
+    "supportServices": [
+      {
+        "title": "Academic Advising",
+        "description": "Personalized guidance for academic planning and career development"
+      },
+      {
+        "title": "Career Services",
+        "description": "Internship placement, job search assistance, and industry connections"
+      },
+      {
+        "title": "Research Opportunities",
+        "description": "Hands-on research experience with faculty mentors"
+      },
+      {
+        "title": "Student Organizations",
+        "description": "Tech clubs, coding competitions, and networking events"
+      }
+    ],
+    "achievements": "Student Achievements",
+    "achievementStats": [
+      { "number": "95%", "label": "Employment Rate" },
+      { "number": "50+", "label": "Industry Partners" },
+      { "number": "200+", "label": "Research Projects" },
+      { "number": "15+", "label": "Student Clubs" }
+    ],
+    "testimonials": "What Our Students Say",
+    "testimonialsList": [
+      {
+        "name": "Nguyen Van A",
+        "program": "Computer Science",
+        "quote": "SIT provided me with the technical skills and industry connections that launched my career in software development."
+      },
+      {
+        "name": "Tran Thi B",
+        "program": "Artificial Intelligence",
+        "quote": "The research opportunities and faculty mentorship at SIT helped me discover my passion for AI and machine learning."
+      }
+    ]
+  },
+  "research": {
+    "title": "Research & Innovation",
+    "subtitle": "Advancing Technology Through Research",
+    "description": "Our faculty and students are engaged in cutting-edge research that addresses real-world challenges and contributes to technological advancement.",
+    "researchAreas": "Research Areas",
+    "areas": [
+      {
+        "title": "Artificial Intelligence & Machine Learning",
+        "description": "Developing intelligent systems and algorithms for various applications",
+        "projects": ["Computer Vision", "Natural Language Processing", "Deep Learning", "Robotics"]
+      },
+      {
+        "title": "Data Science & Analytics",
+        "description": "Extracting insights from complex data sets to drive decision-making",
+        "projects": ["Big Data Processing", "Business Intelligence", "Predictive Analytics", "Data Visualization"]
+      },
+      {
+        "title": "Cybersecurity",
+        "description": "Protecting digital assets and ensuring information security",
+        "projects": ["Network Security", "Cryptography", "Digital Forensics", "Security Protocols"]
+      },
+      {
+        "title": "Software Engineering",
+        "description": "Designing and developing robust software systems",
+        "projects": ["Software Architecture", "Mobile Development", "Web Technologies", "Cloud Computing"]
+      }
+    ],
+    "publications": "Recent Publications",
+    "publicationsList": [
+      {
+        "title": "Deep Learning Approaches for Computer Vision",
+        "authors": "Dr. Nguyen Van C, Dr. Tran Thi D",
+        "journal": "IEEE Transactions on Pattern Analysis",
+        "year": "2024"
+      },
+      {
+        "title": "Machine Learning in Healthcare Applications",
+        "authors": "Dr. Le Van E, Dr. Pham Thi F",
+        "journal": "Journal of Medical Informatics",
+        "year": "2024"
+      }
+    ],
+    "collaborations": "Industry Collaborations",
+    "collaborationList": [
+      "Microsoft Vietnam",
+      "Google Cloud Platform",
+      "Amazon Web Services",
+      "Viettel Group",
+      "FPT Corporation"
+    ]
+  },
+  "news": {
+    "title": "News & Events",
+    "subtitle": "Stay Updated with SIT",
+    "description": "Keep up with the latest news, events, and achievements from our School of Information Technology.",
+    "latestNews": "Latest News",
+    "newsList": [
+      {
+        "title": "SIT Students Win National Programming Competition",
+        "date": "December 15, 2024",
+        "category": "Achievements",
+        "summary": "Our Computer Science students secured first place in the National Programming Contest 2024.",
+        "image": "/assets/news/programming-contest.jpg"
+      },
+      {
+        "title": "New AI Research Lab Opens",
+        "date": "December 10, 2024",
+        "category": "Research",
+        "summary": "State-of-the-art AI research facility equipped with latest hardware and software.",
+        "image": "/assets/news/ai-lab.jpg"
+      },
+      {
+        "title": "Industry Partnership with Microsoft",
+        "date": "December 5, 2024",
+        "category": "Partnership",
+        "summary": "New collaboration agreement signed for cloud computing education and research.",
+        "image": "/assets/news/microsoft-partnership.jpg"
+      },
+      {
+        "title": "Graduate Student Research Conference",
+        "date": "November 28, 2024",
+        "category": "Events",
+        "summary": "Annual conference showcasing graduate student research projects and innovations.",
+        "image": "/assets/news/research-conference.jpg"
+      }
+    ],
+    "upcomingEvents": "Upcoming Events",
+    "eventsList": [
+      {
+        "title": "Open House Day 2025",
+        "date": "January 15, 2025",
+        "time": "9:00 AM - 4:00 PM",
+        "location": "SIT Building",
+        "description": "Prospective students can explore our programs and facilities."
+      },
+      {
+        "title": "Tech Career Fair",
+        "date": "February 20, 2025",
+        "time": "10:00 AM - 3:00 PM",
+        "location": "University Auditorium",
+        "description": "Meet with leading technology companies and explore career opportunities."
+      }
+    ]
+  },
   "footer": {
     "quickLinks": "Quick Links",
     "academicPrograms": "Academic Programs",

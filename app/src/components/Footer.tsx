@@ -5,10 +5,13 @@ import { Facebook, Youtube, Mail, Phone, MapPin, Sparkles, Zap, Target } from "l
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
   const t = useTranslations("header");
   const tFooter = useTranslations("footer");
+  const pathname = usePathname();
+  const currentLocale = pathname.split('/')[1] || 'vi';
   
   return (
     <footer className="bg-gradient-to-br from-background via-background to-primary/10 text-foreground relative overflow-hidden border-t border-primary/20">
@@ -50,7 +53,7 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Link href={"/"} className="flex items-center gap-2">
+            <Link href={`/${currentLocale}`} className="flex items-center gap-2">
               <img src="/assets/logo.png" alt="SIT" className="w-14 h-14" />
               <div className="flex flex-col items-start gap-1">
                 <p className="text-primary text-xl font-bold">

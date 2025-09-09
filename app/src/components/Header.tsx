@@ -4,14 +4,12 @@ import { Menu, Search, Phone, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
   const t = useTranslations("header");
-  
-  // Debug: Log translations
-  console.log('Header - University:', t("university"));
-  console.log('Header - Faculty:', t("faculty"));
+  const pathname = usePathname();
   
   return (
     <motion.header 
@@ -68,35 +66,64 @@ const Header = () => {
             whileHover={{ scale: 1.02 }}
             className="flex items-center gap-2"
           >
-            <Link href={"/"} className="flex items-center gap-2">
-              <img src="/assets/logo.png" alt="SIT" className="w-16 h-16" />
+            <Link href={`/${pathname.split('/')[1] || 'vi'}`} className="flex items-center gap-2">
+              <img src="/assets/logo.png" alt="SIT" className="w-14 h-14" />
               <div className="flex flex-col items-start gap-1">
-                <p className="text-primary text-2xl font-bold">
+                <p className={`text-xl font-bold transition-colors duration-300 ${
+                  pathname === '/' || pathname === '/vi' || pathname === '/en' 
+                    ? 'text-primary' 
+                    : 'text-primary hover:text-primary/80'
+                }`}>
                   {t("university")}
                 </p>
-                <div className="h-0.5 w-48 bg-primary"/>
-                <p className="text-2xl text-primary font-bold">{t("faculty")}</p>
+                <div className={`h-0.5 w-40 transition-colors duration-300 ${
+                  pathname === '/' || pathname === '/vi' || pathname === '/en' 
+                    ? 'bg-primary' 
+                    : 'bg-primary/60'
+                }`}/>
+                <p className={`text-xl font-bold transition-colors duration-300 ${
+                  pathname === '/' || pathname === '/vi' || pathname === '/en' 
+                    ? 'text-primary' 
+                    : 'text-primary hover:text-primary/80'
+                }`}>{t("faculty")}</p>
               </div>
             </Link>
           </motion.div>
 
           <nav className="hidden lg:flex items-center gap-8">
             {[
-              { key: "about", href: "#" },
-              { key: "programs", href: "#" },
-              { key: "students", href: "#" },
-              { key: "research", href: "#" },
-              { key: "news", href: "#" }
-            ].map((item, index) => (
-              <motion.a 
-                key={index}
-                href={item.href} 
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="text-foreground hover:text-primary transition-all duration-300 font-medium"
-              >
-                {t(`navigation.${item.key}`)}
-              </motion.a>
-            ))}
+              { key: "about", href: "/about" },
+              { key: "programs", href: "/programs" },
+              { key: "students", href: "/students" },
+              { key: "research", href: "/research" },
+              { key: "news", href: "/news" }
+            ].map((item, index) => {
+              const currentLocale = pathname.split('/')[1] || 'vi';
+              const fullHref = `/${currentLocale}${item.href}`;
+              const isActive = pathname === fullHref;
+              return (
+                <motion.div key={index} whileHover={{ scale: 1.05, y: -2 }}>
+                  <Link 
+                    href={fullHref} 
+                    className={`transition-all duration-300 font-medium relative ${
+                      isActive 
+                        ? 'text-primary font-bold' 
+                        : 'text-foreground hover:text-primary'
+                    }`}
+                  >
+                    {t(`navigation.${item.key}`)}
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeIndicator"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                        initial={false}
+                        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                      />
+                    )}
+                  </Link>
+                </motion.div>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-4">

@@ -107,6 +107,223 @@
       }
     ]
   },
+  "about": {
+    "title": "Giới thiệu SIT",
+    "subtitle": "Dẫn đầu tương lai giáo dục Công nghệ Thông tin",
+    "description": "Khoa Công nghệ Thông tin Đại học Tân Tạo cam kết đào tạo nguồn nhân lực chất lượng cao trong lĩnh vực Công nghệ Thông tin và Khoa học Máy tính, đồng hành cùng cách mạng công nghệ 4.0.",
+    "whatWeDo": "CHÚNG TÔI LÀM GÌ",
+    "ourApproach": "PHƯƠNG PHÁP CỦA CHÚNG TÔI",
+    "howWeDoIt": "CHÚNG TÔI LÀM NHƯ THẾ NÀO",
+    "howWeEducate": "CHÚNG TÔI GIÁO DỤC NHƯ THẾ NÀO",
+    "howWeOperate": "CHÚNG TÔI VẬN HÀNH NHƯ THẾ NÀO",
+    "ourPhilosophy": "TRIẾT LÝ CỦA CHÚNG TÔI",
+    "liberalArtsTitle": "Giáo dục Khai phóng",
+    "liberalArtsDescription": "Triết lý giáo dục khai phóng dựa trên nền tảng kiến thức toàn diện và đa chiều trong nhiều lĩnh vực về khoa học xã hội, nhân văn và khoa học tự nhiên trước khi đi sâu vào một chuyên ngành. Các môn học khai phóng được nghiên cứu, chọn lọc và tổng hợp từ các ngành khác nhau trong toàn bộ chương trình học.",
+    "lifelongLearningTitle": "Học suốt đời",
+    "lifelongLearningDescription": "Sinh viên tốt nghiệp ĐHTT sẽ là những người tích cực học hỏi và học hỏi suốt đời, nhằm nâng cao kiến thức và kỹ năng chuyên môn để phù hợp với yêu cầu nghề nghiệp và hoàn thiện bản thân để làm việc suốt đời.",
+    "qualityAssuranceTitle": "Đảm bảo chất lượng",
+    "qualityAssuranceDescription": "Chúng tôi cam kết đào tạo đáp ứng chuẩn đầu ra, phương pháp dạy - học và quản lý đào tạo hướng đến tiếp cận với giáo dục khu vực và thế giới. Chúng tôi nâng cao năng lực của đội ngũ giảng viên và thực hiện cải tiến phương pháp giảng dạy.",
+    "founded": "Thành lập",
+    "facultyLevel": "Trình độ giảng viên",
+    "programs": "Chương trình",
+    "visionYear": "Năm tầm nhìn",
+    "organizationalStructureTitle": "Cơ cấu tổ chức",
+    "facultyExcellenceTitle": "Xuất sắc giảng viên",
+    "technologyIntegrationTitle": "Tích hợp công nghệ",
+    "technologyIntegrationDescription": "Chúng tôi áp dụng ngoại ngữ, công nghệ vào dạy - học, vào quản lý hướng tới yêu cầu của người học, người sử dụng lao động và xã hội. Chúng tôi cung cấp nguồn nhân lực trình độ cao về chuyên môn, có kỹ năng nghề nghiệp vững vàng.",
+    "transparentEnvironmentTitle": "Môi trường minh bạch",
+    "transparentEnvironmentDescription": "Chúng tôi xây dựng môi trường làm việc công khai, minh bạch, luôn tạo cơ hội để mọi thành viên của Khoa có thể phát huy tối đa năng lực. Chúng tôi duy trì môi trường giáo dục đáng tin cậy với sinh viên là trung tâm.",
+    "readyToStart": "Sẵn sàng bắt đầu cùng chúng tôi?",
+    "joinEcosystem": "Tham gia Hệ sinh thái Giáo dục SIT. Liên hệ ngay",
+    "explorePrograms": "Khám phá chương trình",
+    "contactUs": "Liên hệ tư vấn",
+    "history": "Lịch sử hình thành",
+    "historyText": "Khoa Công nghệ Thông tin tiền thân là Khoa Kỹ thuật. Khoa Kỹ thuật được thành lập theo Quyết định số 82/QĐ.TTU.12 ngày 04 tháng 01 năm 2012 đào tạo ngành Khoa học Máy tính nhằm đáp ứng nhu cầu nhân lực cho xã hội và với định hướng phát triển mở rộng các ngành về công nghệ thông tin. Khoa Công nghệ Thông tin là tên gọi chính thức kể từ ngày 01/6/2023 theo Quyết định số 70/QĐ-TTU.23 ngày 01 tháng 6 năm 2023 của Hiệu trưởng Trường Đại học Tân Tạo.",
+    "faculty": "Đội ngũ giảng viên",
+    "facultyText": "Đội ngũ giảng viên phục vụ đào tạo của Khoa Công nghệ Thông tin gồm các giảng viên cơ hữu và thình giảng. Trong đó, đội ngũ giảng viên cơ hữu đều có trình độ tiến sĩ được đào tạo chuyên sâu tại các trường Đại học uy tín trong và ngoài nước (Úc, Pháp, Mỹ,..).",
+    "mission": "Sứ mạng",
+    "missionText": "Khoa Công nghệ thông tin là đơn vị đào tạo và bồi dưỡng nguồn nhân lực ngành Công nghệ thông tin và Máy tính chất lượng cao ở trình độ Đại học; Nghiên cứu chuyên sâu và ứng dụng Khoa học máy tính, Công nghệ thông tin và truyền thông vào các ngành nghề trong xã hội; Tiên phong tiếp cận chuẩn mực giáo dục Đại học khu vực và thế giới dựa trên mô hình giáo dục khai phóng và học tập suốt đời.",
+    "vision": "Tầm nhìn",
+    "visionText": "Đến năm 2030, Công nghệ thông tin là cơ sở đào tạo nguồn nhân lực có chất lượng cao, đáp ứng yêu cầu của thị trường lao động và là đơn vị top đầu Quốc gia về đào tạo, nghiên cứu và chuyển giao công nghệ liên quan đến lĩnh vực Công nghệ Thông tin và Máy tính phục vụ cộng đồng, Chương trình đào tạo được kiểm định chất lượng, hợp tác sâu rộng với các tổ chức trong và ngoài nước.",
+    "values": "Giá trị cốt lõi",
+    "valuesText": "Duy trì môi trường giáo dục đáng tin cậy, học tốt và dạy tốt, sinh viên là trung tâm.",
+    "valuesList": [
+      "Đổi mới và Sáng tạo",
+      "Xuất sắc Học thuật",
+      "Đối tác Công nghiệp",
+      "Học tập Lấy sinh viên làm trung tâm",
+      "Nghiên cứu và Phát triển"
+    ],
+    "philosophy": "Triết lí Giáo dục",
+    "philosophyText": "Khai phóng – Học suốt đời",
+    "philosophyDetails": {
+      "liberalArts": {
+        "title": "Khai phóng",
+        "description": "Triết lý giáo dục khai phóng dựa trên nền tảng kiến thức toàn diện và đa chiều trong nhiều lĩnh vực về khoa học xã hội, nhân văn và khoa học tự nhiên trước khi đi sâu vào một chuyên ngành. Các môn học khai phóng được nghiên cứu, chọn lọc và tổng hợp từ các ngành khác nhau trong toàn bộ chương trình học, trên tinh thần tự do tư duy – tự do suy nghĩ để tự do lựa chọn giúp rèn luyện cho sinh viên khả năng tự học, tự thích nghi và hoàn thiện bản thân trong những môi trường mới."
+      },
+      "lifelongLearning": {
+        "title": "Học suốt đời",
+        "description": "Sinh viên tốt nghiệp ĐHTT sẽ là những người tích cực học hỏi và học hỏi suốt đời, nhằm nâng cao kiến thức và kỹ năng chuyên môn để phù hợp với yêu cầu nghề nghiệp và hoàn thiện bản thân để làm việc suốt đời."
+      }
+    },
+    "organization": "Cơ cấu tổ chức",
+    "organizationText": "Cơ cấu tổ chức của Khoa Công nghệ thông tin gồm có: (1) Hội đồng Khoa, (2) Ban Lãnh đạo Khoa, (3) Bộ phận Văn phòng, (4) Bộ phận chuyên môn.",
+    "qualityPolicy": "Chính sách chất lượng",
+    "qualityPolicyText": "Khoa Công nghệ Thông tin cam kết: (1) Đào tạo đáp ứng chuẩn đầu ra, phương pháp dạy - học và quản lý đào tạo hướng đến tiếp cận với giáo dục khu vực và thế giới; (2) Nâng cao năng lực của đội ngũ giảng viên, thực hiện cải tiến phương pháp giảng dạy, đánh giá theo hướng lấy người học làm trung tâm; (3) Áp dụng ngoại ngữ, công nghệ vào dạy - học, vào quản lý hướng tới yêu cầu của người học, người sử dụng lao động và xã hội; (4) Cung cấp nguồn nhân lực trình độ cao về chuyên môn, có kỹ năng nghề nghiệp vững vàng, ý thức trách nhiệm với cá nhân, tổ chức và cộng đồng, có tư duy cầu tiến, giao tiếp và làm việc độc lập hoặc theo nhóm hiệu quả; (5) Xây dựng môi trường làm việc công khai, minh bạch, luôn tạo cơ hội để mọi thành viên của Khoa có thể phát huy tối đa năng lực.",
+    "dean": "Trưởng Khoa",
+    "deanName": "TS. Cao Tiến Dũng",
+    "contact": "Thông tin liên hệ",
+    "phone": "+84 27 2376 9216",
+    "email": "sit@ttu.edu.vn"
+  },
+  "students": {
+    "title": "Đời sống sinh viên",
+    "subtitle": "Trao quyền cho các nhà lãnh đạo công nghệ tương lai",
+    "description": "Sinh viên của chúng tôi là trung tâm của mọi thứ chúng tôi làm. Chúng tôi cung cấp hỗ trợ toàn diện, cơ hội và nguồn lực để giúp họ thành công trong học tập và nghề nghiệp.",
+    "studentSupport": "Dịch vụ hỗ trợ sinh viên",
+    "supportServices": [
+      {
+        "title": "Tư vấn học tập",
+        "description": "Hướng dẫn cá nhân hóa cho kế hoạch học tập và phát triển nghề nghiệp"
+      },
+      {
+        "title": "Dịch vụ nghề nghiệp",
+        "description": "Sắp xếp thực tập, hỗ trợ tìm việc và kết nối với ngành công nghiệp"
+      },
+      {
+        "title": "Cơ hội nghiên cứu",
+        "description": "Kinh nghiệm nghiên cứu thực hành với các giảng viên hướng dẫn"
+      },
+      {
+        "title": "Tổ chức sinh viên",
+        "description": "Câu lạc bộ công nghệ, cuộc thi lập trình và sự kiện kết nối"
+      }
+    ],
+    "achievements": "Thành tích sinh viên",
+    "achievementStats": [
+      { "number": "95%", "label": "Tỷ lệ có việc làm" },
+      { "number": "50+", "label": "Đối tác công nghiệp" },
+      { "number": "200+", "label": "Dự án nghiên cứu" },
+      { "number": "15+", "label": "Câu lạc bộ sinh viên" }
+    ],
+    "testimonials": "Sinh viên nói gì về chúng tôi",
+    "testimonialsList": [
+      {
+        "name": "Nguyễn Văn A",
+        "program": "Khoa học Máy tính",
+        "quote": "SIT đã cung cấp cho tôi các kỹ năng kỹ thuật và kết nối ngành công nghiệp để khởi động sự nghiệp phát triển phần mềm của tôi."
+      },
+      {
+        "name": "Trần Thị B",
+        "program": "Trí tuệ Nhân tạo",
+        "quote": "Các cơ hội nghiên cứu và sự hướng dẫn của giảng viên tại SIT đã giúp tôi khám phá niềm đam mê với AI và machine learning."
+      }
+    ]
+  },
+  "research": {
+    "title": "Nghiên cứu & Đổi mới",
+    "subtitle": "Thúc đẩy công nghệ thông qua nghiên cứu",
+    "description": "Giảng viên và sinh viên của chúng tôi tham gia vào nghiên cứu tiên tiến giải quyết các thách thức thực tế và đóng góp vào sự tiến bộ công nghệ.",
+    "researchAreas": "Lĩnh vực nghiên cứu",
+    "areas": [
+      {
+        "title": "Trí tuệ Nhân tạo & Machine Learning",
+        "description": "Phát triển hệ thống thông minh và thuật toán cho các ứng dụng khác nhau",
+        "projects": ["Thị giác máy tính", "Xử lý ngôn ngữ tự nhiên", "Học sâu", "Robot"]
+      },
+      {
+        "title": "Khoa học Dữ liệu & Phân tích",
+        "description": "Trích xuất thông tin từ các tập dữ liệu phức tạp để thúc đẩy ra quyết định",
+        "projects": ["Xử lý dữ liệu lớn", "Thông tin kinh doanh", "Phân tích dự đoán", "Trực quan hóa dữ liệu"]
+      },
+      {
+        "title": "An ninh mạng",
+        "description": "Bảo vệ tài sản số và đảm bảo an toàn thông tin",
+        "projects": ["An ninh mạng", "Mật mã học", "Điều tra số", "Giao thức bảo mật"]
+      },
+      {
+        "title": "Kỹ thuật Phần mềm",
+        "description": "Thiết kế và phát triển hệ thống phần mềm mạnh mẽ",
+        "projects": ["Kiến trúc phần mềm", "Phát triển di động", "Công nghệ web", "Điện toán đám mây"]
+      }
+    ],
+    "publications": "Ấn phẩm gần đây",
+    "publicationsList": [
+      {
+        "title": "Phương pháp học sâu cho thị giác máy tính",
+        "authors": "TS. Nguyễn Văn C, TS. Trần Thị D",
+        "journal": "IEEE Transactions on Pattern Analysis",
+        "year": "2024"
+      },
+      {
+        "title": "Machine Learning trong ứng dụng y tế",
+        "authors": "TS. Lê Văn E, TS. Phạm Thị F",
+        "journal": "Journal of Medical Informatics",
+        "year": "2024"
+      }
+    ],
+    "collaborations": "Hợp tác công nghiệp",
+    "collaborationList": [
+      "Microsoft Vietnam",
+      "Google Cloud Platform",
+      "Amazon Web Services",
+      "Tập đoàn Viettel",
+      "Tập đoàn FPT"
+    ]
+  },
+  "news": {
+    "title": "Tin tức & Sự kiện",
+    "subtitle": "Cập nhật với SIT",
+    "description": "Theo dõi tin tức, sự kiện và thành tích mới nhất từ Khoa Công nghệ Thông tin của chúng tôi.",
+    "latestNews": "Tin tức mới nhất",
+    "newsList": [
+      {
+        "title": "Sinh viên SIT giành giải nhất cuộc thi lập trình quốc gia",
+        "date": "15 tháng 12, 2024",
+        "category": "Thành tích",
+        "summary": "Sinh viên Khoa học Máy tính của chúng tôi đã giành vị trí đầu tiên trong Cuộc thi Lập trình Quốc gia 2024.",
+        "image": "/assets/news/programming-contest.jpg"
+      },
+      {
+        "title": "Phòng thí nghiệm nghiên cứu AI mới khai trương",
+        "date": "10 tháng 12, 2024",
+        "category": "Nghiên cứu",
+        "summary": "Cơ sở nghiên cứu AI hiện đại được trang bị phần cứng và phần mềm mới nhất.",
+        "image": "/assets/news/ai-lab.jpg"
+      },
+      {
+        "title": "Đối tác công nghiệp với Microsoft",
+        "date": "5 tháng 12, 2024",
+        "category": "Đối tác",
+        "summary": "Thỏa thuận hợp tác mới được ký kết cho giáo dục và nghiên cứu điện toán đám mây.",
+        "image": "/assets/news/microsoft-partnership.jpg"
+      },
+      {
+        "title": "Hội nghị nghiên cứu sinh viên sau đại học",
+        "date": "28 tháng 11, 2024",
+        "category": "Sự kiện",
+        "summary": "Hội nghị hàng năm trưng bày các dự án nghiên cứu và đổi mới của sinh viên sau đại học.",
+        "image": "/assets/news/research-conference.jpg"
+      }
+    ],
+    "upcomingEvents": "Sự kiện sắp tới",
+    "eventsList": [
+      {
+        "title": "Ngày mở cửa 2025",
+        "date": "15 tháng 1, 2025",
+        "time": "9:00 - 16:00",
+        "location": "Tòa nhà SIT",
+        "description": "Sinh viên tiềm năng có thể khám phá các chương trình và cơ sở vật chất của chúng tôi."
+      },
+      {
+        "title": "Hội chợ nghề nghiệp công nghệ",
+        "date": "20 tháng 2, 2025",
+        "time": "10:00 - 15:00",
+        "location": "Hội trường Đại học",
+        "description": "Gặp gỡ với các công ty công nghệ hàng đầu và khám phá cơ hội nghề nghiệp."
+      }
+    ]
+  },
   "footer": {
     "quickLinks": "Liên kết nhanh",
     "academicPrograms": "Chương trình học",
