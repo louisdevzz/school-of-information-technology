@@ -31,7 +31,7 @@ export default function AboutPage() {
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         {/* Hero Section - Akilia Style */}
-        <section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-orange-50">
+        <section className="relative min-h-screen bg-orange-50">
           <div className="absolute inset-0 overflow-hidden">
             {/* Animated Background Elements */}
             <motion.div

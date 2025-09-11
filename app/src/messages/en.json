@@ -12,7 +12,7 @@
     "faculty": "School of Information Technology",
     "navigation": {
       "about": "About",
-      "programs": "Academic Programs",
+      "programs": "Programs",
       "students": "Students",
       "research": "Research",
       "news": "News"
@@ -60,53 +60,91 @@
   },
   "programs": {
     "badge": "Academic Programs",
-    "title": "Explore our",
+    "title": "Explore our Academic Programs",
     "titleHighlight": "Information Technology Programs",
     "subtitle": "Tan Tao University's School of Information Technology applies the educational philosophy of \"Liberal Arts - Lifelong Learning\" with curricula based on Duke University, USA programs.",
-    "whyChoose": "Why Choose SIT?",
-    "features": [
-      {
-        "title": "Educational Model",
-        "description": "Applies the educational philosophy of \"Liberal Arts - Lifelong Learning\" with curricula based on Duke University, USA programs."
-      },
-      {
-        "title": "Faculty Team",
-        "description": "Most faculty members hold PhD degrees from prestigious universities domestically and internationally with strong research profiles."
-      },
-      {
-        "title": "Research",
-        "description": "100% of students participate in research projects and can intern in the industry."
-      }
-    ],
-    "financialSupport": "Learn about Financial Support",
     "viewAll": "View All Programs",
     "viewDetails": "View Details",
-    "programs": [
+    "undergraduate": "Undergraduate",
+    "graduate": "Graduate",
+    "whyChoose": "Why Choose Our?",
+    "features": [
       {
-        "title": "Bachelor of Computer Science",
-        "code": "7480101",
-        "description": "Develop programming skills and design modern software systems with focus on Data Engineering and Software Engineering",
-        "features": "Java, Python, C++, Web Development, Mobile Apps, Software Architecture, Data Engineering"
+        "title": "Industry-Relevant Curriculum",
+        "description": "Our programs are designed in collaboration with industry leaders to ensure graduates are job-ready."
       },
       {
-        "title": "Bachelor of Artificial Intelligence",
-        "code": "7480109",
-        "description": "Research and apply AI, Machine Learning with focus on Computer Vision and Natural Language Processing",
-        "features": "Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Neural Networks"
+        "title": "Expert Faculty",
+        "description": "Learn from experienced professors with real-world industry experience and research expertise."
       },
       {
-        "title": "Bachelor of Data Science",
-        "code": "7480104",
-        "description": "Analyze and extract data with focus on Bioinformatics and Business Analytics",
-        "features": "Data Analytics, Business Intelligence, Bioinformatics, Statistical Modeling, Big Data"
-      },
-      {
-        "title": "Master of Computer Science",
-        "code": "7480102",
-        "description": "Graduate program specializing in advanced technology research and development",
-        "features": "Advanced Algorithms, Research Methods, Thesis Project, Industry Collaboration, Innovation"
+        "title": "Hands-on Learning",
+        "description": "Practical projects, internships, and research opportunities to apply knowledge in real-world scenarios."
       }
-    ]
+    ],
+    "financialSupport": "Financial Support Available",
+    "programs": {
+      "undergraduate": {
+        "computerScience": {
+          "title": "Bachelor of Computer Science",
+          "programs": [
+            {
+              "title": "Bachelor of Computer Science (Curriculum 2025)",
+              "code": "7480101",
+              "description": "Develop programming skills and design modern software systems with focus on Data Engineering and Software Engineering",
+              "features": "Java, Python, C++, Web Development, Mobile Apps, Software Architecture, Data Engineering"
+            },
+            {
+              "title": "Bachelor of Computer Science (Curriculum 2025, Vietnamese)",
+              "code": "7480101-VN",
+              "description": "Develop programming skills and design modern software systems with focus on Data Engineering and Software Engineering (Vietnamese)",
+              "features": "Java, Python, C++, Web Development, Mobile Apps, Software Architecture, Data Engineering"
+            },
+            {
+              "title": "Bachelor of Computer Science (Curriculum 2021, English)",
+              "code": "7480101-EN",
+              "description": "Develop programming skills and design modern software systems with focus on Data Engineering and Software Engineering (English)",
+              "features": "Java, Python, C++, Web Development, Mobile Apps, Software Architecture, Data Engineering"
+            }
+          ]
+        },
+        "dataScience": {
+          "title": "Bachelor of Data Science",
+          "programs": [
+            {
+              "title": "Bachelor of Data Science (Curriculum 2025)",
+              "code": "7480104",
+              "description": "Analyze and extract data with focus on Bioinformatics and Business Analytics",
+              "features": "Data Analytics, Business Intelligence, Bioinformatics, Statistical Modeling, Big Data"
+            }
+          ]
+        },
+        "artificialIntelligence": {
+          "title": "Bachelor of Artificial Intelligence",
+          "programs": [
+            {
+              "title": "Bachelor of Artificial Intelligence (Curriculum 2025)",
+              "code": "7480109",
+              "description": "Research and apply AI, Machine Learning with focus on Computer Vision and Natural Language Processing",
+              "features": "Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Neural Networks"
+            }
+          ]
+        }
+      },
+      "graduate": {
+        "computerScience": {
+          "title": "Master of Computer Science",
+          "programs": [
+            {
+              "title": "Master of Computer Science (Curriculum 2025)",
+              "code": "7480102",
+              "description": "Graduate program specializing in advanced technology research and development",
+              "features": "Advanced Algorithms, Research Methods, Thesis Project, Industry Collaboration, Innovation"
+            }
+          ]
+        }
+      }
+    }
   },
   "about": {
     "title": "About SIT",

@@ -12,7 +12,7 @@
     "faculty": "Khoa Công nghệ Thông tin",
     "navigation": {
       "about": "Giới thiệu",
-      "programs": "Chương trình đào tạo",
+      "programs": "Đào tạo",
       "students": "Sinh viên",
       "research": "Nghiên cứu",
       "news": "Tin tức"
@@ -59,53 +59,91 @@
   },
   "programs": {
     "badge": "Chương trình đào tạo",
-    "title": "Khám phá các chương trình",
+    "title": "Các chương trình đào tạo",
     "titleHighlight": "Công nghệ Thông tin",
     "subtitle": "Khoa Công nghệ Thông tin TTU áp dụng triết lí giáo dục \"Khai phóng - học suốt đời\" với chương trình học được xây dựng dựa trên chương trình của Đại học Duke, Hoa Kỳ.",
-    "whyChoose": "Tại sao chọn SIT?",
-    "features": [
-      {
-        "title": "Mô hình giáo dục",
-        "description": "Áp dụng triết lí giáo dục \"Khai phóng - học suốt đời\" với chương trình học được xây dựng dựa trên chương trình của Đại học Duke, Hoa Kỳ."
-      },
-      {
-        "title": "Đội ngũ giảng viên",
-        "description": "Đa số giảng viên có bằng tiến sĩ từ các trường Đại học uy tín trong và ngoài nước với hồ sơ nghiên cứu mạnh."
-      },
-      {
-        "title": "Nghiên cứu",
-        "description": "100% sinh viên được tham gia vào các dự án nghiên cứu và có thể thực tập trong ngành công nghiệp."
-      }
-    ],
-    "financialSupport": "Tìm hiểu về hỗ trợ tài chính",
     "viewAll": "Xem tất cả chương trình",
     "viewDetails": "Xem chi tiết",
-    "programs": [
+    "undergraduate": "Đại học",
+    "graduate": "Sau đại học",
+    "whyChoose": "Tại sao chọn chúng tôi?",
+    "features": [
       {
-        "title": "Cử nhân Khoa học Máy tính",
-        "code": "7480101",
-        "description": "Phát triển kỹ năng lập trình và thiết kế hệ thống phần mềm hiện đại với định hướng Kỹ thuật Dữ liệu và Kỹ thuật phần mềm",
-        "features": "Java, Python, C++, Web Development, Mobile Apps, Software Architecture, Data Engineering"
+        "title": "Chương trình học phù hợp với ngành",
+        "description": "Các chương trình được thiết kế phối hợp với các nhà lãnh đạo ngành để đảm bảo sinh viên tốt nghiệp sẵn sàng làm việc."
       },
       {
-        "title": "Cử nhân Trí tuệ Nhân tạo",
-        "code": "7480109",
-        "description": "Nghiên cứu và ứng dụng AI, Machine Learning với định hướng Thị giác máy tính và Xử lý ngôn ngữ tự nhiên",
-        "features": "Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Neural Networks"
+        "title": "Giảng viên chuyên gia",
+        "description": "Học từ các giáo sư có kinh nghiệm với kinh nghiệm thực tế trong ngành và chuyên môn nghiên cứu."
       },
       {
-        "title": "Cử nhân Khoa học Dữ liệu",
-        "code": "7480104",
-        "description": "Phân tích và khai thác dữ liệu với định hướng Tin Sinh học và Phân tích kinh doanh",
-        "features": "Data Analytics, Business Intelligence, Bioinformatics, Statistical Modeling, Big Data"
-      },
-      {
-        "title": "Thạc sĩ Khoa học Máy tính",
-        "code": "7480102",
-        "description": "Chương trình sau đại học chuyên sâu về nghiên cứu và phát triển công nghệ tiên tiến",
-        "features": "Advanced Algorithms, Research Methods, Thesis Project, Industry Collaboration, Innovation"
+        "title": "Học tập thực hành",
+        "description": "Các dự án thực tế, thực tập và cơ hội nghiên cứu để áp dụng kiến thức vào các tình huống thực tế."
       }
-    ]
+    ],
+    "financialSupport": "Hỗ trợ tài chính có sẵn",
+    "programs": {
+      "undergraduate": {
+        "computerScience": {
+          "title": "Cử nhân Khoa học Máy tính",
+          "programs": [
+            {
+              "title": "Cử nhân Khoa học Máy tính (CTDT năm 2025)",
+              "code": "7480101",
+              "description": "Phát triển kỹ năng lập trình và thiết kế hệ thống phần mềm hiện đại với định hướng Kỹ thuật Dữ liệu và Kỹ thuật phần mềm",
+              "features": "Java, Python, C++, Web Development, Mobile Apps, Software Architecture, Data Engineering"
+            },
+            {
+              "title": "Cử nhân Khoa học Máy tính (CTDT năm 2025, tiếng Việt)",
+              "code": "7480101-VN",
+              "description": "Phát triển kỹ năng lập trình và thiết kế hệ thống phần mềm hiện đại với định hướng Kỹ thuật Dữ liệu và Kỹ thuật phần mềm (tiếng Việt)",
+              "features": "Java, Python, C++, Web Development, Mobile Apps, Software Architecture, Data Engineering"
+            },
+            {
+              "title": "Cử nhân Khoa học Máy tính (CTDT năm 2021, tiếng Anh)",
+              "code": "7480101-EN",
+              "description": "Phát triển kỹ năng lập trình và thiết kế hệ thống phần mềm hiện đại với định hướng Kỹ thuật Dữ liệu và Kỹ thuật phần mềm (tiếng Anh)",
+              "features": "Java, Python, C++, Web Development, Mobile Apps, Software Architecture, Data Engineering"
+            }
+          ]
+        },
+        "dataScience": {
+          "title": "Cử nhân Khoa học Dữ liệu",
+          "programs": [
+            {
+              "title": "Cử nhân Khoa học Dữ liệu (CTDT năm 2025)",
+              "code": "7480104",
+              "description": "Phân tích và khai thác dữ liệu với định hướng Tin Sinh học và Phân tích kinh doanh",
+              "features": "Data Analytics, Business Intelligence, Bioinformatics, Statistical Modeling, Big Data"
+            }
+          ]
+        },
+        "artificialIntelligence": {
+          "title": "Cử nhân Trí tuệ Nhân tạo",
+          "programs": [
+            {
+              "title": "Cử nhân Trí tuệ Nhân tạo (CTDT năm 2025)",
+              "code": "7480109",
+              "description": "Nghiên cứu và ứng dụng AI, Machine Learning với định hướng Thị giác máy tính và Xử lý ngôn ngữ tự nhiên",
+              "features": "Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Neural Networks"
+            }
+          ]
+        }
+      },
+      "graduate": {
+        "computerScience": {
+          "title": "Thạc sĩ Khoa học Máy tính",
+          "programs": [
+            {
+              "title": "Thạc sĩ Khoa học Máy tính (CTDT năm 2025)",
+              "code": "7480102",
+              "description": "Chương trình sau đại học chuyên sâu về nghiên cứu và phát triển công nghệ tiên tiến",
+              "features": "Advanced Algorithms, Research Methods, Thesis Project, Industry Collaboration, Innovation"
+            }
+          ]
+        }
+      }
+    }
   },
   "about": {
     "title": "Giới thiệu SIT",

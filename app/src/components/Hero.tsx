@@ -47,7 +47,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex pt-12 justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-orange-50">
+    <section className="relative min-h-screen flex pt-12 justify-center overflow-hidden  bg-orange-50/50">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {techIcons.map(({ icon: Icon, delay }, index) => (
@@ -122,7 +122,7 @@ const Hero = () => {
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight font-sans"
           >
             <span className="block mb-4">{t("title")}</span>
-            <span className="block text-primary-glow">
+            <span className="block text-primary">
               {currentText}
               <motion.span
                 animate={{ opacity: [1, 0, 1] }}

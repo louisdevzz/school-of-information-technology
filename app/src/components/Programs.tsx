@@ -9,36 +9,60 @@ import { useTranslations } from "next-intl";
 
 const Programs = () => {
   const t = useTranslations("programs");
-  const programs = [
-    {
-      title: t("programs.0.title"),
-      code: t("programs.0.code"),
-      description: t("programs.0.description"),
-      features: t("programs.0.features"),
-      gradient: "from-orange-400 to-orange-600"
-    },
-    {
-      title: t("programs.1.title"),
-      code: t("programs.1.code"),
-      description: t("programs.1.description"),
-      features: t("programs.1.features"),
-      gradient: "from-orange-500 to-red-500"
-    },
-    {
-      title: t("programs.2.title"),
-      code: t("programs.2.code"),
-      description: t("programs.2.description"),
-      features: t("programs.2.features"),
-      gradient: "from-orange-600 to-yellow-500"
-    },
-    {
-      title: t("programs.3.title"),
-      code: t("programs.3.code"),
-      description: t("programs.3.description"),
-      features: t("programs.3.features"),
-      gradient: "from-red-500 to-orange-500"
+  
+  // Get all programs from the nested structure
+  const getAllPrograms = () => {
+    const programs: any[] = [];
+    const programsData = t.raw('programs');
+    
+    // Add undergraduate programs
+    if (programsData.undergraduate) {
+      Object.values(programsData.undergraduate).forEach((category: any) => {
+        if (category.programs) {
+          category.programs.forEach((program: any) => {
+            programs.push({
+              ...program,
+              level: 'Undergraduate',
+              category: category.title
+            });
+          });
+        }
+      });
     }
-  ];
+    
+    // Add graduate programs
+    if (programsData.graduate) {
+      Object.values(programsData.graduate).forEach((category: any) => {
+        if (category.programs) {
+          category.programs.forEach((program: any) => {
+            programs.push({
+              ...program,
+              level: 'Graduate',
+              category: category.title
+            });
+          });
+        }
+      });
+    }
+    
+    return programs;
+  };
+
+  const allPrograms = getAllPrograms();
+  
+  // Take first 4 programs for display
+  const programs = allPrograms.slice(0, 4).map((program, index) => ({
+    title: program.title,
+    code: program.code,
+    description: program.description,
+    features: program.features,
+    gradient: [
+      "from-orange-400 to-orange-600",
+      "from-orange-500 to-red-500", 
+      "from-orange-600 to-yellow-500",
+      "from-red-500 to-orange-500"
+    ][index]
+  }));
 
   return (
     <section className="py-24 bg-gradient-subtle relative overflow-hidden">
@@ -259,7 +283,7 @@ const Programs = () => {
                   </CardHeader>
                   <CardContent className="relative z-10 flex flex-col flex-grow">
                     <ul className="space-y-3 mb-6 flex-grow">
-                      {program.features.split(',').map((feature, featureIndex) => (
+                      {program.features.split(',').map((feature: string, featureIndex: number) => (
                         <motion.li 
                           key={featureIndex} 
                           initial={{ opacity: 0, x: -20 }}
