@@ -29,7 +29,7 @@ const Header = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="bg-background/80 backdrop-blur-xl border-b border-primary/20 sticky top-0 z-50 shadow-elegant"
+      className="bg-background border-b border-primary/20 sticky top-0 z-50 shadow-elegant"
     >
       <div className="w-full px-10">
         {/* Top Info Bar */}

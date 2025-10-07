@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { GraduationCap, BookOpen, Users, Award, CheckCircle, Code, Database, Cloud, Cpu } from 'lucide-react';
+import { Code, Database, Cloud, Cpu } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -64,7 +64,7 @@ export default function ProgramsPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="min-h-screen bg-orange-50"
+      className="min-h-screen"
     >
       <Header />
       <motion.main
@@ -131,6 +131,7 @@ export default function ProgramsPage() {
               className="text-4xl md:text-6xl font-bold text-[#ba4911] mb-6 font-sans"
             >
               {t('title')}
+              
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}

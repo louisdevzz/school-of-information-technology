@@ -1,0 +1,33 @@
+ALTER TABLE "program_courses" ADD CONSTRAINT "program_courses_program_structure_id_program_structures_vi_id_fk" FOREIGN KEY ("program_structure_id") REFERENCES "public"."program_structures_vi"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "courses_en" DROP COLUMN "translation_status";--> statement-breakpoint
+ALTER TABLE "courses_en" DROP COLUMN "translated_at";--> statement-breakpoint
+ALTER TABLE "courses_en" DROP COLUMN "reviewed_at";--> statement-breakpoint
+ALTER TABLE "courses_en" DROP COLUMN "approved_at";--> statement-breakpoint
+ALTER TABLE "education_levels_en" DROP COLUMN "translation_status";--> statement-breakpoint
+ALTER TABLE "education_levels_en" DROP COLUMN "translated_at";--> statement-breakpoint
+ALTER TABLE "education_levels_en" DROP COLUMN "reviewed_at";--> statement-breakpoint
+ALTER TABLE "education_levels_en" DROP COLUMN "approved_at";--> statement-breakpoint
+ALTER TABLE "graduation_requirements_en" DROP COLUMN "translation_status";--> statement-breakpoint
+ALTER TABLE "graduation_requirements_en" DROP COLUMN "translated_at";--> statement-breakpoint
+ALTER TABLE "graduation_requirements_en" DROP COLUMN "reviewed_at";--> statement-breakpoint
+ALTER TABLE "graduation_requirements_en" DROP COLUMN "approved_at";--> statement-breakpoint
+ALTER TABLE "internship_programs_en" DROP COLUMN "translation_status";--> statement-breakpoint
+ALTER TABLE "internship_programs_en" DROP COLUMN "translated_at";--> statement-breakpoint
+ALTER TABLE "internship_programs_en" DROP COLUMN "reviewed_at";--> statement-breakpoint
+ALTER TABLE "internship_programs_en" DROP COLUMN "approved_at";--> statement-breakpoint
+ALTER TABLE "majors_en" DROP COLUMN "translation_status";--> statement-breakpoint
+ALTER TABLE "majors_en" DROP COLUMN "translated_at";--> statement-breakpoint
+ALTER TABLE "majors_en" DROP COLUMN "reviewed_at";--> statement-breakpoint
+ALTER TABLE "majors_en" DROP COLUMN "approved_at";--> statement-breakpoint
+ALTER TABLE "program_documents_en" DROP COLUMN "translation_status";--> statement-breakpoint
+ALTER TABLE "program_documents_en" DROP COLUMN "translated_at";--> statement-breakpoint
+ALTER TABLE "program_documents_en" DROP COLUMN "reviewed_at";--> statement-breakpoint
+ALTER TABLE "program_documents_en" DROP COLUMN "approved_at";--> statement-breakpoint
+ALTER TABLE "program_structures_en" DROP COLUMN "translation_status";--> statement-breakpoint
+ALTER TABLE "program_structures_en" DROP COLUMN "translated_at";--> statement-breakpoint
+ALTER TABLE "program_structures_en" DROP COLUMN "reviewed_at";--> statement-breakpoint
+ALTER TABLE "program_structures_en" DROP COLUMN "approved_at";--> statement-breakpoint
+ALTER TABLE "programs_en" DROP COLUMN "translation_status";--> statement-breakpoint
+ALTER TABLE "programs_en" DROP COLUMN "translated_at";--> statement-breakpoint
+ALTER TABLE "programs_en" DROP COLUMN "reviewed_at";--> statement-breakpoint
+ALTER TABLE "programs_en" DROP COLUMN "approved_at";

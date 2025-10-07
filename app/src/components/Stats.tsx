@@ -15,7 +15,7 @@ const Stats = () => {
   ];
 
   return (
-    <section className="bg-gradient-subtle">
+    <section className="bg-white">
       <div className="w-full px-10 py-10">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}

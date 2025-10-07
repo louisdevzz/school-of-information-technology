@@ -65,7 +65,7 @@ const Programs = () => {
   }));
 
   return (
-    <section className="py-24 bg-gradient-subtle relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
@@ -115,18 +115,18 @@ const Programs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="font-sans text-5xl md:text-6xl font-bold text-foreground mb-8"
+            className="font-sans text-5xl md:text-6xl font-bold text-foreground mb-8 flex flex-col gap-3"
           >
             {t("title")}
             <br />
-            <span className="text-primary-glow">{t("titleHighlight")}</span>
+            <span className="text-primary font-bold">{t("titleHighlight")}</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-sans"
+            className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed"
           >
             {t("subtitle")}
           </motion.p>
@@ -217,21 +217,6 @@ const Programs = () => {
                 );
               })}
             </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex justify-start"
-            >
-              <Button 
-                variant="default" 
-                className="bg-gradient-orange hover:shadow-glow border-2 border-primary/20 hover:border-primary/40"
-                size="lg"
-              >
-                <Zap className="mr-2 h-5 w-5" />
-                {t("financialSupport")}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </motion.div>
           </motion.div>
         </motion.div>
 
@@ -243,8 +228,6 @@ const Programs = () => {
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {programs.map((program, index) => {
-            const icons = [Code, Brain, Database, Smartphone];
-            const Icon = icons[index];
             return (
               <motion.div
                 key={index}
@@ -260,20 +243,6 @@ const Programs = () => {
                   <div className={`absolute inset-0 bg-gradient-to-br ${program.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
                   
                   <CardHeader className="relative z-10">
-                    <div className="flex items-start justify-between">
-                      <motion.div 
-                        whileHover={{ rotate: 360, scale: 1.1 }}
-                        transition={{ duration: 0.6 }}
-                        className="w-16 h-16 bg-gradient-orange rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-glow transition-all duration-300"
-                      >
-                        <Icon className="h-8 w-8 text-white" />
-                      </motion.div>
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full border border-primary/30">
-                          {program.code}
-                        </span>
-                      </div>
-                    </div>
                     <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300 leading-tight">
                       {program.title}
                     </CardTitle>
