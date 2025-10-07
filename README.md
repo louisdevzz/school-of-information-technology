@@ -9,11 +9,13 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13+-blue?style=for-the-badge&logo=postgresql)](https://www.postgresql.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-🚀-green?style=for-the-badge)](https://sit-ttu.vercel.app/)
+
 **Website chính thức của Khoa Công nghệ Thông tin - Đại học Tân Tạo**
 
 *Modern web application với Next.js frontend và NestJS backend*
 
-[🌐 Website](https://sit.ttu.edu.vn) • [📧 Email](mailto:info@ttu.edu.vn) • [📍 Location](https://maps.google.com/?q=Tan+Tao+University+Long+An+Vietnam)
+[🌐 Website](https://sit.ttu.edu.vn) • [🚀 Live Demo](https://sit-ttu.vercel.app/) • [📧 Email](mailto:info@ttu.edu.vn) • [📍 Location](https://maps.google.com/?q=Tan+Tao+University+Long+An+Vietnam)
 
 </div>
 
@@ -285,6 +287,18 @@ Website được thiết kế responsive với breakpoints:
 
 ## 🚀 Deployment
 
+### 🌐 Live Demo
+
+**🚀 [View Live Website](https://sit-ttu.vercel.app/)**
+
+The School of Information Technology website is currently deployed and live at [https://sit-ttu.vercel.app/](https://sit-ttu.vercel.app/). The website features:
+
+- 📱 **Responsive Design**: Optimized for all devices
+- 🌍 **Multilingual Support**: Vietnamese and English
+- 🎨 **Modern UI**: Built with Next.js and Tailwind CSS
+- ⚡ **Fast Performance**: Powered by Vercel's edge network
+- 🔍 **SEO Optimized**: Full metadata and search optimization
+
 ### 🎨 Frontend (Vercel - Recommended)
 
 1. 📤 Push code lên GitHub
@@ -371,6 +385,7 @@ Dự án này thuộc về Đại học Tân Tạo. Xem file [LICENSE](LICENSE) 
 ## 📞 Liên hệ
 
 - 🌐 **Website**: [https://sit.ttu.edu.vn](https://sit.ttu.edu.vn)
+- 🚀 **Live Demo**: [https://sit-ttu.vercel.app/](https://sit-ttu.vercel.app/)
 - 📧 **Email**: [info@ttu.edu.vn](mailto:info@ttu.edu.vn)
 - 📍 **Địa chỉ**: Đại học Tân Tạo, Long An, Việt Nam
 
