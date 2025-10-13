@@ -1,6 +1,7 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
-import { Menu, Search, Phone, Mail, ChevronDown } from "lucide-react";
+import { Menu, Search, Phone, Mail, ChevronDown, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -23,6 +24,8 @@ const Header = () => {
   const tPrograms = useTranslations("programs");
   const pathname = usePathname();
   const [isProgramsDropdownOpen, setIsProgramsDropdownOpen] = useState(false);
+  const [isResearchDropdownOpen, setIsResearchDropdownOpen] = useState(false);
+  const [isStudentsDropdownOpen, setIsStudentsDropdownOpen] = useState(false);
   
   return (
     <motion.header 
@@ -71,7 +74,7 @@ const Header = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex items-center justify-between py-6"
+          className="flex items-center justify-between py-4"
         >
           <motion.div 
             whileHover={{ scale: 1.02 }}
@@ -182,18 +185,22 @@ const Header = () => {
                   {/* Undergraduate Programs */}
                   <DropdownMenuSub>
                     <DropdownMenuSubTrigger>
-                      {tPrograms("undergraduate")}
+                      <Link href={`/${pathname.split('/')[1] || 'vi'}/programs/undergraduate`}>
+                        {tPrograms("undergraduate")}
+                      </Link>
                     </DropdownMenuSubTrigger>
                     <DropdownMenuSubContent className="w-64">
                       {/* Computer Science */}
                       <DropdownMenuSub>
                         <DropdownMenuSubTrigger>
-                          {tPrograms("programs.undergraduate.computerScience.title")}
+                          <Link href={`/${pathname.split('/')[1] || 'vi'}/programs/undergraduate/computer-science`}>
+                            {tPrograms("programs.undergraduate.computerScience.title")}
+                          </Link>
                         </DropdownMenuSubTrigger>
                         <DropdownMenuSubContent className="w-56">
                           {tPrograms.raw("programs.undergraduate.computerScience.programs").map((program: any, index: number) => (
                             <DropdownMenuItem key={index} asChild>
-                              <Link href={`/${pathname.split('/')[1] || 'vi'}/programs/${program.code}`}>
+                              <Link href={`/${pathname.split('/')[1] || 'vi'}/programs/undergraduate/computer-science/${program.code}`}>
                                 {program.title}
                               </Link>
                             </DropdownMenuItem>
@@ -204,12 +211,14 @@ const Header = () => {
                       {/* Data Science */}
                       <DropdownMenuSub>
                         <DropdownMenuSubTrigger>
+                          <Link href={`/${pathname.split('/')[1] || 'vi'}/programs/undergraduate/data-science`}>
                           {tPrograms("programs.undergraduate.dataScience.title")}
+                          </Link>
                         </DropdownMenuSubTrigger>
                         <DropdownMenuSubContent className="w-56">
                           {tPrograms.raw("programs.undergraduate.dataScience.programs").map((program: any, index: number) => (
                             <DropdownMenuItem key={index} asChild>
-                              <Link href={`/${pathname.split('/')[1] || 'vi'}/programs/${program.code}`}>
+                              <Link href={`/${pathname.split('/')[1] || 'vi'}/programs/undergraduate/dataScience/${program.code}`}>
                                 {program.title}
                               </Link>
                             </DropdownMenuItem>
@@ -220,12 +229,14 @@ const Header = () => {
                       {/* Artificial Intelligence */}
                       <DropdownMenuSub>
                         <DropdownMenuSubTrigger>
-                          {tPrograms("programs.undergraduate.artificialIntelligence.title")}
+                          <Link href={`/${pathname.split('/')[1] || 'vi'}/programs/undergraduate/artificial-intelligence`}>
+                            {tPrograms("programs.undergraduate.artificialIntelligence.title")}
+                          </Link>
                         </DropdownMenuSubTrigger>
                         <DropdownMenuSubContent className="w-56">
                           {tPrograms.raw("programs.undergraduate.artificialIntelligence.programs").map((program: any, index: number) => (
                             <DropdownMenuItem key={index} asChild>
-                              <Link href={`/${pathname.split('/')[1] || 'vi'}/programs/${program.code}`}>
+                              <Link href={`/${pathname.split('/')[1] || 'vi'}/programs/undergraduate/artificial-intelligence/${program.code}`}>
                                 {program.title}
                               </Link>
                             </DropdownMenuItem>
@@ -240,18 +251,22 @@ const Header = () => {
                   {/* Graduate Programs */}
                   <DropdownMenuSub>
                     <DropdownMenuSubTrigger>
-                      {tPrograms("graduate")}
+                      <Link href={`/${pathname.split('/')[1] || 'vi'}/programs/graduate`}>
+                        {tPrograms("graduate")}
+                      </Link>
                     </DropdownMenuSubTrigger>
                     <DropdownMenuSubContent className="w-64">
                       {/* Master of Computer Science */}
                       <DropdownMenuSub>
                         <DropdownMenuSubTrigger>
-                          {tPrograms("programs.graduate.computerScience.title")}
+                          <Link href={`/${pathname.split('/')[1] || 'vi'}/programs/graduate/computer-science`}>
+                            {tPrograms("programs.graduate.computerScience.title")}
+                          </Link>
                         </DropdownMenuSubTrigger>
                         <DropdownMenuSubContent className="w-56">
                           {tPrograms.raw("programs.graduate.computerScience.programs").map((program: any, index: number) => (
                             <DropdownMenuItem key={index} asChild>
-                              <Link href={`/${pathname.split('/')[1] || 'vi'}/programs/${program.code}`}>
+                              <Link href={`/${pathname.split('/')[1] || 'vi'}/programs/graduate/computer-science/${program.code}`}>
                                 {program.title}
                               </Link>
                             </DropdownMenuItem>
@@ -273,48 +288,138 @@ const Header = () => {
               </DropdownMenu>
             </motion.div>
 
-            {/* Research */}
-            <motion.div whileHover={{ scale: 1.05, y: -2 }}>
-              <Link 
-                href={`/${pathname.split('/')[1] || 'vi'}/research`} 
-                className={`transition-all duration-300 font-medium relative ${
-                  pathname.includes('/research')
-                    ? 'text-primary font-bold' 
-                    : 'text-foreground hover:text-primary'
-                }`}
-              >
-                {t("navigation.research")}
-                {pathname.includes('/research') && (
-                  <motion.div
-                    layoutId="activeIndicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
-                    initial={false}
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  />
-                )}
-              </Link>
+            {/* Research Dropdown */}
+            <motion.div
+              whileHover={{ scale: 1.05, y: -2 }}
+              onMouseEnter={() => setIsResearchDropdownOpen(true)}
+              onMouseLeave={() => setIsResearchDropdownOpen(false)}
+            >
+              <DropdownMenu open={isResearchDropdownOpen} onOpenChange={setIsResearchDropdownOpen}>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    className={`transition-all duration-300 font-medium relative flex items-center gap-1 ${
+                      pathname.includes('/research')
+                        ? 'text-primary font-bold'
+                        : 'text-foreground hover:text-primary'
+                    }`}
+                  >
+                    {t("navigation.research")}
+                    <ChevronDown className="h-4 w-4" />
+                    {pathname.includes('/research') && (
+                      <motion.div
+                        layoutId="activeIndicator"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                        initial={false}
+                        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                      />
+                    )}
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  className="w-56"
+                  align="start"
+                  onMouseEnter={() => setIsResearchDropdownOpen(true)}
+                  onMouseLeave={() => setIsResearchDropdownOpen(false)}
+                >
+                  <DropdownMenuItem asChild>
+                    <Link href={`/${pathname.split('/')[1] || 'vi'}/research`}>
+                      {t("navigation.researchOverview")}
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem asChild>
+                    <Link href={`/${pathname.split('/')[1] || 'vi'}/research/scientific-projects`}>
+                      {t("navigation.scientificProjects")}
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href={`/${pathname.split('/')[1] || 'vi'}/research/scientific-publications`}>
+                      {t("navigation.scientificPublications")}
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </motion.div>
 
-            {/* Students */}
-            <motion.div whileHover={{ scale: 1.05, y: -2 }}>
-              <Link 
-                href={`/${pathname.split('/')[1] || 'vi'}/students`} 
-                className={`transition-all duration-300 font-medium relative ${
-                  pathname.includes('/students')
-                    ? 'text-primary font-bold' 
-                    : 'text-foreground hover:text-primary'
-                }`}
-              >
-                {t("navigation.students")}
-                {pathname.includes('/students') && (
-                  <motion.div
-                    layoutId="activeIndicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
-                    initial={false}
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  />
-                )}
-              </Link>
+            {/* Students Dropdown */}
+            <motion.div
+              whileHover={{ scale: 1.05, y: -2 }}
+              onMouseEnter={() => setIsStudentsDropdownOpen(true)}
+              onMouseLeave={() => setIsStudentsDropdownOpen(false)}
+            >
+              <DropdownMenu open={isStudentsDropdownOpen} onOpenChange={setIsStudentsDropdownOpen}>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    className={`transition-all duration-300 font-medium relative flex items-center gap-1 ${
+                      pathname.includes('/students')
+                        ? 'text-primary font-bold'
+                        : 'text-foreground hover:text-primary'
+                    }`}
+                  >
+                    {t("navigation.students")}
+                    <ChevronDown className="h-4 w-4" />
+                    {pathname.includes('/students') && (
+                      <motion.div
+                        layoutId="activeIndicator"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                        initial={false}
+                        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                      />
+                    )}
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  className="w-64"
+                  align="start"
+                  onMouseEnter={() => setIsStudentsDropdownOpen(true)}
+                  onMouseLeave={() => setIsStudentsDropdownOpen(false)}
+                >
+                  <DropdownMenuItem asChild>
+                    <Link href={`/${pathname.split('/')[1] || 'vi'}/students`}>
+                      {t("navigation.studentsOverview")}
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem asChild>
+                    <a
+                      href="https://tuyensinh.ttu.edu.vn/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      {t("navigation.studentsAdmissions")}
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a
+                      href="https://ttu.edu.vn/dao-tao/so-tay-sinh-vien/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      {t("navigation.studentsHandbook")}
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem asChild>
+                    <Link href={`/${pathname.split('/')[1] || 'vi'}/students/activities`}>
+                      {t("navigation.studentsActivities")}
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href={`/${pathname.split('/')[1] || 'vi'}/students/internships`}>
+                      {t("navigation.studentsInternships")}
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href={`/${pathname.split('/')[1] || 'vi'}/students/alumni`}>
+                      {t("navigation.studentsAlumni")}
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </motion.div>
           </nav>
 

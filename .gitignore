@@ -9,6 +9,8 @@ build/
 .next/
 out/
 
+.DS_Store
+
 # Environment variables
 .env
 .env.local

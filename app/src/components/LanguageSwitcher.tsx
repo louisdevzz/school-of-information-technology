@@ -18,12 +18,6 @@ const LanguageSwitcher = () => {
   // Get locale from URL params as fallback
   const currentLocale = (params?.locale as string) || locale;
 
-  // Debug: Log the current locale
-  console.log('LanguageSwitcher - Current locale:', locale);
-  console.log('LanguageSwitcher - Params locale:', params?.locale);
-  console.log('LanguageSwitcher - Current pathname:', pathname);
-  console.log('LanguageSwitcher - Using locale:', currentLocale);
-
   const languages = [
     { code: "vi", name: t("vi"), flag: "🇻🇳" },
     { code: "en", name: t("en"), flag: "🇺🇸" }

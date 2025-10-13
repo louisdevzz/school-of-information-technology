@@ -7,9 +7,11 @@ import { Users, BookOpen, Briefcase, Microscope, Award, Quote } from 'lucide-rea
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 
 export default function StudentsPage() {
   const t = useTranslations('students');
+  const achievements = (t.raw('achievementStats') as Array<{ number: string; label: string }>) ?? [];
 
   return (
     <motion.div 
@@ -25,18 +27,80 @@ export default function StudentsPage() {
         transition={{ duration: 0.8, delay: 0.2 }}
       >
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-6">
-            <Users className="w-4 h-4 mr-2" />
-            {t('title')}
+      <section className="relative overflow-hidden bg-white px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid items-stretch gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-white shadow-elegant">
+                <div className="flex items-center justify-between gap-4 border-b border-border/60 px-8 py-6">
+                  <div className="inline-flex items-center gap-3 rounded-full bg-green-100 px-5 py-2 text-sm font-semibold text-green-800">
+                    <Users className="h-4 w-4" />
+                    {t('title')}
+                  </div>
+                  <span className="text-xs font-semibold uppercase tracking-[0.4em] text-muted-foreground">
+                    {t('studentSupport')}
+                  </span>
+                </div>
+
+                <div className="flex flex-1 flex-col gap-6 px-8 py-10 text-left">
+                  <span className="text-sm uppercase tracking-[0.4em] text-muted-foreground">{t('title')}</span>
+                  <h1 className="text-4xl font-bold text-gray-900 md:text-6xl">
+                    {t('subtitle')}
+                  </h1>
+                  <p className="max-w-2xl text-lg text-gray-600 md:text-xl">{t('description')}</p>
+
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                    <Button size="lg" className="px-8 py-3 text-base">
+                      Apply Now
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="px-8 py-3 text-base border-green-200 text-green-800 hover:bg-green-50"
+                    >
+                      Learn More
+                    </Button>
+                  </div>
+                </div>
+
+                {achievements.length > 0 && (
+                  <div className="grid divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+                    {achievements.slice(0, 3).map((item) => (
+                      <div key={item.label} className="px-6 py-5 text-left">
+                        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+                          {item.number}
+                        </p>
+                        <p className="mt-2 text-sm font-medium text-gray-700">{item.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative"
+            >
+              <div className="relative min-h-[360px] overflow-hidden rounded-3xl border border-border bg-muted shadow-elegant">
+                <Image
+                  src="/assets/design.png"
+                  alt={t('subtitle')}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-y-0 right-0 w-2 bg-green-500" />
+              </div>
+            </motion.div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            {t('subtitle')}
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            {t('description')}
-          </p>
         </div>
       </section>
 
