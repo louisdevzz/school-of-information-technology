@@ -39,57 +39,19 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, [currentText, isDeleting, currentTextIndex, dynamicTexts]);
 
-  const techIcons = [
-    { icon: Code, delay: 0 },
-    { icon: Database, delay: 0.2 },
-    { icon: Cloud, delay: 0.4 },
-    { icon: Cpu, delay: 0.6 },
-  ];
-
   return (
-    <section className="relative min-h-screen flex pt-12 justify-center overflow-hidden  bg-orange-50/50">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {techIcons.map(({ icon: Icon, delay }, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0, rotate: -180 }}
-            animate={{ opacity: 0.1, scale: 1, rotate: 0 }}
-            transition={{ duration: 1, delay: delay + 0.5 }}
-            className="absolute"
-            style={{
-              top: `${20 + index * 20}%`,
-              left: `${10 + index * 25}%`,
-            }}
-          >
-            <Icon className="w-32 h-32 text-primary/10" />
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Floating Particles */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-primary/20 rounded-full"
-            animate={{
-              y: [0, -100, 0],
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: 3 + i * 0.2,
-              repeat: Infinity,
-              delay: i * 0.1,
-            }}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-          />
-        ))}
-      </div>
-
+    <section 
+      className="relative pb-20 flex justify-center overflow-hidden bg-white pt-10 min-h-[calc(100vh-200px)]"
+      style={{
+        backgroundImage: 'url(/assets/banner-KT2.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      {/* Background Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/70 z-0"></div>
+      
       {/* Main Content */}
       <motion.div 
         style={{ y, opacity }}
@@ -119,10 +81,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight font-sans"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight font-sans drop-shadow-lg"
           >
-            <span className="block mb-4">{t("title")}</span>
-            <span className="block text-primary">
+            {/* <span className="block mb-4">{t("title")}</span> */}
+            <span className="block text-white">
               {currentText}
               <motion.span
                 animate={{ opacity: [1, 0, 1] }}
@@ -139,7 +101,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light font-sans"
+            className="text-white text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light font-sans"
           >
             {t("subtitle")}
           </motion.p>
@@ -149,11 +111,11 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
           >
             <Button 
               size="lg" 
-              className="bg-gradient-orange hover:shadow-glow transition-all duration-300 font-sans"
+              className="bg-gradient-orange hover:shadow-glow transition-all duration-300 font-sans shadow-lg"
             >
               {t("explore")}
               <ArrowRight className="ml-2 w-4 h-4" />
@@ -161,32 +123,12 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-sans"
+              className="border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-gray-900 transition-all duration-300 font-sans shadow-lg"
             >
               <Play className="mr-2 w-4 h-4" />
               {t("watchVideo")}
             </Button>
           </motion.div>
-        </motion.div>
-      </motion.div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-20 left-1/2 transform -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-primary rounded-full flex justify-center"
-        >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-primary rounded-full mt-2"
-          />
         </motion.div>
       </motion.div>
     </section>

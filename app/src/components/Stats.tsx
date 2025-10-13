@@ -2,7 +2,6 @@
 
 import { Target, Zap, Sparkles, GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
-import TextRibbon from "./TextRibbon";
 import { useTranslations } from "next-intl";
 
 const Stats = () => {
@@ -16,7 +15,7 @@ const Stats = () => {
 
   return (
     <section className="bg-white">
-      <div className="w-full px-10 py-10">
+      <div className="w-full px-10 py-14 pt-20">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -29,15 +29,14 @@ const Header = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="bg-background border-b border-primary/20 sticky top-0 z-50 shadow-elegant"
+      className="border-b border-primary/20 sticky top-0 z-50 bg-white"
     >
       <div className="w-full px-10">
-        {/* Top Info Bar */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="border-b border-primary/20 py-3"
+          className="border-b border-primary/20 py-1"
         >
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center gap-6">
@@ -68,7 +67,6 @@ const Header = () => {
           </div>
         </motion.div>
 
-        {/* Main Navigation */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

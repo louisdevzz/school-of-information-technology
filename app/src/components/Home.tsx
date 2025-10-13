@@ -14,7 +14,7 @@ const Home = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="min-h-screen bg-background"
+      className="min-h-screen bg-white"
     >
       <Header />
       <TextRibbon />
