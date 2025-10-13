@@ -44,7 +44,7 @@ const Footer = () => {
         />
       </div>
 
-      <div className="w-full px-10 py-20 relative z-10">
+      <div className="w-full px-10 pb-10 pt-16 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* University Info */}
           <motion.div
@@ -56,11 +56,11 @@ const Footer = () => {
             <Link href={`/${currentLocale}`} className="flex items-center gap-2">
               <img src="/assets/logo.png" alt="SIT" className="w-14 h-14" />
               <div className="flex flex-col items-start gap-1">
-                <p className="text-primary text-xl font-bold">
+                <p className="text-[#ba4911] text-xl font-bold">
                   {t("university")}
                 </p>
                 <div className="h-0.5 w-40 bg-primary"/>
-                <p className="text-lg text-primary font-bold">{t("faculty")}</p>
+                <p className="text-lg text-[#ba4911] font-bold">{t("faculty")}</p>
               </div>
             </Link>
             <p className="text-muted-foreground mb-8 leading-relaxed font-sans mt-4">
@@ -224,11 +224,6 @@ const Footer = () => {
           viewport={{ once: true }}
           className="border-t border-primary/20 mt-16 pt-8 text-center"
         >
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Sparkles className="h-5 w-5 text-primary" />
-            <span className="text-muted-foreground font-medium font-sans">Đồng hành cùng cách mạng công nghệ 4.0</span>
-            <Sparkles className="h-5 w-5 text-primary" />
-          </div>
           <p className="text-muted-foreground font-sans">
             {tFooter("copyright")}
           </p>

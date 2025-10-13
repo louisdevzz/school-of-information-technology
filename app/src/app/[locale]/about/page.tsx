@@ -1,21 +1,18 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
-  Heart, Target, Eye, CheckCircle, Users, Award, 
-  BookOpen, Lightbulb, Globe, Phone, Mail, 
-  Calendar, Building, GraduationCap, Sparkles, ArrowRight
+  Target, Eye, Users, Phone, Mail, 
+  Sparkles
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { useLocalePath } from "@/lib/locale-utils";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export default function AboutPage() {
   const t = useTranslations('about');
-  const { createPath } = useLocalePath();
 
   return (
     <motion.div 
@@ -30,86 +27,40 @@ export default function AboutPage() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        {/* Hero Section - Akilia Style */}
-        <section className="relative min-h-screen bg-orange-50">
-          <div className="absolute inset-0 overflow-hidden">
-            {/* Animated Background Elements */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0, rotate: -180 }}
-              animate={{ opacity: 0.1, scale: 1, rotate: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="absolute top-20 left-20"
-            >
-              <Heart className="w-32 h-32 text-primary/10" />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0, rotate: -180 }}
-              animate={{ opacity: 0.1, scale: 1, rotate: 0 }}
-              transition={{ duration: 1, delay: 0.7 }}
-              className="absolute top-40 left-40"
-            >
-              <Users className="w-32 h-32 text-primary/10" />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0, rotate: -180 }}
-              animate={{ opacity: 0.1, scale: 1, rotate: 0 }}
-              transition={{ duration: 1, delay: 0.9 }}
-              className="absolute top-60 left-60"
-            >
-              <GraduationCap className="w-32 h-32 text-primary/10" />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0, rotate: -180 }}
-              animate={{ opacity: 0.1, scale: 1, rotate: 0 }}
-              transition={{ duration: 1, delay: 1.1 }}
-              className="absolute top-80 left-80"
-            >
-              <Building className="w-32 h-32 text-primary/10" />
-            </motion.div>
-
-            {/* Floating Particles */}
-            <div className="absolute inset-0">
-              {[...Array(20)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-2 h-2 bg-primary/20 rounded-full"
-                  animate={{
-                    y: [0, -100, 0],
-                    opacity: [0, 1, 0],
-                  }}
-                  transition={{
-                    duration: 3 + i * 0.2,
-                    repeat: Infinity,
-                    delay: i * 0.1,
-                  }}
-                  style={{
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                  }}
-                />
-              ))}
-            </div>
+        {/* Hero Section */}
+        <section className="relative min-h-screen overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/assets/ttu-gill.png"
+              alt="Tan Tao University Campus"
+              fill
+              className="object-cover"
+              priority
+            />
+            {/* Overlay for better text readability */}
+            <div className="absolute inset-0 bg-black/40"></div>
           </div>
-
-          <div className="relative z-10 min-h-screen flex flex-col">
-            {/* Main Content */}
+          
+          {/* Content */}
+          <div className="relative z-10 flex flex-col py-20 min-h-screen">
             <div className="flex-1 flex items-center">
               <div className="max-w-7xl mx-auto px-6 w-full">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
-                  {/* Left Side - Main Content */}
+                  {/* Left Side */}
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
                     className="space-y-8"
                   >
-                    {/* Main Title */}
-                    <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight font-sans">
+                    {/* Title */}
+                    <h1 className="text-5xl md:text-7xl font-bold leading-tight font-sans text-white">
                       {t('subtitle')}
                     </h1>
                   
 
-                    {/* Scroll Indicator */}
+                    {/* Scroll Indicator - Our Approach */}
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -119,21 +70,21 @@ export default function AboutPage() {
                       <motion.div
                         animate={{ y: [0, 8, 0] }}
                         transition={{ duration: 2, repeat: Infinity }}
-                        className="w-8 h-8 border-2 border-primary rounded-full flex items-center justify-center"
+                        className="w-8 h-8 border-2 border-white rounded-full flex items-center justify-center"
                       >
                         <motion.div
                           animate={{ y: [0, 4, 0] }}
                           transition={{ duration: 2, repeat: Infinity }}
-                          className="w-1 h-2 bg-primary rounded-full"
+                          className="w-1 h-2 bg-white rounded-full"
                         />
                       </motion.div>
-                      <span className="text-muted-foreground text-sm font-medium tracking-wider uppercase">
+                      <span className="text-white/80 text-sm font-medium tracking-wider uppercase">
                         {t('ourApproach')}
                       </span>
                     </motion.div>
                   </motion.div>
 
-                  {/* Right Side - What We Do */}
+                  {/* Right Side */}
                   <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -141,14 +92,14 @@ export default function AboutPage() {
                     className="relative"
                   >
                     {/* Vertical Line */}
-                    <div className="absolute left-0 top-0 bottom-0 w-px bg-border"></div>
+                    <div className="absolute left-0 top-0 bottom-0 w-px bg-white/30"></div>
                     
                     <div className="pl-12">
-                      <h2 className="text-sm font-bold text-muted-foreground tracking-wider uppercase mb-8">
+                      <h2 className="text-sm font-bold text-white/80 tracking-wider uppercase mb-8">
                         {t('whatWeDo')}
                       </h2>
                       
-                      <div className="space-y-6 text-muted-foreground">
+                      <div className="space-y-6 text-white/90">
                         <p className="text-lg leading-relaxed">
                           {t('description')}
                         </p>
@@ -267,7 +218,7 @@ export default function AboutPage() {
                   <motion.div
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-gradient-to-br from-accent to-accent/50 rounded-2xl p-6 border border-border"
+                    className="bg-white rounded-2xl p-6 border-2 border-border"
                   >
                     <div className="text-3xl font-bold text-primary mb-2">2012</div>
                     <div className="text-sm text-muted-foreground">{t('founded')}</div>
@@ -276,7 +227,7 @@ export default function AboutPage() {
                   <motion.div
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-gradient-to-br from-accent to-accent/50 rounded-2xl p-6 border border-border"
+                    className="bg-white rounded-2xl p-6 border-2 border-border"
                   >
                     <div className="text-3xl font-bold text-primary mb-2">PhD</div>
                     <div className="text-sm text-muted-foreground">{t('facultyLevel')}</div>
@@ -285,7 +236,7 @@ export default function AboutPage() {
                   <motion.div
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-gradient-to-br from-accent to-accent/50 rounded-2xl p-6 border border-border"
+                    className="bg-white rounded-2xl p-6 border-2 border-border"
                   >
                     <div className="text-3xl font-bold text-primary mb-2">4</div>
                     <div className="text-sm text-muted-foreground">{t('programs')}</div>
@@ -294,7 +245,7 @@ export default function AboutPage() {
                   <motion.div
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-gradient-to-br from-accent to-accent/50 rounded-2xl p-6 border border-border"
+                    className="bg-white rounded-2xl p-6 border-2 border-border"
                   >
                     <div className="text-3xl font-bold text-primary mb-2">2030</div>
                     <div className="text-sm text-muted-foreground">{t('visionYear')}</div>
@@ -307,7 +258,7 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-accent to-accent/50 rounded-2xl p-8 border border-border"
+                  className="bg-white rounded-2xl p-8 border-2 border-border"
                 >
                   <blockquote className="text-lg text-foreground italic mb-4">
                     "{t('missionText')}"
@@ -447,7 +398,7 @@ export default function AboutPage() {
                   <motion.div
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-gradient-to-br from-accent to-accent/50 rounded-2xl p-8 border border-border"
+                    className="bg-white rounded-2xl p-8 border-2 border-border"
                   >
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/30 rounded-full flex items-center justify-center">
@@ -463,7 +414,7 @@ export default function AboutPage() {
                   <motion.div
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-gradient-to-br from-accent to-accent/50 rounded-2xl p-8 border border-border"
+                    className="bg-white rounded-2xl p-8 border-2 border-border"
                   >
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/30 rounded-full flex items-center justify-center">
@@ -483,7 +434,7 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-accent to-accent/50 rounded-2xl p-8 border border-border"
+                  className="bg-white rounded-2xl p-8 border-2 border-border"
                 >
                   <blockquote className="text-lg text-foreground italic mb-4">
                     "{t('philosophyText')}"

@@ -9,7 +9,7 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   title: "Khoa Công nghệ Thông tin - Đại học Tân Tạo",
-  description: "Khoa Công nghệ Thông tin - Đại học Tân Tạo đào tạo nguồn nhân lực chất lượng cao trong lĩnh vực Công nghệ Thông tin và Máy tính. Đồng hành cùng cách mạng công nghệ 4.0.",
+  description: "Khoa Công nghệ Thông tin Đại học Tân Tạo áp dụng triết lí \"Khai phóng - học suốt đời\" với chương trình tham chiếu từ Đại học Duke (Hoa Kỳ), đồng hành cùng chuyển đổi số.",
   keywords: "Khoa Công nghệ Thông tin, Đại học Tân Tạo, Tan Tao University, SIT, School of Information Technology, IT, Computer Science, Đào tạo, Giáo dục, Công nghệ 4.0",
   authors: [{ name: "Khoa Công nghệ Thông tin - Đại học Tân Tạo" }],
   creator: "Khoa Công nghệ Thông tin - Đại học Tân Tạo",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     url: "https://sit.ttu.edu.vn",
     siteName: "Khoa Công nghệ Thông tin - Đại học Tân Tạo",
     title: "Khoa Công nghệ Thông tin - Đại học Tân Tạo",
-    description: "Khoa Công nghệ Thông tin - Đại học Tân Tạo đào tạo nguồn nhân lực chất lượng cao trong lĩnh vực Công nghệ Thông tin và Máy tính. Đồng hành cùng cách mạng công nghệ 4.0.",
+    description: "Khoa Công nghệ Thông tin Đại học Tân Tạo áp dụng triết lí \"Khai phóng - học suốt đời\" với chương trình tham chiếu từ Đại học Duke (Hoa Kỳ), đồng hành cùng chuyển đổi số.",
     images: [
       {
         url: "https://sit.ttu.edu.vn/wp-content/uploads/2025/01/cropped-orange_logo-01-1-192x192.png",
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Khoa Công nghệ Thông tin - Đại học Tân Tạo",
-    description: "Khoa Công nghệ Thông tin - Đại học Tân Tạo đào tạo nguồn nhân lực chất lượng cao trong lĩnh vực Công nghệ Thông tin và Máy tính. Đồng hành cùng cách mạng công nghệ 4.0.",
+    description: "Khoa Công nghệ Thông tin Đại học Tân Tạo áp dụng triết lí \"Khai phóng - học suốt đời\" với chương trình tham chiếu từ Đại học Duke (Hoa Kỳ), đồng hành cùng chuyển đổi số.",
     images: ["https://sit.ttu.edu.vn/wp-content/uploads/2025/01/cropped-orange_logo-01-1-192x192.png"],
   },
   alternates: {
     canonical: "https://sit.ttu.edu.vn",
     languages: {
       "vi-VN": "https://sit.ttu.edu.vn",
-      "en-US": "https://sit.ttu.edu.vn/en",
+      "en-US": "https://sit.ttu.edu.vn/?lang=en",
     },
   },
   icons: {
