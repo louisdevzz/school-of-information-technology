@@ -109,7 +109,7 @@
           "subtitle": "Biến ý tưởng của bạn thành hiện thực với chương trình khai phóng kết hợp công nghệ, sáng tạo và tinh thần khởi nghiệp.",
           "ctaPrimary": "Tải brochure",
           "ctaSecondary": "Đặt lịch tham quan",
-          "image": "/assets/design.png",
+          "image": "/assets/banner-KT2.png",
           "alt": "Sinh viên đại học khám phá các lộ trình công nghệ"
         },
         "keyDetails": [
@@ -236,7 +236,7 @@
       },
       "undergraduate": {
         "heroTagline": "Biến ý tưởng thành sản phẩm trong môi trường studio năng động.",
-        "heroImage": "/assets/design.png",
+        "heroImage": "/assets/banner-KT2.png",
         "keyFacts": [
           {
             "label": "Mã ngành",
@@ -331,7 +331,7 @@
       "undergraduate": {
         "hero": {
           "badge": "Chương trình Đại học",
-          "fallbackImage": "/assets/design.png"
+          "fallbackImage": "/assets/banner-KT2.png"
         },
         "meta": {
           "school": "Khoa Công nghệ Thông tin",
@@ -484,6 +484,7 @@
     "email": "info@ttu.edu.vn"
   },
   "students": {
+    "badge": "Đời sống sinh viên",
     "title": "Đời sống sinh viên",
     "subtitle": "Trao quyền cho các nhà lãnh đạo công nghệ tương lai",
     "description": "SIT đồng hành cùng sinh viên qua cố vấn học tập, nghiên cứu, cuộc thi và hoạt động cộng đồng, giúp mỗi bạn phát triển toàn diện.",
@@ -525,7 +526,11 @@
         "program": "Hợp tác Simpson Strong-Tie",
         "quote": "Ngày 13/12/2024: sinh viên SIT tham quan Simpson Strong-Tie Vietnam, tìm hiểu quy trình kỹ thuật thực tế và cơ hội nghề nghiệp."
       }
-    ]
+    ],
+    "ctaTitle": "Gia nhập cộng đồng sinh viên SIT",
+    "ctaDescription": "Trở thành một phần của hệ sinh thái công nghệ, sáng tạo và phụng sự cộng đồng tại SIT.",
+    "ctaPrimary": "Nộp hồ sơ ngay",
+    "ctaSecondary": "Khám phá dịch vụ hỗ trợ"
   },
   "studentsActivities": {
     "badge": "Hoạt động sinh viên",

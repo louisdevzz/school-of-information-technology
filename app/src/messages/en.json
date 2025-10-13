@@ -109,7 +109,7 @@
           "subtitle": "Bring your ideas to life through a liberal arts-inspired curriculum that blends technology, creativity and entrepreneurship.",
           "ctaPrimary": "Download brochure",
           "ctaSecondary": "Book a campus tour",
-          "image": "/assets/design.png",
+          "image": "/assets/banner-KT2.png",
           "alt": "Undergraduate students exploring technology pathways"
         },
         "keyDetails": [
@@ -236,7 +236,7 @@
       },
       "undergraduate": {
         "heroTagline": "Bring your ideas to life in a studio-inspired environment.",
-        "heroImage": "/assets/design.png",
+        "heroImage": "/assets/banner-KT2.png",
         "keyFacts": [
           {
             "label": "Program code",
@@ -331,7 +331,7 @@
       "undergraduate": {
         "hero": {
           "badge": "Undergraduate Programs",
-          "fallbackImage": "/assets/design.png"
+          "fallbackImage": "/assets/banner-KT2.png"
         },
         "meta": {
           "school": "School of Information Technology",
@@ -484,6 +484,7 @@
     "email": "info@ttu.edu.vn"
   },
   "students": {
+    "badge": "Student life",
     "title": "Student Life",
     "subtitle": "Empowering Future Technology Leaders",
     "description": "SIT supports students with advising, research, competitions and community engagement, ensuring every learner can thrive academically and professionally.",
@@ -525,7 +526,11 @@
         "program": "Simpson Strong-Tie partnership",
         "quote": "Published on 13 Dec 2024: SIT students visited Simpson Strong-Tie Vietnam to explore professional engineering workflows and career opportunities."
       }
-    ]
+    ],
+    "ctaTitle": "Join our student community",
+    "ctaDescription": "Become part of a vibrant ecosystem of technologists, innovators and community leaders at SIT.",
+    "ctaPrimary": "Apply now",
+    "ctaSecondary": "Discover support services"
   },
   "studentsActivities": {
     "badge": "Student activities",
