@@ -43,7 +43,7 @@ export default function AboutPage() {
           </div>
           
           {/* Content */}
-          <div className="relative z-10 flex flex-col py-20">
+          <div className="relative z-10 flex flex-col py-20 pt-28">
             <div className="flex-1 flex items-center">
               <div className="max-w-7xl mx-auto px-6 w-full">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">

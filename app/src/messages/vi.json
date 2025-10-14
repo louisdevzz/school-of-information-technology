@@ -27,10 +27,25 @@
       "studentsAlumni": "Cựu sinh viên"
     },
     "contact": "Liên hệ tư vấn",
+    "close": "Đóng",
+    "exploreSit": "Khám phá SIT",
+    "quickLinks": "Liên kết nhanh",
+    "about": "Giới thiệu",
+    "news": "Tin tức",
+    "research": "Nghiên cứu",
+    "students": "Sinh viên",
+    "contactButton": "Liên hệ",
+    "programsDescription": "Khám phá các chương trình đào tạo toàn diện được thiết kế cho mọi loại người học.",
+    "studentsDescription": "Mọi thông tin bạn cần biết về đời sống sinh viên, tuyển sinh và cơ hội.",
+    "researchDescription": "Khám phá các sáng kiến nghiên cứu tiên tiến và đóng góp khoa học của chúng tôi.",
+    "exploreDescription": "Khám phá mọi thứ mà SIT mang lại cho sinh viên và nhà nghiên cứu.",
+    "programsBrowseDescription": "Duyệt tất cả các chương trình và chuyên ngành của chúng tôi.",
     "language": {
       "vi": "Tiếng Việt",
       "en": "English"
-    }
+    },
+    "search": "Tìm kiếm",
+    "menu": "Danh Mục"
   },
   "textRibbon": {
     "messages": [

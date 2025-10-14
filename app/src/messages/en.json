@@ -27,10 +27,25 @@
       "studentsAlumni": "Alumni network"
     },
     "contact": "Consultation Hotline",
+    "close": "Close",
+    "exploreSit": "Explore SIT",
+    "quickLinks": "Quick Links",
+    "about": "About",
+    "news": "News",
+    "research": "Research",
+    "students": "Students",
+    "contactButton": "Contact",
+    "programsDescription": "Discover our comprehensive academic programs designed for every type of learner.",
+    "studentsDescription": "Everything you need to know about student life, admissions, and opportunities.",
+    "researchDescription": "Explore our cutting-edge research initiatives and scientific contributions.",
+    "exploreDescription": "Discover everything SIT has to offer for students and researchers.",
+    "programsBrowseDescription": "Browse all of our programs and specializations.",
     "language": {
       "vi": "Tiếng Việt",
       "en": "English"
-    }
+    },
+    "search": "Search",
+    "menu": "Menu"
   },
   "textRibbon": {
     "messages": [

@@ -1,23 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Menu, Search, Phone, Mail, ChevronDown, ExternalLink, X } from "lucide-react";
+import { Menu, Search, Phone, Mail, ExternalLink, X, ArrowLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const t = useTranslations("header");
@@ -28,14 +18,19 @@ const Header = () => {
   const locale = localeCandidate === "vi" || localeCandidate === "en" ? localeCandidate : "vi";
   const basePath = `/${locale}`;
 
-  const [isProgramsDropdownOpen, setIsProgramsDropdownOpen] = useState(false);
-  const [isResearchDropdownOpen, setIsResearchDropdownOpen] = useState(false);
-  const [isStudentsDropdownOpen, setIsStudentsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [activeProgramCategory, setActiveProgramCategory] = useState<string | null>(null);
+
+  const resetMenuFlow = useCallback(() => {
+    setActiveSection(null);
+    setActiveProgramCategory(null);
+  }, []);
 
   useEffect(() => {
     setIsMenuOpen(false);
-  }, [pathname]);
+    resetMenuFlow();
+  }, [pathname, resetMenuFlow]);
 
   const getPrograms = useMemo(
     () =>
@@ -53,7 +48,19 @@ const Header = () => {
 
   const primaryNavHighlight = (segment: string) => pathname.includes(segment);
 
-  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+  const toggleMenu = () =>
+    setIsMenuOpen((prev) => {
+      const next = !prev;
+      if (!next) {
+        resetMenuFlow();
+      }
+      return next;
+    });
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    resetMenuFlow();
+  };
 
   const overlayQuickLinks = [
     { label: t("navigation.about"), href: `${basePath}/about` },
@@ -85,7 +92,68 @@ const Header = () => {
     { label: t("navigation.studentsInternships"), href: `${basePath}/students/internships` },
     { label: t("navigation.studentsAlumni"), href: `${basePath}/students/alumni` },
   ];
-  
+  const programSections = useMemo(
+    () => [
+      {
+        id: "undergraduate",
+        title: tPrograms("undergraduate"),
+        href: `${basePath}/programs/undergraduate`,
+        groups: [
+          {
+            id: "undergraduate-computer-science",
+            title: tPrograms("programs.undergraduate.computerScience.title"),
+            href: `${basePath}/programs/undergraduate/computer-science`,
+            items: undergraduateComputerScience,
+          },
+          {
+            id: "undergraduate-data-science",
+            title: tPrograms("programs.undergraduate.dataScience.title"),
+            href: `${basePath}/programs/undergraduate/data-science`,
+            items: undergraduateDataScience,
+          },
+          {
+            id: "undergraduate-artificial-intelligence",
+            title: tPrograms("programs.undergraduate.artificialIntelligence.title"),
+            href: `${basePath}/programs/undergraduate/artificial-intelligence`,
+            items: undergraduateArtificialIntelligence,
+          },
+        ],
+      },
+      {
+        id: "graduate",
+        title: tPrograms("graduate"),
+        href: `${basePath}/programs/graduate`,
+        groups: [
+          {
+            id: "graduate-computer-science",
+            title: tPrograms("programs.graduate.computerScience.title"),
+            href: `${basePath}/programs/graduate/computer-science`,
+            items: graduateComputerScience,
+          },
+        ],
+      },
+    ],
+    [
+      basePath,
+      graduateComputerScience,
+      tPrograms,
+      undergraduateArtificialIntelligence,
+      undergraduateComputerScience,
+      undergraduateDataScience,
+    ]
+  );
+
+  const menuSections = useMemo(
+    () => [
+      { id: "explore", title: t("exploreSit") },
+      { id: "programs", title: t("navigation.programs") },
+      { id: "students", title: t("navigation.students") },
+      { id: "research", title: t("navigation.research") },
+    ],
+    [t]
+  );
+
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
@@ -139,31 +207,33 @@ const Header = () => {
               </Link>
             </motion.div>
             <div className="flex items-center gap-2">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="hidden md:inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#ba4911] border border-[#ba4911] transition-colors hover:bg-[#ba4911]/10 cursor-pointer"
-                  onClick={() => window.open("https://tuyensinh.ttu.edu.vn/", "_blank", "noopener,noreferrer")}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="hidden md:inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#ba4911] border border-[#ba4911] transition-colors hover:bg-[#ba4911]/10 cursor-pointer"
+                onClick={() => window.open("https://tuyensinh.ttu.edu.vn/", "_blank", "noopener,noreferrer")}
+              >
+                {t("navigation.studentsAdmissions")}
+              </motion.button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button variant="ghost" size="icon" className="hover:bg-[#ba4911]/80 bg-[#ba4911] text-white cursor-pointer w-full p-4 px-6 rounded-full">
+                  <Search className="h-5 w-5 text-white" />
+                  <span className="text-white">{t("search")}</span>
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="hover:bg-[#ba4911]/80 bg-[#ba4911] text-white cursor-pointer w-full p-4 px-6 rounded-full"
+                  onClick={toggleMenu}
+                  aria-expanded={isMenuOpen}
+                  aria-label="Toggle menu"
                 >
-                  {t("navigation.studentsAdmissions")}
-                </motion.button>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button variant="ghost" size="icon" className="hover:bg-[#ba4911]/80 bg-[#ba4911] text-white cursor-pointer">
-                    <Search className="h-5 w-5 text-white" />
-                  </Button>
-                </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="hover:bg-[#ba4911]/80 bg-[#ba4911] text-white cursor-pointer"
-                    onClick={toggleMenu}
-                    aria-expanded={isMenuOpen}
-                    aria-label="Toggle menu"
-                  >
-                    {isMenuOpen ? <X className="h-5 w-5 text-white" /> : <Menu className="h-5 w-5 text-white" />}
-                  </Button>
-                </motion.div>
+                  <Menu className="h-5 w-5 text-white" />
+                  <span className="text-white">{t("menu")}</span>
+                </Button>
+              </motion.div>
               </div>
           </div>
         </div>
@@ -177,185 +247,414 @@ const Header = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={toggleMenu}
+              onClick={closeMenu}
             />
             <motion.div
               initial={{ y: "-100%" }}
               animate={{ y: 0 }}
               exit={{ y: "-100%" }}
               transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-0 left-0 right-0 z-[50] bg-white shadow-2xl border-b border-primary/20"
+              className="fixed top-0 left-0 right-0 z-[50] h-screen bg-white text-slate-900"
             >
-              <div className="px-6 py-8 md:px-10 lg:px-16">
-                <div className="flex items-center justify-between border-b border-primary/10 pb-6">
-                  <div className="flex items-center gap-3">
+              
+              <div className="relative flex h-full flex-col">
+                {/* Header */}
+                <div className="flex items-center justify-between border-b border-slate-200 px-8 py-4">
+                  <div className="flex items-center gap-2">
                     <img src="/assets/logo.png" alt="SIT" className="h-10 w-10" />
-                    <div className="flex flex-col">
-                      <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#ba4911]">
+                    <div className="flex flex-col gap-y-0.5">
+                      <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#ba4911]">
                         {t("university")}
                       </span>
-                      <span className="text-lg font-bold text-[#ba4911]">
+                      <span className="h-[1px] w-full bg-[#ba4911]" />
+                      <span className="text-base font-bold text-[#ba4911]">
                         {t("faculty")}
                       </span>
                     </div>
                   </div>
-                  <Button variant="ghost" size="icon" className="hover:bg-primary/10" onClick={toggleMenu}>
-                    <X className="h-5 w-5" />
-                  </Button>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#ba4911] font-medium text-base ">{t("close")}</span>
+                    <button
+                      className="cursor-pointer rounded-full p-1 hover:bg-[#ba4911]/30 border border-[#ba4911] transition-colors"
+                      onClick={closeMenu}
+                    >
+                      <X className="h-4 w-4 text-[#ba4911]" />
+                    </button>
+                  </div>
                 </div>
 
-                <div className="mt-8 grid gap-10 lg:grid-cols-3">
-                  <div className="space-y-6">
-                    <p className="text-xs uppercase tracking-[0.35em] text-[#ba4911]">Explore SIT</p>
-                    <ul className="space-y-4 text-base font-semibold text-slate-900">
-                      {overlayQuickLinks.map((link) => (
-                        <li key={link.href}>
-                          <Link href={link.href} className="transition-colors hover:text-[#ba4911]" onClick={toggleMenu}>
-                            {link.label}
-                          </Link>
-                        </li>
+                {/* Main Content - 3 Column Layout */}
+                <div className="flex flex-1 px-8 py-8">
+                  {/* Column 1: Main Menu */}
+                  <div className="w-1/3 pr-8">
+                    <div className="space-y-6">
+                      {menuSections.map((section) => (
+                        <button
+                          key={section.id}
+                          onClick={() => setActiveSection(section.id)}
+                          className={`relative block w-full text-left text-3xl gap-3 font-semibold transition-colors pb-2 ${
+                            activeSection === section.id
+                              ? "text-[#ba4911]"
+                              : "text-slate-800 hover:text-[#ba4911]"
+                          }`}
+                        >
+                          {section.title}
+                          <motion.div
+                            className="absolute bottom-0 left-0 h-0.5 bg-[#ba4911]"
+                            initial={{ width: 0 }}
+                            animate={{ 
+                              width: activeSection === section.id ? "100%" : 0 
+                            }}
+                            transition={{ 
+                              duration: 0.3, 
+                              ease: "easeInOut" 
+                            }}
+                          />
+                        </button>
                       ))}
-                    </ul>
-                    <div className="pt-4">
-                      <Button
-                        className="w-full bg-gradient-orange hover:shadow-glow"
-                        onClick={() =>
-                          window.open("https://calendly.com/sit-ttu", "_blank", "noopener,noreferrer")
-                        }
-                      >
-                        {t("contact")}
-                      </Button>
                     </div>
                   </div>
 
-                  <div className="space-y-6">
-                    <p className="text-xs uppercase tracking-[0.35em] text-[#ba4911]">
-                      {t("navigation.programs")}
-                    </p>
-                    <div className="space-y-5">
-                      <div>
-                        <Link
-                          href={`${basePath}/programs/undergraduate`}
-                          className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-900 hover:text-[#ba4911]"
-                          onClick={toggleMenu}
+                  {/* Column 2: Sub Menu */}
+                  <div className="w-1/3 px-4">
+                    {activeSection && (
+                      <AnimatePresence mode="wait">
+                        <motion.div
+                          key={activeSection}
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -20 }}
+                          transition={{ duration: 0.3 }}
                         >
-                          {tPrograms("undergraduate")}
-                        </Link>
-                        <div className="mt-3 grid gap-3">
-                          {[{
-                            title: tPrograms("programs.undergraduate.computerScience.title"),
-                            href: `${basePath}/programs/undergraduate/computer-science`,
-                            items: undergraduateComputerScience,
-                          },
-                          {
-                            title: tPrograms("programs.undergraduate.dataScience.title"),
-                            href: `${basePath}/programs/undergraduate/data-science`,
-                            items: undergraduateDataScience,
-                          },
-                          {
-                            title: tPrograms("programs.undergraduate.artificialIntelligence.title"),
-                            href: `${basePath}/programs/undergraduate/artificial-intelligence`,
-                            items: undergraduateArtificialIntelligence,
-                          }].map((section) => (
-                            <div key={section.href} className="space-y-2">
-                              <Link
-                                href={section.href}
-                                className="text-sm font-medium text-slate-800 transition-colors hover:text-[#ba4911]"
-                                onClick={toggleMenu}
-                              >
-                                {section.title}
-                              </Link>
-                              <ul className="space-y-1 text-sm text-slate-500">
-                                {section.items.map((program) => (
-                                  <li key={`${section.href}-${program.code}`}>
-                                    <Link
-                                      href={`${section.href}/${program.code}`}
-                                      className="hover:text-[#ba4911]"
-                                      onClick={toggleMenu}
-                                    >
-                                      {program.title}
-                                    </Link>
-                                  </li>
+                          {activeSection === "programs" && (
+                            <div className="space-y-6">
+                              <div className="flex items-center gap-2">
+                                <h2 className="text-xl font-bold text-[#ba4911]">
+                                  {t("navigation.programs")}
+                                </h2>
+                                <ChevronRight className="h-5 w-5 text-[#ba4911]" />
+                              </div>
+                              <p className="text-slate-500 text-sm leading-relaxed">
+                                {t("programsDescription")}
+                              </p>
+                              <div className="space-y-3">
+                                {programSections.map((category) => (
+                                  <button
+                                    key={category.id}
+                                    onClick={() => setActiveProgramCategory(category.id)}
+                                    className={`relative block w-full text-left text-lg font-semibold transition-colors pb-1 ${
+                                      activeProgramCategory === category.id
+                                        ? "text-[#ba4911]"
+                                        : "text-slate-700 hover:text-[#ba4911]"
+                                    }`}
+                                  >
+                                    {category.title} →
+                                    <motion.div
+                                      className="absolute bottom-0 left-0 h-0.5 bg-[#ba4911]"
+                                      initial={{ width: 0 }}
+                                      animate={{ 
+                                        width: activeProgramCategory === category.id ? "100%" : 0 
+                                      }}
+                                      transition={{ 
+                                        duration: 0.3, 
+                                        ease: "easeInOut" 
+                                      }}
+                                    />
+                                  </button>
                                 ))}
-                              </ul>
+                              </div>
                             </div>
-                          ))}
-                        </div>
-                      </div>
+                          )}
 
-                      <div>
-                        <Link
-                          href={`${basePath}/programs/graduate`}
-                          className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-900 hover:text-[#ba4911]"
-                          onClick={toggleMenu}
-                        >
-                          {tPrograms("graduate")}
-                        </Link>
-                        <ul className="mt-3 space-y-2 text-sm text-slate-500">
-                          {graduateComputerScience.map((program) => (
-                            <li key={`graduate-${program.code}`}>
-                              <Link
-                                href={`${basePath}/programs/graduate/computer-science/${program.code}`}
-                                className="hover:text-[#ba4911]"
-                                onClick={toggleMenu}
-                              >
-                                {program.title}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
+                          {activeSection === "students" && (
+                            <div className="space-y-6">
+                              <div className="flex items-center gap-2">
+                                <h2 className="text-xl font-bold text-[#ba4911]">
+                                  {t("navigation.students")}
+                                </h2>
+                                <ChevronRight className="h-5 w-5 text-[#ba4911]" />
+                              </div>
+                              <p className="text-slate-500 text-sm leading-relaxed">
+                                {t("studentsDescription")}
+                              </p>
+                              <div className="space-y-3">
+                                {overlayStudentLinks.map((link) => (
+                                  <div key={link.href} className="relative group">
+                                    {link.external ? (
+                                      <a
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block text-slate-700 hover:text-[#ba4911] transition-colors font-medium pb-1"
+                                        onClick={closeMenu}
+                                      >
+                                        {link.label}
+                                        <motion.div
+                                          className="absolute bottom-0 left-0 h-0.5 bg-[#ba4911]"
+                                          initial={{ width: 0 }}
+                                          whileHover={{ width: "100%" }}
+                                          transition={{ 
+                                            duration: 0.3, 
+                                            ease: "easeInOut" 
+                                          }}
+                                        />
+                                      </a>
+                                    ) : (
+                                      <Link
+                                        href={link.href}
+                                        className="block text-slate-700 hover:text-[#ba4911] transition-colors font-medium pb-1"
+                                        onClick={closeMenu}
+                                      >
+                                        {link.label}
+                                        <motion.div
+                                          className="absolute bottom-0 left-0 h-0.5 bg-[#ba4911]"
+                                          initial={{ width: 0 }}
+                                          whileHover={{ width: "100%" }}
+                                          transition={{ 
+                                            duration: 0.3, 
+                                            ease: "easeInOut" 
+                                          }}
+                                        />
+                                      </Link>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {activeSection === "research" && (
+                            <div className="space-y-6">
+                              <div className="flex items-center gap-2">
+                                <h2 className="text-xl font-bold text-[#ba4911]">
+                                  {t("navigation.research")}
+                                </h2>
+                                <ChevronRight className="h-5 w-5 text-[#ba4911]" />
+                              </div>
+                              <p className="text-slate-500 text-sm leading-relaxed">
+                                {t("researchDescription")}
+                              </p>
+                              <div className="space-y-3">
+                                {overlayResearchLinks.map((link) => (
+                                  <div key={link.href} className="relative group">
+                                    <Link
+                                      href={link.href}
+                                      className="block text-slate-800 hover:text-[#ba4911] transition-colors pb-1"
+                                      onClick={closeMenu}
+                                    >
+                                      {link.label}
+                                      <motion.div
+                                        className="absolute bottom-0 left-0 h-0.5 bg-[#ba4911]"
+                                        initial={{ width: 0 }}
+                                        whileHover={{ width: "100%" }}
+                                        transition={{ 
+                                          duration: 0.3, 
+                                          ease: "easeInOut" 
+                                        }}
+                                      />
+                                    </Link>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {activeSection === "explore" && (
+                            <div className="space-y-6">
+                              <div className="flex items-center gap-2">
+                                <h2 className="text-xl font-bold text-[#ba4911]">
+                                  {t("exploreSit")}
+                                </h2>
+                                <ChevronRight className="h-5 w-5 text-[#ba4911]" />
+                              </div>
+                              <p className="text-slate-500 text-sm leading-relaxed">
+                                {t("exploreDescription")}
+                              </p>
+                              <div className="space-y-3">
+                                {overlayQuickLinks.map((link) => (
+                                  <div key={link.href} className="relative group">
+                                    <Link
+                                      href={link.href}
+                                      className="block text-slate-800 hover:text-[#ba4911] transition-colors pb-1"
+                                      onClick={closeMenu}
+                                    >
+                                      {link.label}
+                                      <motion.div
+                                        className="absolute bottom-0 left-0 h-0.5 bg-[#ba4911]"
+                                        initial={{ width: 0 }}
+                                        whileHover={{ width: "100%" }}
+                                        transition={{ 
+                                          duration: 0.3, 
+                                          ease: "easeInOut" 
+                                        }}
+                                      />
+                                    </Link>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </motion.div>
+                      </AnimatePresence>
+                    )}
                   </div>
 
-                  <div className="space-y-6">
-                    <p className="text-xs uppercase tracking-[0.35em] text-[#ba4911]">
-                      {t("navigation.students")}
-                    </p>
-                    <ul className="space-y-3 text-sm font-medium text-slate-900">
-                      {overlayStudentLinks.map((item) => (
-                        <li key={item.label}>
-                          {item.external ? (
-                            <a
-                              href={item.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2 hover:text-[#ba4911]"
-                              onClick={toggleMenu}
-                            >
-                              {item.label}
-                              <ExternalLink className="h-4 w-4" />
-                            </a>
-                          ) : (
-                            <Link
-                              href={item.href}
-                              className="hover:text-[#ba4911]"
-                              onClick={toggleMenu}
-                            >
-                              {item.label}
-                            </Link>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Column 3: Sub-Sub Menu */}
+                  <div className="w-1/3 pl-4">
+                    {activeSection === "programs" && activeProgramCategory && (
+                      <AnimatePresence mode="wait">
+                        <motion.div
+                          key={activeProgramCategory}
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -20 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          {programSections
+                            .filter((category) => category.id === activeProgramCategory)
+                            .map((category) => (
+                              <div key={category.id} className="space-y-6">
+                                <h2 className="text-xl font-bold text-[#ba4911]">
+                                  {category.title}
+                                </h2>
+                                <p className="text-slate-500 text-sm leading-relaxed">
+                                  {t("programsBrowseDescription")}
+                                </p>
+                                <div className="space-y-4">
+                                  {category.groups.map((group) => (
+                                    <div key={group.id} className="space-y-2">
+                                      <div className="relative group">
+                                        <Link
+                                          href={group.href}
+                                          className="block text-slate-800 font-semibold hover:text-[#ba4911] transition-colors text-base pb-1"
+                                          onClick={closeMenu}
+                                        >
+                                          {group.title}
+                                          <motion.div
+                                            className="absolute bottom-0 left-0 h-0.5 bg-[#ba4911]"
+                                            initial={{ width: 0 }}
+                                            whileHover={{ width: "100%" }}
+                                            transition={{ 
+                                              duration: 0.3, 
+                                              ease: "easeInOut" 
+                                            }}
+                                          />
+                                        </Link>
+                                      </div>
+                                      <ul className="space-y-1 ml-4">
+                                        {group.items.map((program) => (
+                                          <li key={`${group.id}-${program.code}`} className="relative group">
+                                            <Link
+                                              href={`${group.href}/${program.code}`}
+                                              className="block text-slate-600 hover:text-[#ba4911] transition-colors text-sm font-medium pb-1"
+                                              onClick={closeMenu}
+                                            >
+                                              {program.title}
+                                              <motion.div
+                                                className="absolute bottom-0 left-0 h-0.5 bg-[#ba4911]"
+                                                initial={{ width: 0 }}
+                                                whileHover={{ width: "100%" }}
+                                                transition={{ 
+                                                  duration: 0.3, 
+                                                  ease: "easeInOut" 
+                                                }}
+                                              />
+                                            </Link>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                        </motion.div>
+                      </AnimatePresence>
+                    )}
+                  </div>
+                </div>
 
-                    <div className="pt-6">
-                      <p className="text-xs uppercase tracking-[0.35em] text-[#ba4911]">
-                        {t("navigation.research")}
-                      </p>
-                      <ul className="mt-4 space-y-3 text-sm font-medium text-slate-900">
-                        {overlayResearchLinks.map((item) => (
-                          <li key={item.href}>
-                            <Link
-                              href={item.href}
-                              className="hover:text-[#ba4911]"
-                              onClick={toggleMenu}
-                            >
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                {/* Footer */}
+                <div className="border-t border-slate-200 px-8 py-6">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="text-slate-900 font-medium">{t("quickLinks")}</span>
+                      <ChevronRight className="h-4 w-4 text-slate-900" />
+                    </div>
+                    <div className="flex items-center gap-6 text-sm">
+                      <div className="relative group">
+                        <Link href={`${basePath}/about`} className="text-slate-600 hover:text-[#ba4911] transition-colors pb-1">
+                          {t("about")}
+                          <motion.div
+                            className="absolute bottom-0 left-0 h-0.5 bg-[#ba4911]"
+                            initial={{ width: 0 }}
+                            whileHover={{ width: "100%" }}
+                            transition={{ 
+                              duration: 0.3, 
+                              ease: "easeInOut" 
+                            }}
+                          />
+                        </Link>
+                      </div>
+                      <div className="relative group">
+                        <Link href={`${basePath}/news`} className="text-slate-600 hover:text-[#ba4911] transition-colors pb-1">
+                          {t("news")}
+                          <motion.div
+                            className="absolute bottom-0 left-0 h-0.5 bg-[#ba4911]"
+                            initial={{ width: 0 }}
+                            whileHover={{ width: "100%" }}
+                            transition={{ 
+                              duration: 0.3, 
+                              ease: "easeInOut" 
+                            }}
+                          />
+                        </Link>
+                      </div>
+                      <div className="relative group">
+                        <Link href={`${basePath}/research`} className="text-slate-600 hover:text-[#ba4911] transition-colors pb-1">
+                          {t("research")}
+                          <motion.div
+                            className="absolute bottom-0 left-0 h-0.5 bg-[#ba4911]"
+                            initial={{ width: 0 }}
+                            whileHover={{ width: "100%" }}
+                            transition={{ 
+                              duration: 0.3, 
+                              ease: "easeInOut" 
+                            }}
+                          />
+                        </Link>
+                      </div>
+                      <div className="relative group">
+                        <Link href={`${basePath}/students`} className="text-slate-600 hover:text-[#ba4911] transition-colors pb-1">
+                          {t("students")}
+                          <motion.div
+                            className="absolute bottom-0 left-0 h-0.5 bg-[#ba4911]"
+                            initial={{ width: 0 }}
+                            whileHover={{ width: "100%" }}
+                            transition={{ 
+                              duration: 0.3, 
+                              ease: "easeInOut" 
+                            }}
+                          />
+                        </Link>
+                      </div>
+                      <div className="relative group">
+                        <button
+                          onClick={() => window.open("https://calendly.com/sit-ttu", "_blank", "noopener,noreferrer")}
+                          className="text-slate-600 hover:text-[#ba4911] transition-colors pb-1"
+                        >
+                          {t("contactButton")}
+                          <motion.div
+                            className="absolute bottom-0 left-0 h-0.5 bg-[#ba4911]"
+                            initial={{ width: 0 }}
+                            whileHover={{ width: "100%" }}
+                            transition={{ 
+                              duration: 0.3, 
+                              ease: "easeInOut" 
+                            }}
+                          />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
