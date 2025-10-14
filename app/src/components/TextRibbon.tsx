@@ -46,7 +46,7 @@ const TextRibbon = ({
         
         {/* Scrolling content */}
         <motion.div
-          className="flex items-center gap-8 whitespace-nowrap"
+          className="flex items-center gap-10 whitespace-nowrap"
           animate={{
             x: direction === "left" ? "-50%" : "50%",
           }}
@@ -63,10 +63,10 @@ const TextRibbon = ({
           {duplicatedMessages.map((message, index) => (
             <motion.div
               key={index}
-              className="flex items-center gap-4 text-sm font-medium text-foreground"
+              className="flex items-center gap-8 text-sm font-medium text-foreground"
               whileHover={{ scale: 1.02 }}
             >
-              <span className="text-foreground">
+              <span className="text-foreground font-roboto-mono">
                 {message}
               </span>
               <div className="w-1 h-1 bg-primary/30 rounded-full" />

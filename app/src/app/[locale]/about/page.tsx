@@ -39,11 +39,11 @@ export default function AboutPage() {
               priority
             />
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-black/75"></div>
           </div>
           
           {/* Content */}
-          <div className="relative z-10 flex flex-col py-20 min-h-screen">
+          <div className="relative z-10 flex flex-col py-20">
             <div className="flex-1 flex items-center">
               <div className="max-w-7xl mx-auto px-6 w-full">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -55,7 +55,7 @@ export default function AboutPage() {
                     className="space-y-8"
                   >
                     {/* Title */}
-                    <h1 className="text-5xl md:text-7xl font-bold leading-tight font-sans text-white">
+                    <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white">
                       {t('subtitle')}
                     </h1>
                   
@@ -89,13 +89,13 @@ export default function AboutPage() {
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.5 }}
-                    className="relative"
+                    className="relative py-10"
                   >
                     {/* Vertical Line */}
-                    <div className="absolute left-0 top-0 bottom-0 w-px bg-white/30"></div>
+                    <div className="absolute left-0 top-0 bottom-0 w-px bg-white/60"></div>
                     
                     <div className="pl-12">
-                      <h2 className="text-sm font-bold text-white/80 tracking-wider uppercase mb-8">
+                      <h2 className="text-xl border border-white/70 bg-white/20 backdrop-blur rounded-full p-2 px-5 font-bold text-white/80 tracking-wider uppercase mb-8">
                         {t('whatWeDo')}
                       </h2>
                       

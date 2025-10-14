@@ -115,7 +115,7 @@ const Programs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="font-sans text-5xl md:text-6xl font-bold text-foreground mb-8 flex flex-col gap-3"
+            className=" text-5xl md:text-6xl font-bold text-foreground mb-8 flex flex-col gap-3"
           >
             {t("title")}
             <br />
@@ -186,7 +186,7 @@ const Programs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="font-sans text-4xl font-bold text-foreground mb-8"
+              className=" text-4xl font-bold text-foreground mb-8"
             >
               {t("whyChoose")}
             </motion.h3>
@@ -210,8 +210,8 @@ const Programs = () => {
                       <Icon className="w-4 h-4 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg text-foreground mb-2 font-sans">{feature.title}</h4>
-                      <p className="text-muted-foreground font-sans">{feature.description}</p>
+                      <h4 className="font-semibold text-lg text-foreground mb-2 ">{feature.title}</h4>
+                      <p className="text-muted-foreground ">{feature.description}</p>
                     </div>
                   </div>
                 );

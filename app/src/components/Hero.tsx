@@ -70,7 +70,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="pt-4"
           >
-            <span className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-orange text-white font-medium rounded-full text-sm shadow-glow font-sans">
+            <span className="inline-flex font-roboto-mono items-center gap-2 px-6 py-3 bg-gradient-orange text-white font-medium rounded-full text-sm shadow-glow">
               <Sparkles className="w-4 h-4" />
               {t("welcome")}
             </span>
@@ -81,10 +81,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight font-sans drop-shadow-lg"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight drop-shadow-lg"
           >
             {/* <span className="block mb-4">{t("title")}</span> */}
-            <span className="block text-white">
+            <span className="block text-white font-roboto-mono">
               {currentText}
               <motion.span
                 animate={{ opacity: [1, 0, 1] }}
@@ -101,7 +101,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-white text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light font-sans"
+            className="text-white text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed font-roboto-mono"
           >
             {t("subtitle")}
           </motion.p>
@@ -115,7 +115,7 @@ const Hero = () => {
           >
             <Button 
               size="lg" 
-              className="bg-gradient-orange hover:shadow-glow transition-all duration-300 font-sans shadow-lg"
+              className="bg-gradient-orange hover:shadow-glow transition-all duration-300 shadow-lg font-roboto-mono"
             >
               {t("explore")}
               <ArrowRight className="ml-2 w-4 h-4" />
@@ -123,7 +123,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-gray-900 transition-all duration-300 font-sans shadow-lg"
+              className="border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-gray-900 transition-all duration-300 shadow-lg font-roboto-mono"
             >
               <Play className="mr-2 w-4 h-4" />
               {t("watchVideo")}

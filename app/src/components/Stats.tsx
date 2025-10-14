@@ -28,7 +28,7 @@ const Stats = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-6"
+            className="text-4xl md:text-5xl font-bold mb-6"
           >
             {t("title")}
           </motion.h2>
@@ -37,7 +37,7 @@ const Stats = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-sans"
+            className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
           >
             {t("subtitle")}
           </motion.p>
@@ -86,7 +86,7 @@ const Stats = () => {
                 >
                   {stat.number}
                 </motion.div>
-                <div className="text-muted-foreground text-lg font-medium font-sans">{stat.label}</div>
+                <div className="text-muted-foreground text-lg font-medium">{stat.label}</div>
               </motion.div>
             );
           })}

@@ -53,23 +53,17 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <motion.div whileHover={{ scale: 1.02 }} className="flex">
-              <Link href={`/${currentLocale}`} className="flex flex-col items-center gap-2">
-                <div className="flex items-center gap-2">
-                  <img src="/assets/logo.png" alt="SIT" className="h-12 w-12 md:h-14 md:w-14" />
-                  <div className="flex flex-col text-center md:text-left gap-y-0.5">
-                    <span className="text-base md:text-lg font-semibold uppercase tracking-[0.2em] text-[#ba4911]">
-                      {t("university")}
-                    </span>
-                    <span className="h-[1.5px] w-full bg-[#ba4911]" />
-                    <span className="text-lg md:text-xl font-bold text-[#ba4911]">
-                      {t("faculty")}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-            <p className="text-muted-foreground mb-8 leading-relaxed mt-4">
+            <Link href={`/${currentLocale}`} className="flex items-center gap-2">
+              <img src="/assets/logo.png" alt="SIT" className="w-14 h-14" />
+              <div className="flex flex-col items-start gap-1">
+                <p className="text-[#ba4911] text-xl font-bold">
+                  {t("university")}
+                </p>
+                <div className="h-0.5 w-40 bg-primary"/>
+                <p className="text-lg text-[#ba4911] font-bold">{t("faculty")}</p>
+              </div>
+            </Link>
+            <p className="text-muted-foreground mb-8 leading-relaxed  mt-4">
               {t("slogan")}, TTU cam kết cung cấp giáo dục chất lượng cao 
               trong lĩnh vực công nghệ thông tin với triết lí "Khai phóng - học suốt đời".
             </p>
@@ -99,7 +93,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold text-xl mb-8 flex items-center gap-2">
+            <h4 className="font-semibold text-xl mb-8 flex items-center gap-2 ">
               <Sparkles className="h-5 w-5 text-primary" />
               {tFooter("quickLinks")}
             </h4>
@@ -234,6 +228,176 @@ const Footer = () => {
             {tFooter("copyright")}
           </p>
         </motion.div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+
+"use client"
+
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Facebook, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+
+const Footer = () => {
+  const t = useTranslations("header");
+  const tFooter = useTranslations("footer");
+
+  const quickLinks = tFooter.raw("links") as string[];
+  const programs = tFooter.raw("programs") as string[];
+
+  return (
+    <footer className="relative overflow-hidden border-t border-primary/20 bg-gradient-to-b from-background via-background to-primary/10 text-foreground">
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.1, 1] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-primary/15 blur-3xl"
+        />
+        <motion.div
+          animate={{ opacity: [0.3, 0.6, 0.3], scale: [1.1, 1.2, 1.1] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute -top-24 right-0 h-72 w-72 rounded-full bg-primary/10 blur-3xl"
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-16 pt-16 sm:px-10 lg:px-16">
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="relative overflow-hidden rounded-3xl border border-primary/15 bg-gradient-to-br from-primary/10 via-background to-background/80 px-8 py-12 md:px-14 md:py-16"
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,theme(colors.primary/20),transparent_55%)] opacity-60" />
+          <div className="relative flex flex-col gap-10 text-center md:flex-row md:items-center md:justify-between md:text-left">
+            <div className="space-y-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+                {t("university")}
+              </p>
+              <h2 className="text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
+                {t("faculty")}
+              </h2>
+              <p className="text-base text-muted-foreground md:max-w-xl">
+                {t("slogan")}
+              </p>
+            </div>
+            <div className="flex justify-center md:justify-end">
+              <Button className="group rounded-full px-8 py-6 text-base font-semibold">
+                {t("contact")}
+                <ArrowRight className="ml-3 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Button>
+            </div>
+          </div>
+        </motion.section>
+
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="mt-16 grid gap-12 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]"
+        >
+          <div className="space-y-10">
+            <div className="space-y-6">
+              <h3 className="text-lg font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+                {tFooter("contact")}
+              </h3>
+              <div className="space-y-5 text-left text-muted-foreground">
+                <div className="flex items-start gap-4">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 bg-primary/10">
+                    <MapPin className="h-5 w-5 text-primary" />
+                  </span>
+                  <p className="whitespace-pre-line text-sm leading-relaxed">
+                    {tFooter("address")}
+                  </p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 bg-primary/10">
+                    <Phone className="h-5 w-5 text-primary" />
+                  </span>
+                  <p className="text-sm font-semibold">{tFooter("phone")}</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-10 gap-y-4 text-xs font-semibold uppercase tracking-[0.4em] text-muted-foreground">
+              <span className="flex items-center gap-2">
+                <Facebook className="h-4 w-4" />
+                Facebook
+              </span>
+              <span className="flex items-center gap-2">
+                <Youtube className="h-4 w-4" />
+                Youtube
+              </span>
+              <span className="flex items-center gap-2">
+                <Mail className="h-4 w-4" />
+                Email
+              </span>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-start justify-between gap-8 rounded-3xl border border-primary/15 bg-background/60 p-10">
+            <div className="space-y-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
+                {tFooter("contact")}
+              </p>
+              <p className="text-3xl font-semibold text-foreground md:text-4xl">
+                {tFooter("email")}
+              </p>
+            </div>
+            <div className="space-y-3 text-sm text-muted-foreground">
+              <p>{tFooter("quickLinks")}</p>
+              <div className="flex flex-wrap gap-3 text-sm font-medium text-foreground/80">
+                {quickLinks.map((link, index) => (
+                  <span key={index} className="transition-colors hover:text-primary">
+                    {link}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-16 space-y-10 border-t border-primary/15 pt-10"
+        >
+          {/* <div className="grid gap-10 md:grid-cols-2">
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
+                {tFooter("quickLinks")}
+              </p>
+              <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted-foreground">
+                {quickLinks.map((link, index) => (
+                  <span key={index} className="font-medium uppercase tracking-wide text-foreground/80">
+                    {link}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
+                {tFooter("academicPrograms")}
+              </p>
+              <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted-foreground">
+                {programs.map((program, index) => (
+                  <span key={index} className="font-medium uppercase tracking-wide text-foreground/80">
+                    {program}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div> */}
+          <p className="text-center text-sm text-muted-foreground md:text-left">
+            {tFooter("copyright")}
+          </p>
+        </motion.section>
       </div>
     </footer>
   );

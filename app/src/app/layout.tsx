@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { Roboto_Mono, Roboto_Condensed } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
+const robotoCondensed = Roboto_Condensed({
+  variable: "--font-roboto-condensed",
   subsets: ["latin"],
+});
+
+const robotoMono = Roboto_Mono({
+  variable: "--font-roboto-mono",
+  subsets: ["latin"],
+  weight: ["400","500","600","700"],
 });
 
 export const metadata: Metadata = {
@@ -75,9 +82,10 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body
-        className={`${openSans.variable} antialiased`}
+        className={`${robotoCondensed.className} ${robotoMono.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
