@@ -76,10 +76,10 @@
     "title": "Dấu mốc chính",
     "subtitle": "Thông tin chính thức từ Đại học Tân Tạo và Khoa CNTT",
     "items": [
-      { "number": "2010", "label": "Đại học Tân Tạo thành lập" },
-      { "number": "2012", "label": "Thành lập Khoa Kỹ thuật" },
-      { "number": "2023", "label": "Chính thức mang tên Khoa CNTT" },
-      { "number": "100%", "label": "Sinh viên tham gia đề tài nghiên cứu" }
+      { "number": "2012", "label": "Khoa Công nghệ Thông tin thành lập" },
+      { "number": "18+", "label": "Đề tài nghiên cứu đang triển khai" },
+      { "number": "30+", "label": "Bài báo khoa học" },
+      { "number": "80+", "label": "Tổng số sinh viên đang học" }
     ]
   },
   "programs": {
@@ -457,13 +457,13 @@
     "transparentEnvironmentDescription": "SIT duy trì môi trường làm việc cởi mở, minh bạch, tạo điều kiện để mỗi thành viên phát huy năng lực với sinh viên là trung tâm.",
     "readyToStart": "Sẵn sàng bắt đầu cùng chúng tôi?",
     "joinEcosystem": "Tham gia hệ sinh thái học tập của SIT. Liên hệ ngay",
-    "explorePrograms": "Khám phá chương trình",
+    "explorePrograms": "Thông tin thêm về SIT",
     "contactUs": "Liên hệ tư vấn",
     "history": "Lịch sử hình thành",
     "historyText": "Khoa Công nghệ Thông tin tiền thân là Khoa Kỹ thuật, thành lập theo Quyết định 82/QĐ.TTU.12 ngày 04.01.2012 để đào tạo ngành Khoa học Máy tính. Từ ngày 01.06.2023, tên gọi “Khoa Công nghệ Thông tin” được chính thức áp dụng theo Quyết định 70/QĐ-TTU.23 của Hiệu trưởng ĐHTT.",
     "faculty": "Đội ngũ giảng viên",
     "facultyText": "Đội ngũ giảng viên gồm giảng viên cơ hữu và thỉnh giảng; giảng viên cơ hữu đều có trình độ tiến sĩ từ các đại học uy tín trong nước và quốc tế (Úc, Pháp, Mỹ, Nhật Bản,...).",
-    "mission": "Sứ mạng",
+    "mission": "Sứ Mệnh",
     "missionText": "Đào tạo và bồi dưỡng nguồn nhân lực Công nghệ Thông tin, Khoa học Máy tính chất lượng cao; nghiên cứu và ứng dụng công nghệ; tiên phong triển khai mô hình khai phóng - học suốt đời theo chuẩn khu vực và quốc tế.",
     "vision": "Tầm nhìn",
     "visionText": "Đến năm 2030, Khoa CNTT hướng tới vị thế cơ sở hàng đầu Việt Nam về đào tạo, nghiên cứu và chuyển giao trong lĩnh vực CNTT & KHMT, với chương trình được kiểm định và mạng lưới hợp tác rộng khắp trong, ngoài nước.",
@@ -670,7 +670,7 @@
     "description": "Mạng lưới alumni cố vấn sinh viên, đồng xây dựng học phần và mở rộng cơ hội toàn cầu.",
     "impact": [
       {
-        "value": "500+",
+        "value": "20+",
         "label": "Cựu sinh viên hoạt động",
         "description": "Tại Việt Nam, Singapore, Hoa Kỳ và châu Âu"
       },

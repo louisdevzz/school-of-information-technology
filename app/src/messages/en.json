@@ -76,10 +76,10 @@
     "title": "Key milestones",
     "subtitle": "Official highlights from Tan Tao University and SIT",
     "items": [
-      { "number": "2010", "label": "Tan Tao University established" },
-      { "number": "2012", "label": "Engineering faculty founded" },
-      { "number": "2023", "label": "Renamed School of Information Technology" },
-      { "number": "100%", "label": "Students join faculty-led research projects" }
+      { "number": "2012", "label": "School of Information Technology founded" },
+      { "number": "18+", "label": "Active research projects" },
+      { "number": "30+", "label": "Scientific publications" },
+      { "number": "80+", "label": "Total enrolled students" }
     ]
   },
   "programs": {
@@ -457,7 +457,7 @@
     "transparentEnvironmentDescription": "SIT builds an open, transparent workplace that enables every member to maximise their potential while keeping students at the centre.",
     "readyToStart": "Ready to start with us?",
     "joinEcosystem": "Join SIT's learning ecosystem. Contact us today.",
-    "explorePrograms": "Explore Programs",
+    "explorePrograms": "More information about SIT",
     "contactUs": "Contact Us",
     "history": "Our History",
     "historyText": "The School of Information Technology originated from the Faculty of Engineering, established on 4 January 2012 (Decision No. 82/QD.TTU.12) to deliver Computer Science programmes. The title “School of Information Technology” became official on 1 June 2023 under Decision No. 70/QD-TTU.23.",
@@ -670,7 +670,7 @@
     "description": "Our alumni community mentors students, co-develops curricula and opens doors to global opportunities.",
     "impact": [
       {
-        "value": "500+",
+        "value": "20+",
         "label": "Active alumni",
         "description": "Across Vietnam, Singapore, the US and Europe"
       },

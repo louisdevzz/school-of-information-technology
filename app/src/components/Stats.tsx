@@ -1,16 +1,36 @@
 "use client";
 
-import { Target, Zap, Sparkles, GraduationCap } from "lucide-react";
+import { Calendar, BookOpen, FileText, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 const Stats = () => {
   const t = useTranslations("stats");
   const stats = [
-    { number: "2005", label: t("items.0.label") },
-    { number: "15,000+", label: t("items.1.label") },
-    { number: "500+", label: t("items.2.label") },
-    { number: "50+", label: t("items.3.label") }
+    { 
+      number: "2011", 
+      label: t("items.0.label"),
+      icon: Calendar,
+      size: "large" // Top-left, spans 2 rows
+    },
+    { 
+      number: "18+", 
+      label: t("items.1.label"),
+      icon: BookOpen,
+      size: "medium" // Top-middle
+    },
+    { 
+      number: "40+", 
+      label: t("items.2.label"),
+      icon: FileText,
+      size: "medium" // Top-right
+    },
+    { 
+      number: "80+", 
+      label: t("items.3.label"),
+      icon: Users,
+      size: "large" // Bottom-right, spans 2 columns
+    }
   ];
 
   return (
@@ -48,11 +68,14 @@ const Stats = () => {
           whileInView={{ opacity: 1 }}
           transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8"
+          className="grid grid-cols-3 grid-rows-2 gap-6 max-w-6xl mx-auto"
         >
           {stats.map((stat, index) => {
-            const icons = [Target, Zap, Sparkles, GraduationCap];
-            const Icon = icons[index];
+            const Icon = stat.icon;
+            const isLarge = stat.size === "large";
+            const isFirst = index === 0; // Calendar - spans 2 rows
+            const isLast = index === 3; // Users - spans 2 columns
+            
             return (
               <motion.div
                 key={index}
@@ -62,31 +85,56 @@ const Stats = () => {
                   duration: 0.6, 
                   delay: 0.5 + index * 0.1
                 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="text-center group"
+                whileHover={{ scale: 1.02, y: -2 }}
+                className={`
+                  bg-gradient-to-br from-white to-gray-50 
+                  rounded-2xl p-8 shadow-lg border border-gray-100
+                  group cursor-pointer relative overflow-hidden
+                  ${isFirst ? 'row-span-2' : ''}
+                  ${isLast ? 'col-span-2' : ''}
+                  hover:shadow-xl transition-all duration-300
+                `}
               >
-                <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                  className="w-20 h-20 bg-gradient-orange rounded-full flex items-center justify-center mx-auto mb-6 shadow-glow"
-                >
-                  <Icon className="w-10 h-10 text-white" />
-                </motion.div>
-                <motion.div 
-                  className="text-5xl md:text-6xl font-bold text-primary mb-3"
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: 0.7 + index * 0.1,
-                    type: "spring",
-                    stiffness: 200
-                  }}
-                  viewport={{ once: true }}
-                >
-                  {stat.number}
-                </motion.div>
-                <div className="text-muted-foreground text-lg font-medium">{stat.label}</div>
+                {/* Background decoration */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-100 to-transparent rounded-full opacity-20"></div>
+                
+                <div className="relative z-10">
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                    className={`
+                      ${isLarge ? 'w-24 h-24' : 'w-16 h-16'} 
+                      bg-gradient-orange rounded-full flex items-center justify-center mb-6 shadow-glow
+                    `}
+                  >
+                    <Icon className={`${isLarge ? 'w-12 h-12' : 'w-8 h-8'} text-white`} />
+                  </motion.div>
+                  
+                  <motion.div 
+                    className={`
+                      ${isLarge ? 'text-6xl md:text-7xl' : 'text-4xl md:text-5xl'} 
+                      font-bold text-primary mb-4
+                    `}
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ 
+                      duration: 0.5, 
+                      delay: 0.7 + index * 0.1,
+                      type: "spring",
+                      stiffness: 200
+                    }}
+                    viewport={{ once: true }}
+                  >
+                    {stat.number}
+                  </motion.div>
+                  
+                  <div className={`
+                    text-muted-foreground font-medium leading-tight
+                    ${isLarge ? 'text-lg' : 'text-base'}
+                  `}>
+                    {stat.label}
+                  </div>
+                </div>
               </motion.div>
             );
           })}

@@ -41,7 +41,7 @@ const Hero = () => {
 
   return (
     <section 
-      className="relative pb-20 flex justify-center overflow-hidden bg-white pt-12 min-h-[calc(100vh)]"
+      className="relative pb-20 flex justify-center overflow-hidden bg-white pt-20 min-h-[calc(100vh-150px)]"
       style={{
         backgroundImage: 'url(/assets/banner-KT2.png)',
         backgroundSize: 'cover',

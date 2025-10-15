@@ -115,7 +115,7 @@ const Programs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className=" text-5xl md:text-6xl font-bold text-foreground mb-8 flex flex-col gap-3"
+            className="text-5xl md:text-6xl font-bold text-foreground mb-8 flex flex-col gap-3"
           >
             {t("title")}
             <br />

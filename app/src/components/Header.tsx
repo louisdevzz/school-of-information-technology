@@ -160,7 +160,7 @@ const Header = () => {
     <motion.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ 
-        y: scrollDirection === 'down' ? -200 : 0, 
+        y: scrollDirection === 'down' ? -45 : 0, 
         opacity: 1
       }}
       transition={{ 
