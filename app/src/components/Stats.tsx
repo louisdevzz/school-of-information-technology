@@ -8,28 +8,28 @@ const Stats = () => {
   const t = useTranslations("stats");
   const stats = [
     { 
-      number: "2011", 
-      label: t("items.0.label"),
-      icon: Calendar,
-      size: "large" // Top-left, spans 2 rows
-    },
-    { 
       number: "18+", 
       label: t("items.1.label"),
       icon: BookOpen,
-      size: "medium" // Top-middle
+      size: "medium" // Top-left
     },
     { 
       number: "40+", 
       label: t("items.2.label"),
       icon: FileText,
+      size: "medium" // Top-middle
+    },
+    { 
+      number: "2011", 
+      label: t("items.0.label"),
+      icon: Calendar,
       size: "medium" // Top-right
     },
     { 
       number: "80+", 
       label: t("items.3.label"),
       icon: Users,
-      size: "large" // Bottom-right, spans 2 columns
+      size: "medium" // Bottom-left
     }
   ];
 
@@ -68,76 +68,82 @@ const Stats = () => {
           whileInView={{ opacity: 1 }}
           transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
           viewport={{ once: true }}
-          className="grid grid-cols-3 grid-rows-2 gap-6 max-w-6xl mx-auto"
+          className="flex flex-row-reverse gap-10 max-w-7xl mx-auto"
         >
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            const isLarge = stat.size === "large";
-            const isFirst = index === 0; // Calendar - spans 2 rows
-            const isLast = index === 3; // Users - spans 2 columns
-            
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: 0.5 + index * 0.1
-                }}
-                whileHover={{ scale: 1.02, y: -2 }}
-                className={`
-                  bg-gradient-to-br from-white to-gray-50 
-                  rounded-2xl p-8 shadow-lg border border-gray-100
-                  group cursor-pointer relative overflow-hidden
-                  ${isFirst ? 'row-span-2' : ''}
-                  ${isLast ? 'col-span-2' : ''}
-                  hover:shadow-xl transition-all duration-300
-                `}
-              >
-                {/* Background decoration */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-100 to-transparent rounded-full opacity-20"></div>
-                
-                <div className="relative z-10">
-                  <motion.div
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                    className={`
-                      ${isLarge ? 'w-24 h-24' : 'w-16 h-16'} 
-                      bg-gradient-orange rounded-full flex items-center justify-center mb-6 shadow-glow
-                    `}
-                  >
-                    <Icon className={`${isLarge ? 'w-12 h-12' : 'w-8 h-8'} text-white`} />
-                  </motion.div>
+          {/* Image in last column spanning 2 rows */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="flex items-center justify-center"
+          >
+            <img 
+              src="/intro-no-bg.gif" 
+              alt="SIT Introduction" 
+              className="w-full h-[450px] object-cover rounded-2xl"
+            />
+          </motion.div>
+          
+          <div className="grid grid-cols-2 gap-4">
+            {stats.map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: 0.6 + index * 0.1
+                  }}
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  className={`
+                    bg-gradient-to-br from-white to-gray-50 
+                    rounded-2xl p-4 border border-border
+                    group cursor-pointer relative overflow-hidden transition-all duration-300
+                  `}
+                >
+                  {/* Background decoration */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-100 to-transparent rounded-full opacity-20"></div>
                   
-                  <motion.div 
-                    className={`
-                      ${isLarge ? 'text-6xl md:text-7xl' : 'text-4xl md:text-5xl'} 
-                      font-bold text-primary mb-4
-                    `}
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ 
-                      duration: 0.5, 
-                      delay: 0.7 + index * 0.1,
-                      type: "spring",
-                      stiffness: 200
-                    }}
-                    viewport={{ once: true }}
-                  >
-                    {stat.number}
-                  </motion.div>
-                  
-                  <div className={`
-                    text-muted-foreground font-medium leading-tight
-                    ${isLarge ? 'text-lg' : 'text-base'}
-                  `}>
-                    {stat.label}
+                  <div className="relative z-10">
+                    <motion.div
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                      className={`w-14 h-14 bg-gradient-orange rounded-full flex items-center justify-center mb-6 shadow-glow
+                      `}
+                    >
+                      <Icon className={`w-6 h-6 text-white`} />
+                    </motion.div>
+                    
+                    <motion.div 
+                      className={`
+                        text-2xl md:text-4xl
+                        font-bold text-primary mb-4
+                      `}
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ 
+                        duration: 0.5, 
+                        delay: 0.7 + index * 0.1,
+                        type: "spring",
+                        stiffness: 200
+                      }}
+                      viewport={{ once: true }}
+                    >
+                      {stat.number}
+                    </motion.div>
+                    
+                    <div className={`
+                      text-muted-foreground font-medium leading-tight
+                    `}>
+                      {stat.label}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            );
-          })}
+                </motion.div>
+              );
+            })}
+          </div>
         </motion.div>
       </div>
     </section>

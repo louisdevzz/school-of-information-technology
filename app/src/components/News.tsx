@@ -33,7 +33,6 @@ export default function News() {
     restDelta: 0.001
   });
 
-  // Calculate which item should be active based on scroll position
   useEffect(() => {
     const unsubscribe = smoothProgress.on("change", (latest) => {
       const itemCount = newsItems.length;
@@ -48,7 +47,7 @@ export default function News() {
   }, [smoothProgress, newsItems.length]);
 
   return (
-    <section className="relative min-h-screen bg-gradient-subtle py-20">
+    <section className="relative min-h-screen py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
