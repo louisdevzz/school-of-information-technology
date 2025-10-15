@@ -41,7 +41,7 @@ const Hero = () => {
 
   return (
     <section 
-      className="relative pb-20 flex justify-center overflow-hidden bg-white pt-10 min-h-[calc(100vh-200px)]"
+      className="relative pb-20 flex justify-center overflow-hidden bg-white pt-20 min-h-[calc(100vh)]"
       style={{
         backgroundImage: 'url(/assets/banner-KT2.png)',
         backgroundSize: 'cover',
@@ -115,7 +115,7 @@ const Hero = () => {
           >
             <Button 
               size="lg" 
-              className="bg-gradient-orange hover:shadow-glow transition-all duration-300 shadow-lg font-roboto-mono"
+              className="bg-gradient-orange hover:shadow-glow hover:bg-gradient-orange/20 transition-all duration-300 shadow-lg font-roboto-mono cursor-pointer"
             >
               {t("explore")}
               <ArrowRight className="ml-2 w-4 h-4" />
@@ -123,7 +123,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-gray-900 transition-all duration-300 shadow-lg font-roboto-mono"
+              className="border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-gray-900 transition-all duration-300 shadow-lg font-roboto-mono cursor-pointer"
             >
               <Play className="mr-2 w-4 h-4" />
               {t("watchVideo")}

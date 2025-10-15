@@ -184,9 +184,14 @@ const Footer = () => {
                   <MapPin className="h-5 w-5 text-primary" />
                 </motion.div>
                 <div>
-                  <p className="text-muted-foreground leading-relaxed  whitespace-pre-line">
+                <a 
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(tFooter("address"))}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground leading-relaxed whitespace-pre-line hover:text-[#ba4911]/80 transition-colors cursor-pointer block"
+                  >
                     {tFooter("address")}
-                  </p>
+                  </a>
                 </div>
               </motion.div>
               <motion.div 
@@ -202,7 +207,7 @@ const Footer = () => {
                 >
                   <Phone className="h-5 w-5 text-primary" />
                 </motion.div>
-                <span className="text-muted-foreground font-medium ">{tFooter("phone")}</span>
+                <a href={`tel:${tFooter("phone")}`} className="text-muted-foreground font-medium hover:text-[#ba4911]/80 transition-colors cursor-pointer">{tFooter("phone")}</a>
               </motion.div>
               <motion.div 
                 initial={{ opacity: 0, x: -20 }}
@@ -217,7 +222,7 @@ const Footer = () => {
                 >
                   <Mail className="h-5 w-5 text-primary" />
                 </motion.div>
-                <span className="text-muted-foreground font-medium ">{tFooter("email")}</span>
+                <a href={`mailto:${tFooter("email")}`} className="text-muted-foreground font-medium hover:text-[#ba4911]/80 transition-colors cursor-pointer">{tFooter("email")}</a>
               </motion.div>
             </div>
           </motion.div>

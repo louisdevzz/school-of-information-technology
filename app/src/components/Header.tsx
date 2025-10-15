@@ -8,11 +8,13 @@ import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useScrollDirection } from "@/hooks/use-scroll-direction";
 
 const Header = () => {
   const t = useTranslations("header");
   const tPrograms = useTranslations("programs");
   const pathname = usePathname();
+  const scrollDirection = useScrollDirection();
   const localeSegments = pathname.split("/").filter(Boolean);
   const localeCandidate = localeSegments[0];
   const locale = localeCandidate === "vi" || localeCandidate === "en" ? localeCandidate : "vi";
@@ -157,8 +159,14 @@ const Header = () => {
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      animate={{ 
+        y: scrollDirection === 'down' ? -200 : 0, 
+        opacity: 1
+      }}
+      transition={{ 
+        duration: 0.3, 
+        ease: "easeInOut"
+      }}
       className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-primary/20 shadow-sm"
     >
       <div className="px-4 md:px-8">
@@ -167,18 +175,24 @@ const Header = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="flex flex-col gap-2 border-b border-primary/20 py-2 text-xs uppercase tracking-[0.2em] text-[#ba4911]"
+            className="flex flex-col gap-2 border-b border-primary/20 py-1 text-xs uppercase tracking-[0.2em] text-[#ba4911]"
           >
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex flex-wrap items-center gap-6">
-                <span className="flex items-center gap-2 font-semibold">
+                <a 
+                  href={`tel:${t("phone")}`}
+                  className="flex items-center gap-2 font-semibold hover:text-[#ba4911]/80 transition-colors cursor-pointer"
+                >
                   <Phone className="h-3.5 w-3.5" />
                   {t("phone")}
-                </span>
-                <span className="flex items-center gap-2 font-semibold">
+                </a>
+                <a 
+                  href={`mailto:${t("email")}`}
+                  className="flex items-center gap-2 font-semibold hover:text-[#ba4911]/80 transition-colors cursor-pointer"
+                >
                   <Mail className="h-3.5 w-3.5" />
                   {t("email")}
-                </span>
+                </a>
               </div>
               <div className="flex items-center gap-4 text-[0.7rem]">
                 <span className="hidden sm:inline-flex font-semibold  ">
@@ -189,7 +203,7 @@ const Header = () => {
             </div>
           </motion.div>
 
-          <div className="flex flex-row justify-between gap-4 py-5">
+          <div className="flex flex-row justify-between gap-4 py-2">
             <motion.div whileHover={{ scale: 1.02 }} className="flex">
               <Link href={basePath} className="flex flex-col items-center gap-2">
                 <div className="flex items-center gap-2">

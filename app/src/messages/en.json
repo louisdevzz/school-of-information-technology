@@ -6,7 +6,7 @@
   },
   "header": {
     "phone": "+84 272 376 9216",
-    "email": "info@ttu.edu.vn",
+    "email": "sit@ttu.edu.vn",
     "slogan": "Accompanying the Industry 4.0 technology revolution",
     "university": "Tan Tao University",
     "faculty": "School of Information Technology",
@@ -496,7 +496,7 @@
     "deanName": "Dr. Cao Tien Dung",
     "contact": "Contact Information",
     "phone": "+84 272 376 9216",
-    "email": "info@ttu.edu.vn"
+    "email": "sit@ttu.edu.vn"
   },
   "students": {
     "badge": "Student life",
@@ -1041,9 +1041,9 @@
       "Bachelor of Data Science",
       "Master of Computer Science"
     ],
-    "address": "Tan Tao University, Tan Duc E.City, Duc Hoa District,\nLong An Province, Vietnam",
+    "address": "Tan Tao University Avenue, Tan Duc E.City, Duc Hoa Commune, Tay Ninh Province",
     "phone": "+84 272 376 9216",
-    "email": "info@ttu.edu.vn",
+    "email": "sit@ttu.edu.vn",
     "copyright": "© 2025 Tan Tao University – School of Information Technology."
   }
 }
