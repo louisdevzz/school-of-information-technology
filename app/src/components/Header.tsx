@@ -181,7 +181,7 @@ const Header = () => {
                 </span>
               </div>
               <div className="flex items-center gap-4 text-[0.7rem]">
-                <span className="hidden sm:inline-flex font-semibold tracking-[0.3em]">
+                <span className="hidden sm:inline-flex font-semibold  ">
                   {t("slogan")}
                 </span>
                 <LanguageSwitcher />

@@ -10,25 +10,15 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <motion.div 
+    <motion.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      className="min-h-screen bg-background"
+      transition={{ duration: 0.8, delay: 0.2 }}
     >
-      <Header />
-      <TextRibbon />
-      <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        <Hero />
-        <Stats />
-        <Programs />
-      </motion.main>
-      <Footer />
-    </motion.div>
+      <Hero />
+      <Stats />
+      <Programs />
+    </motion.main>
   );
 };
 
