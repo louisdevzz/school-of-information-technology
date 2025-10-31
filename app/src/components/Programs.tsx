@@ -65,7 +65,7 @@ const Programs = () => {
   }));
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
@@ -95,7 +95,7 @@ const Programs = () => {
         />
       </div>
 
-      <div className="w-full px-10 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-10 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -115,7 +115,7 @@ const Programs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold text-foreground mb-8 flex flex-col gap-3"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-8 flex flex-col gap-3"
           >
             {t("title")}
             <br />
@@ -126,7 +126,7 @@ const Programs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed"
           >
             {t("subtitle")}
           </motion.p>
@@ -137,7 +137,7 @@ const Programs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="grid lg:grid-cols-2 gap-16 items-center mb-20"
+          className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20"
         >
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -186,7 +186,7 @@ const Programs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="text-5xl font-bold text-foreground mb-8"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-8"
             >
               {t("whyChoose")}
             </motion.h3>
@@ -210,8 +210,8 @@ const Programs = () => {
                       <Icon className="w-4 h-4 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-xl text-foreground mb-2 ">{feature.title}</h4>
-                      <p className="text-muted-foreground text-lg">{feature.description}</p>
+                      <h4 className="font-semibold text-lg sm:text-xl text-foreground mb-2 ">{feature.title}</h4>
+                      <p className="text-muted-foreground text-base sm:text-lg">{feature.description}</p>
                     </div>
                   </div>
                 );
@@ -225,7 +225,7 @@ const Programs = () => {
           whileInView={{ opacity: 1 }}
           transition={{ staggerChildren: 0.15, delayChildren: 0.5 }}
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
         >
           {programs.map((program, index) => {
             return (
@@ -304,7 +304,7 @@ const Programs = () => {
             <Button 
               variant="default" 
               size="lg"
-              className="bg-gradient-orange hover:shadow-glow px-12 py-6 text-lg border-2 border-primary/20 hover:border-primary/40"
+              className="bg-gradient-orange hover:shadow-glow px-8 sm:px-12 py-5 text-base sm:text-lg border-2 border-primary/20 hover:border-primary/40"
             >
               <Zap className="mr-3 h-6 w-6" />
               {t("viewAll")}

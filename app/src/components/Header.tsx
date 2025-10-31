@@ -169,16 +169,16 @@ const Header = () => {
       }}
       className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-primary/20 shadow-sm"
     >
-      <div className="px-4 md:px-8">
+      <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="flex flex-col gap-2 border-b border-primary/20 py-1 text-xs uppercase tracking-[0.2em] text-[#ba4911]"
+            className="flex flex-col gap-2 border-b border-primary/20 py-2 text-[0.65rem] sm:text-xs uppercase tracking-[0.2em] text-[#ba4911]"
           >
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <div className="flex flex-wrap items-center gap-6">
+            <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-3">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6">
                 <a 
                   href={`tel:${t("phone")}`}
                   className="flex items-center gap-2 font-semibold hover:text-[#ba4911]/80 transition-colors cursor-pointer"
@@ -203,52 +203,73 @@ const Header = () => {
             </div>
           </motion.div>
 
-          <div className="flex flex-row justify-between gap-4 py-2">
+          <div className="flex flex-row items-center justify-between gap-2 sm:gap-4 py-3">
             <motion.div whileHover={{ scale: 1.02 }} className="flex">
-              <Link href={basePath} className="flex flex-col items-center gap-2">
+              <Link href={basePath} className="flex flex-col items-center gap-1">
                 <div className="flex items-center gap-2">
-                  <img src="/assets/logo.png" alt="SIT" className="h-12 w-12 md:h-14 md:w-14" />
+                  <img
+                    src="/assets/logo.png"
+                    alt="SIT"
+                    className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14"
+                  />
                   <div className="flex flex-col text-center md:text-left gap-y-0.5">
-                    <span className="text-base md:text-lg font-semibold uppercase tracking-[0.2em] text-[#ba4911]">
+                    <span className="text-sm sm:text-base md:text-lg font-semibold uppercase tracking-[0.16em] sm:tracking-[0.2em] text-[#ba4911]">
                       {t("university")}
                     </span>
-                    <span className="h-[1.5px] w-full bg-[#ba4911]" />
-                    <span className="text-lg md:text-xl font-bold text-[#ba4911]">
+                    <span className="h-[1.2px] sm:h-[1.5px] w-full bg-[#ba4911]" />
+                    <span className="text-base sm:text-lg md:text-xl font-bold text-[#ba4911]">
                       {t("faculty")}
                     </span>
                   </div>
                 </div>
               </Link>
             </motion.div>
-            <div className="flex items-center gap-2">
+            <div className="flex w-auto flex-row items-center gap-1 sm:gap-2 md:gap-3 ml-auto">
+              {/* Nút tuyển sinh - chỉ trên md trở lên */}
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="hidden md:inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#ba4911] border border-[#ba4911] transition-colors hover:bg-[#ba4911]/10 cursor-pointer"
-                onClick={() => window.open("https://tuyensinh.ttu.edu.vn/", "_blank", "noopener,noreferrer")}
+                className="hidden md:inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#ba4911] border border-[#ba4911] transition-colors hover:bg-[#ba4911]/10 cursor-pointer"
+                onClick={() =>
+                  window.open(
+                    "https://tuyensinh.ttu.edu.vn/",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
               >
                 {t("navigation.studentsAdmissions")}
               </motion.button>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="ghost" size="icon" className="hover:bg-[#ba4911]/80 bg-[#ba4911] text-white cursor-pointer w-full p-4 px-6 rounded-full">
-                  <Search className="h-5 w-5 text-white" />
-                  <span className="text-white">{t("search")}</span>
-                </Button>
-              </motion.div>
+              {/* Nút search: Trên mobile sẽ chỉ là icon, đủ lớn cho chạm ngón tay */}
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="hover:bg-[#ba4911]/80 bg-[#ba4911] text-white cursor-pointer w-full p-4 px-6 rounded-full"
+                  className="hover:bg-[#ba4911]/10 md:hover:bg-[#ba4911]/80 md:bg-[#ba4911] md:text-white cursor-pointer flex items-center justify-center w-10 h-10 sm:w-auto sm:h-auto md:px-5 md:py-3 rounded-full gap-2"
+                >
+                  <Search className="h-5 w-5 text-[#ba4911] md:text-white" />
+                  <span className="hidden md:inline text-sm font-semibold text-white">
+                    {t("search")}
+                  </span>
+                </Button>
+              </motion.div>
+              {/* Nút menu: nổi bật, dùng icon và chữ, chữ chỉ hiện khi đủ lớn */}
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="hover:bg-[#ba4911]/10 md:hover:bg-[#ba4911]/80 md:bg-[#ba4911] md:text-white cursor-pointer flex items-center justify-center w-10 h-10 sm:w-auto sm:h-auto md:px-5 md:py-3 rounded-full gap-2"
                   onClick={toggleMenu}
                   aria-expanded={isMenuOpen}
                   aria-label="Toggle menu"
                 >
-                  <Menu className="h-5 w-5 text-white" />
-                  <span className="text-white">{t("menu")}</span>
+                  <Menu className="h-5 w-5 text-[#ba4911] md:text-white" />
+                  <span className="hidden md:inline text-sm font-semibold text-white">
+                    {t("menu")}
+                  </span>
                 </Button>
               </motion.div>
-              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -270,10 +291,10 @@ const Header = () => {
               transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
               className="fixed top-0 left-0 right-0 z-[50] h-screen bg-white text-slate-900"
             >
-              
-              <div className="relative flex h-full flex-col">
+
+              <div className="relative flex h-full flex-col overflow-hidden">
                 {/* Header */}
-                <div className="flex items-center justify-between border-b border-slate-200 px-8 py-4">
+                <div className="flex items-center justify-between border-b border-slate-200 px-4 sm:px-8 py-4">
                   <div className="flex items-center gap-2">
                     <img src="/assets/logo.png" alt="SIT" className="h-10 w-10" />
                     <div className="flex flex-col gap-y-0.5">
@@ -297,10 +318,10 @@ const Header = () => {
                   </div>
                 </div>
 
-                {/* Main Content - 3 Column Layout */}
-                <div className="flex flex-1 px-8 py-8">
+                {/* Main Content - Responsive Layout */}
+                <div className="flex flex-1 flex-col gap-8 overflow-y-auto px-4 sm:px-8 py-6 lg:flex-row lg:py-8">
                   {/* Column 1: Main Menu */}
-                  <div className="w-1/3 pr-8">
+                  <div className="w-full lg:w-1/3 lg:pr-8">
                     <div className="space-y-6">
                       {menuSections.map((section) => (
                         <button
@@ -330,7 +351,7 @@ const Header = () => {
                   </div>
 
                   {/* Column 2: Sub Menu */}
-                  <div className="w-1/3 px-4">
+                  <div className="w-full lg:w-1/3 lg:px-4">
                     {activeSection && (
                       <AnimatePresence mode="wait">
                         <motion.div
@@ -514,7 +535,7 @@ const Header = () => {
                   </div>
 
                   {/* Column 3: Sub-Sub Menu */}
-                  <div className="w-1/3 pl-4">
+                  <div className="w-full lg:w-1/3 lg:pl-4">
                     {activeSection === "programs" && activeProgramCategory && (
                       <AnimatePresence mode="wait">
                         <motion.div
@@ -589,13 +610,13 @@ const Header = () => {
                 </div>
 
                 {/* Footer */}
-                <div className="border-t border-slate-200 px-8 py-6">
-                  <div className="flex items-center justify-between">
+                <div className="border-t border-slate-200 px-4 sm:px-8 py-6">
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div className="flex items-center gap-2">
                       <span className="text-slate-900 font-medium">{t("quickLinks")}</span>
                       <ChevronRight className="h-4 w-4 text-slate-900" />
                     </div>
-                    <div className="flex items-center gap-6 text-sm">
+                    <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm">
                       <div className="relative group">
                         <Link href={`${basePath}/about`} className="text-slate-600 hover:text-[#ba4911] transition-colors pb-1">
                           {t("about")}

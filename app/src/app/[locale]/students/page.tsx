@@ -209,10 +209,10 @@ export default function StudentsPage() {
           {t('ctaDescription') ?? 'Become part of a vibrant community of future technology leaders.'}
         </p>
         <div className="flex flex-col gap-4 sm:flex-row">
-          <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90 px-8 py-3">
+          <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-white/10 px-8 py-3">
             {t('ctaPrimary') ?? 'Apply Now'}
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-3">
+          <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-white/10 px-8 py-3">
             {t('ctaSecondary') ?? 'Learn More'}
           </Button>
         </div>

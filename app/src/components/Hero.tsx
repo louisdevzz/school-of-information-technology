@@ -41,7 +41,7 @@ const Hero = () => {
 
   return (
     <section 
-      className="relative pb-20 flex justify-center overflow-hidden bg-white pt-20 min-h-[calc(100vh-150px)]"
+      className="relative flex justify-center overflow-hidden bg-white pt-16 pb-16 sm:pt-20 sm:pb-20 min-h-[calc(100vh-120px)] sm:min-h-[calc(100vh-150px)]"
       style={{
         backgroundImage: 'url(/assets/banner-KT2.png)',
         backgroundSize: 'cover',
@@ -55,20 +55,20 @@ const Hero = () => {
       {/* Main Content */}
       <motion.div 
         style={{ y, opacity }}
-        className="relative z-10 w-full max-w-6xl px-6 text-center"
+        className="relative z-10 w-full max-w-5xl px-4 sm:px-6 text-center"
       >
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8"
         >
           {/* Welcome Badge */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="pt-4"
+            className="pt-2 sm:pt-4"
           >
             <span className="inline-flex font-roboto-mono items-center gap-2 px-6 py-3 bg-gradient-orange text-white font-medium rounded-full text-sm shadow-glow">
               <Sparkles className="w-4 h-4" />
@@ -81,7 +81,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight drop-shadow-lg"
+            className="text-3xl sm:text-5xl lg:text-7xl font-bold text-primary leading-snug sm:leading-tight drop-shadow-lg"
           >
             {/* <span className="block mb-4">{t("title")}</span> */}
             <span className="block text-white font-roboto-mono">
@@ -101,7 +101,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-white text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed font-roboto-mono"
+            className="text-white text-base sm:text-lg lg:text-2xl max-w-3xl sm:max-w-4xl mx-auto leading-relaxed font-roboto-mono"
           >
             {t("subtitle")}
           </motion.p>
@@ -111,11 +111,11 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center pt-4"
           >
             <Button 
               size="lg" 
-              className="bg-gradient-orange hover:shadow-glow hover:bg-gradient-orange/20 transition-all duration-300 shadow-lg font-roboto-mono cursor-pointer"
+              className="bg-gradient-orange hover:shadow-glow hover:bg-gradient-orange/20 transition-all duration-300 shadow-lg font-roboto-mono cursor-pointer w-full sm:w-auto"
             >
               {t("explore")}
               <ArrowRight className="ml-2 w-4 h-4" />
@@ -123,7 +123,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-gray-900 transition-all duration-300 shadow-lg font-roboto-mono cursor-pointer"
+              className="border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-gray-900 transition-all duration-300 shadow-lg font-roboto-mono cursor-pointer w-full sm:w-auto"
             >
               <Play className="mr-2 w-4 h-4" />
               {t("watchVideo")}
