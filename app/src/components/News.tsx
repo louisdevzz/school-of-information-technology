@@ -47,34 +47,34 @@ export default function News() {
   }, [smoothProgress, newsItems.length]);
 
   return (
-    <section className="relative min-h-screen py-20">
+    <section className="relative min-h-screen py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center pb-36"
+          className="text-center pb-16 lg:pb-36"
         >
           <div className="inline-flex items-center gap-3 rounded-full bg-primary/10 px-5 py-2 text-sm uppercase tracking-wide mb-6">
             <span className="font-semibold text-primary">{t("title")}</span>
             <span className="h-1 w-1 rounded-full bg-primary/60" />
             <span className="text-muted-foreground">{t("subtitle")}</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-foreground mb-6">
             {t("latestNews")}
           </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
             {t("description")}
           </p>
         </motion.div>
 
         {/* Scroll Highlight Container - 2 Column Layout */}
-        <div ref={containerRef} className="pt-40">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 min-h-[200vh] relative">
+        <div ref={containerRef} className="pt-12 lg:pt-40">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 relative lg:min-h-[200vh]">
             
             {/* Left Column - Sticky Titles */}
-            <div className="sticky top-1/2 -translate-y-1/2 h-fit z-10">
+            <div className="hidden lg:block lg:sticky lg:top-1/2 lg:-translate-y-1/2 h-fit z-10">
               <div className="space-y-8">
                 {newsItems.map((item, index) => {
                   const isActive = index === activeIndex;

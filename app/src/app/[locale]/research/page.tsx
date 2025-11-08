@@ -303,7 +303,7 @@ export default function ResearchPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-8"
             >
-              <div className="grid gap-6 sm:grid-cols-3">
+              <div className="hidden md:grid gap-6 sm:grid-cols-3">
                 {metrics.map((metric, index) => {
                   const Icon = [Library, Globe, ScrollText][index % 3];
                   return (
@@ -357,10 +357,10 @@ export default function ResearchPage() {
           <h2 className="text-3xl font-bold md:text-4xl">{t('ctaTitle')}</h2>
           <p className="max-w-3xl text-lg text-white/85">{t('ctaDescription')}</p>
           <div className="flex flex-col gap-4 sm:flex-row">
-            <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
+            <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-white/10">
               {t('ctaPrimary')}
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-white/10">
               {t('ctaSecondary')}
             </Button>
           </div>
