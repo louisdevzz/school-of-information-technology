@@ -344,6 +344,186 @@
           "description": "Liên hệ đội ngũ tuyển sinh SIT để tìm hiểu học bổng, cố vấn và cơ hội nghiên cứu.",
           "primary": "Liên hệ",
           "secondary": "Tải brochure"
+        },
+        "accordion": {
+          "title": "PHẦN I. THÔNG TIN CHUNG VỀ CHƯƠNG TRÌNH ĐÀO TẠO",
+          "items": [
+            {
+              "title": "1. Giới thiệu về Chương trình đào tạo năm 2022",
+              "content": [
+                "Chương trình đào tạo được thiết kế nhằm cung cấp cho sinh viên nền tảng kiến thức vững chắc và kỹ năng thực hành trong lĩnh vực công nghệ thông tin. Chương trình kết hợp giữa lý thuyết và thực hành, giúp sinh viên phát triển toàn diện các kỹ năng cần thiết cho nghề nghiệp tương lai.",
+                "Sinh viên sẽ được trang bị các kiến thức cơ bản về khoa học máy tính, lập trình, cơ sở dữ liệu, mạng máy tính và các công nghệ hiện đại. Bên cạnh đó, chương trình cũng chú trọng phát triển kỹ năng mềm như tư duy phản biện, giải quyết vấn đề và làm việc nhóm.",
+                "Chương trình Cử nhân Khoa học Máy tính được thiết kế để đáp ứng nhu cầu của thị trường lao động, đảm bảo sinh viên tốt nghiệp có đủ năng lực để làm việc trong các lĩnh vực công nghệ thông tin đa dạng."
+              ],
+              "defaultOpen": true
+            },
+            {
+              "title": "2. Thông tin về Chương trình đào tạo năm 2022",
+              "content": [
+                "Chương trình đào tạo được cập nhật và điều chỉnh theo chuẩn quốc tế, đảm bảo tính cập nhật và phù hợp với xu hướng phát triển của ngành công nghệ thông tin."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "3. Sứ mạng - Tầm nhìn – Giá trị cốt lõi – Triết lý giáo dục",
+              "content": [
+                "Sứ mạng của chương trình là đào tạo nguồn nhân lực chất lượng cao trong lĩnh vực công nghệ thông tin, góp phần phát triển nền kinh tế số và xã hội thông minh."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "4. Mục tiêu của chương trình đào tạo",
+              "content": [
+                "Mục tiêu của chương trình là đào tạo sinh viên trở thành những chuyên gia công nghệ thông tin có năng lực, đạo đức nghề nghiệp và khả năng thích ứng với sự thay đổi nhanh chóng của công nghệ."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "5. Chuẩn đầu ra (PLO)",
+              "content": [
+                "Sau khi hoàn thành chương trình, sinh viên sẽ đạt được các chuẩn đầu ra về kiến thức, kỹ năng và thái độ, đảm bảo đáp ứng yêu cầu của thị trường lao động và có thể tiếp tục học tập ở bậc cao hơn."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "6. Chuẩn đầu vào",
+              "content": [
+                "Chuẩn đầu vào của chương trình là sinh viên đã hoàn thành chương trình đại học hoặc cao đẳng có đủ kiến thức và kỹ năng cơ bản về công nghệ thông tin."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "7. Khối lượng học tập",
+              "content": [
+                "Khối lượng học tập của chương trình là 128 tín chỉ, bao gồm 64 tín chỉ học phần và 64 tín chỉ thực hành."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "8. Cấu trúc và nội dung của chương trình đào tạo",
+              "content": [
+                "Cấu trúc và nội dung của chương trình là các học phần cơ bản về công nghệ thông tin, các học phần chuyên sâu về công nghệ thông tin và các học phần thực hành về công nghệ thông tin."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "9. Chiến lược, phương pháp giảng dạy - học tập và sự chuẩn bị của giảng viên",
+              "content": [
+                "Chương trình áp dụng các phương pháp giảng dạy hiện đại, kết hợp giữa lý thuyết và thực hành. Giảng viên được đào tạo và chuẩn bị kỹ lưỡng để đảm bảo chất lượng giảng dạy tốt nhất cho sinh viên."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "10. Phương pháp kiểm tra, đánh giá",
+              "content": [
+                "Chương trình sử dụng đa dạng các phương pháp kiểm tra và đánh giá bao gồm bài kiểm tra, bài tập, dự án thực tế và đánh giá liên tục trong suốt quá trình học tập."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "11. Học phần tốt nghiệp",
+              "content": [
+                "Học phần tốt nghiệp là đồ án tốt nghiệp hoặc luận văn tốt nghiệp, giúp sinh viên tổng hợp và áp dụng kiến thức đã học vào thực tế."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "12. Cải tiến, nâng cao chất lượng dạy học",
+              "content": [
+                "Chương trình liên tục được cải tiến và nâng cao chất lượng thông qua việc thu thập phản hồi từ sinh viên, giảng viên và các bên liên quan, cập nhật nội dung theo xu hướng công nghệ mới nhất."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "13. Về vị trí làm việc sau tốt nghiệp",
+              "content": [
+                "Sinh viên tốt nghiệp có thể làm việc ở nhiều vị trí khác nhau trong lĩnh vực công nghệ thông tin như lập trình viên, kỹ sư phần mềm, chuyên viên phân tích dữ liệu, quản trị hệ thống và nhiều vị trí khác."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "14. Cơ hội học tập và nâng cao trình độ",
+              "content": [
+                "Sinh viên có nhiều cơ hội để tiếp tục học tập và nâng cao trình độ thông qua các chương trình sau đại học, các khóa học chuyên sâu và các chứng chỉ quốc tế."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "15. Cơ sở làm việc sau tốt nghiệp",
+              "content": [
+                "Sinh viên tốt nghiệp có thể làm việc tại các công ty công nghệ, tổ chức chính phủ, các trường đại học, viện nghiên cứu và các doanh nghiệp trong nhiều lĩnh vực khác nhau."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "16. Thông tin tuyển sinh, quy trình đào tạo và điều kiện tốt nghiệp",
+              "content": [
+                "Thông tin về quy trình tuyển sinh, các điều kiện đầu vào, quy trình đào tạo và các yêu cầu để tốt nghiệp được công bố rõ ràng và minh bạch cho tất cả các ứng viên và sinh viên."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "17. Các chương trình đào tạo đã đối sánh",
+              "content": [
+                "Chương trình đào tạo được đối sánh với các chương trình tương tự tại các trường đại học uy tín trong và ngoài nước để đảm bảo tính cạnh tranh và chất lượng."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "18. Điều kiện tối thiểu thực hiện chương trình đào tạo",
+              "content": [
+                "Các điều kiện tối thiểu để thực hiện chương trình đào tạo bao gồm cơ sở vật chất, trang thiết bị, đội ngũ giảng viên và các nguồn lực cần thiết khác đều được đảm bảo đầy đủ."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "19. Tóm tắt nội dung học phần",
+              "content": [
+                "Chương trình bao gồm các học phần cơ bản về toán học, khoa học máy tính, lập trình, cơ sở dữ liệu, mạng máy tính, trí tuệ nhân tạo và các học phần chuyên sâu theo từng chuyên ngành."
+              ],
+              "defaultOpen": false
+            }
+          ]
+        },
+        "accordionPart2": {
+          "title": "PHẦN II. HƯỚNG DẪN SỬ DỤNG CHƯƠNG TRÌNH",
+          "items": [
+            {
+              "title": "1. Các học phần đại cương",
+              "content": [
+                "Nội dung về các học phần đại cương."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "2. Hướng dẫn xác định nội dung và thời gian học tập",
+              "content": [
+                "Hướng dẫn chi tiết về cách xác định nội dung và thời gian học tập cho từng học phần."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "3. Hướng dẫn tổ chức kiểm tra kết thúc học phần",
+              "content": [
+                "Quy trình và hướng dẫn tổ chức các kỳ kiểm tra cuối học phần."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "4. Hướng dẫn xét công nhận tốt nghiệp",
+              "content": [
+                "Các tiêu chí và quy định để xét công nhận tốt nghiệp."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "5. Các chú ý khác: Kế hoạch triển khai Thực tập tốt nghiệp/Thực tập trải nghiệm",
+              "content": [
+                "Thông tin về kế hoạch triển khai thực tập tốt nghiệp và thực tập trải nghiệm, cùng các lưu ý quan trọng khác."
+              ],
+              "defaultOpen": false
+            }
+          ]
         }
       },
       "undergraduate": {

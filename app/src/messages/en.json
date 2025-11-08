@@ -344,6 +344,186 @@
           "description": "Connect with the SIT admissions team to explore scholarships, mentorship and research opportunities.",
           "primary": "Talk to us",
           "secondary": "Download brochure"
+        },
+        "accordion": {
+          "title": "PART I. GENERAL INFORMATION ABOUT THE TRAINING PROGRAM",
+          "items": [
+            {
+              "title": "1. Introduction to the 2022 Training Program",
+              "content": [
+                "The training program is designed to provide students with a solid foundation of knowledge and practical skills in the field of information technology. The program combines theory and practice, helping students develop comprehensive skills necessary for future careers.",
+                "Students will be equipped with basic knowledge of computer science, programming, databases, computer networks and modern technologies. In addition, the program also focuses on developing soft skills such as critical thinking, problem solving and teamwork.",
+                "The Bachelor of Computer Science program is designed to meet the needs of the labor market, ensuring graduates have sufficient capacity to work in diverse information technology fields."
+              ],
+              "defaultOpen": true
+            },
+            {
+              "title": "2. Information about the 2022 Training Program",
+              "content": [
+                "The training program is updated and adjusted according to international standards, ensuring currency and alignment with the development trends of the information technology industry."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "3. Mission - Vision – Core Values – Educational Philosophy",
+              "content": [
+                "The mission of the program is to train high-quality human resources in the field of information technology, contributing to the development of the digital economy and smart society."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "4. Objectives of the training program",
+              "content": [
+                "The objective of the program is to train students to become capable information technology professionals with professional ethics and the ability to adapt to rapid technological changes."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "5. Program Learning Outcomes (PLO)",
+              "content": [
+                "Upon completion of the program, students will achieve learning outcomes in knowledge, skills and attitudes, ensuring they meet the requirements of the labor market and can continue their studies at higher levels."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "6. Entry Requirements",
+              "content": [
+                "Entry requirements for the program include students who have completed undergraduate or college programs with sufficient basic knowledge and skills in information technology."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "7. Study Load",
+              "content": [
+                "The study load of the program is 128 credits, including 64 credits of coursework and 64 credits of practical training."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "8. Structure and Content of the Training Program",
+              "content": [
+                "The structure and content of the program include basic information technology modules, specialized information technology modules and practical information technology modules."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "9. Strategy, Teaching-Learning Methods and Lecturer Preparation",
+              "content": [
+                "The program applies modern teaching methods, combining theory and practice. Lecturers are trained and well-prepared to ensure the best teaching quality for students."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "10. Assessment Methods",
+              "content": [
+                "The program uses a variety of assessment methods including tests, assignments, practical projects and continuous assessment throughout the learning process."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "11. Graduation Module",
+              "content": [
+                "The graduation module is a graduation project or thesis, helping students synthesize and apply the knowledge they have learned in practice."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "12. Improving and Enhancing Teaching Quality",
+              "content": [
+                "The program is continuously improved and enhanced through collecting feedback from students, lecturers and stakeholders, updating content according to the latest technology trends."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "13. About Post-Graduation Job Positions",
+              "content": [
+                "Graduates can work in various positions in the field of information technology such as programmers, software engineers, data analysts, system administrators and many other positions."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "14. Learning Opportunities and Skill Enhancement",
+              "content": [
+                "Students have many opportunities to continue learning and improving their skills through postgraduate programs, specialized courses and international certifications."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "15. Workplace After Graduation",
+              "content": [
+                "Graduates can work at technology companies, government organizations, universities, research institutes and businesses in various fields."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "16. Admission Information, Training Process and Graduation Conditions",
+              "content": [
+                "Information about the admission process, entry requirements, training process and graduation requirements are clearly and transparently published for all applicants and students."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "17. Compared Training Programs",
+              "content": [
+                "The training program is benchmarked against similar programs at reputable universities at home and abroad to ensure competitiveness and quality."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "18. Minimum Conditions for Implementing the Training Program",
+              "content": [
+                "The minimum conditions for implementing the training program including facilities, equipment, teaching staff and other necessary resources are all fully guaranteed."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "19. Summary of Module Content",
+              "content": [
+                "The program includes basic modules in mathematics, computer science, programming, databases, computer networks, artificial intelligence and specialized modules for each major."
+              ],
+              "defaultOpen": false
+            }
+          ]
+        },
+        "accordionPart2": {
+          "title": "PART II. PROGRAM USAGE GUIDE",
+          "items": [
+            {
+              "title": "1. General courses",
+              "content": [
+                "Content related to general courses."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "2. Guide to determining content and study time",
+              "content": [
+                "Detailed guide on how to determine the content and study time for each course."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "3. Guide to organizing end-of-course exams",
+              "content": [
+                "Procedures and guidelines for organizing end-of-course examinations."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "4. Guide to considering graduation recognition",
+              "content": [
+                "Criteria and regulations for graduation recognition."
+              ],
+              "defaultOpen": false
+            },
+            {
+              "title": "5. Other notes: Implementation plan for Graduation Internship/Experience Internship",
+              "content": [
+                "Information on the implementation plan for graduation internships and experience internships, along with other important notes."
+              ],
+              "defaultOpen": false
+            }
+          ]
         }
       },
       "undergraduate": {

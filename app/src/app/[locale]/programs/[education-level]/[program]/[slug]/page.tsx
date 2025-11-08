@@ -1,6 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useMemo } from "react";
@@ -53,6 +59,22 @@ type ProgramSlugShared = {
     description: string;
     primary: string;
     secondary: string;
+  };
+  accordion?: {
+    title: string;
+    items: Array<{
+      title: string;
+      content: string[];
+      defaultOpen?: boolean;
+    }>;
+  };
+  accordionPart2?: {
+    title: string;
+    items: Array<{
+      title: string;
+      content: string[];
+      defaultOpen?: boolean;
+    }>;
   };
 };
 
@@ -167,7 +189,9 @@ export default function ProgramDetailPage() {
       sections: slugTranslations?.shared?.overview?.sections ?? defaultShared.overview.sections
     },
     curriculum: { ...defaultShared.curriculum, ...(slugTranslations?.shared?.curriculum ?? {}) },
-    ctaBanner: { ...defaultShared.ctaBanner, ...(slugTranslations?.shared?.ctaBanner ?? {}) }
+    ctaBanner: { ...defaultShared.ctaBanner, ...(slugTranslations?.shared?.ctaBanner ?? {}) },
+    accordion: slugTranslations?.shared?.accordion,
+    accordionPart2: slugTranslations?.shared?.accordionPart2
   };
 
   const baseLevel = defaultLevelConfigs[levelKey];
@@ -283,23 +307,23 @@ export default function ProgramDetailPage() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-6 rounded-3xl bg-black/80 p-8 text-white shadow-2xl backdrop-blur"
+              className="space-y-6 rounded-3xl bg-white p-8 text-foreground shadow-2xl"
             >
               <div className="space-y-4">
                 {metaItems.map((item) => (
-                  <div key={item.label} className="border-b border-white/15 pb-4 last:border-none last:pb-0">
-                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/60">
+                  <div key={item.label} className="border-b border-border pb-4 last:border-none last:pb-0">
+                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
                       {item.label}
                     </p>
-                    <p className="mt-1 text-lg font-semibold text-white">{item.value}</p>
+                    <p className="mt-1 text-lg font-semibold text-foreground">{item.value}</p>
                   </div>
                 ))}
               </div>
               <div className="flex flex-wrap gap-3">
-                <Button className="flex-1 bg-white text-black hover:bg-white/90">
+                <Button className="flex-1 bg-primary text-white hover:bg-primary/90">
                   {shared.hero.inquireLabel}
                 </Button>
-                <Button className="flex-1 bg-primary text-white hover:bg-primary/90">
+                <Button className="flex-1 bg-black text-white hover:bg-black/90">
                   {shared.hero.applyLabel}
                 </Button>
               </div>
@@ -350,6 +374,118 @@ export default function ProgramDetailPage() {
           </div>
         </div>
       </section>
+
+      {shared.accordion && (
+        <section className="bg-white py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mb-12 text-center"
+            >
+              <h2 className="text-3xl font-bold text-foreground md:text-4xl">
+                {shared.accordion.title}
+              </h2>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mx-auto max-w-4xl"
+            >
+              <Accordion
+                type="single"
+                collapsible
+                defaultValue={
+                  shared.accordion.items.find((item) => item.defaultOpen)
+                    ? `item-${shared.accordion.items.findIndex((item) => item.defaultOpen)}`
+                    : undefined
+                }
+                className="w-full"
+              >
+                {shared.accordion.items.map((item, index) => (
+                  <AccordionItem
+                    key={`accordion-item-${index}`}
+                    value={`item-${index}`}
+                    className="border-b border-border/50"
+                  >
+                    <AccordionTrigger className="bg-white px-6 py-4 text-left text-foreground hover:bg-muted hover:no-underline transition-colors">
+                      <span className="text-base font-semibold md:text-lg">{item.title}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 py-4 text-sm text-muted-foreground md:text-base bg-white">
+                      <div className="space-y-4">
+                        {item.content.map((paragraph, pIndex) => (
+                          <p key={`paragraph-${index}-${pIndex}`}>{paragraph}</p>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {shared.accordionPart2 && (
+        <section className="bg-white py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mb-12 text-center"
+            >
+              <h2 className="text-3xl font-bold text-foreground md:text-4xl">
+                {shared.accordionPart2.title}
+              </h2>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mx-auto max-w-4xl"
+            >
+              <Accordion
+                type="single"
+                collapsible
+                defaultValue={
+                  shared.accordionPart2.items.find((item) => item.defaultOpen)
+                    ? `item-${shared.accordionPart2.items.findIndex((item) => item.defaultOpen)}`
+                    : undefined
+                }
+                className="w-full"
+              >
+                {shared.accordionPart2.items.map((item, index) => (
+                  <AccordionItem
+                    key={`accordion-part2-item-${index}`}
+                    value={`item-${index}`}
+                    className="border-b border-border/50"
+                  >
+                    <AccordionTrigger className="bg-white px-6 py-4 text-left text-foreground hover:bg-muted hover:no-underline transition-colors">
+                      <span className="text-base font-semibold md:text-lg">{item.title}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 py-4 text-sm text-muted-foreground md:text-base bg-white">
+                      <div className="space-y-4">
+                        {item.content.map((paragraph, pIndex) => (
+                          <p key={`paragraph-part2-${index}-${pIndex}`}>{paragraph}</p>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-muted/40 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
