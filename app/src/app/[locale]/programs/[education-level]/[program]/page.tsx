@@ -3,9 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo } from "react";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { ArrowRight } from "lucide-react";
 
 type LevelKey = "undergraduate" | "graduate";
 
@@ -69,16 +71,29 @@ const slugify = (value?: string) =>
     .replace(/-+/g, "-")
     ?? "";
 
+// Convert camelCase to kebab-case
+const camelToKebab = (str: string) => {
+  return str
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .toLowerCase();
+};
+
 export default function ProgramListPage() {
   const params = useParams<{
     "education-level": string;
     program: string;
-    slug: string;
   }>();
+  const pathname = usePathname();
 
   const levelParam = params?.["education-level"]?.toLowerCase();
   const programParam = params?.program?.toLowerCase();
-  const slugParam = params?.slug?.toLowerCase();
+  // Note: This page doesn't have [slug] segment, slug is handled in [slug]/page.tsx
+  const slugParam = undefined;
+
+  // Get locale from pathname
+  const localeSegments = pathname.split("/").filter(Boolean);
+  const localeCandidate = localeSegments[0];
+  const locale = localeCandidate === "vi" || localeCandidate === "en" ? localeCandidate : "vi";
 
   const levelKey: LevelKey = levelParam === "graduate" ? "graduate" : "undergraduate";
 
@@ -112,9 +127,10 @@ export default function ProgramListPage() {
 
     const found = entries.find(([key, category]) => {
       const normalizedKey = key.toLowerCase();
+      const kebabKey = camelToKebab(key); // Convert camelCase to kebab-case
       const slugKey = slugify(key);
       const slugTitle = slugify(category.title);
-      return [normalizedKey, slugKey, slugTitle].includes(programParam);
+      return [normalizedKey, kebabKey, slugKey, slugTitle].includes(programParam);
     });
 
     return found ?? fallback;
@@ -182,23 +198,63 @@ export default function ProgramListPage() {
     return [shared.curriculum.placeholder];
   }, [program?.features, shared.curriculum.placeholder]);
 
+  // Get other programs in the same category (excluding current program)
+  const otherPrograms = useMemo(() => {
+    const programList = category?.programs ?? [];
+    if (!programList.length || !program) return [];
+    
+    return programList.filter((item) => {
+      const currentSlug = slugify(program.code);
+      const itemSlug = slugify(item.code);
+      console.log({
+        current: program.code,
+        currentSlug: slugify(program.code),
+        item: item.code,
+        itemSlug: slugify(item.code),
+        keep: slugify(item.code) !== slugify(program.code)
+      });
+      
+      return programList.filter((item) => item.code !== program.code);
+
+    });
+  }, [category?.programs, program]);
+
+  // Generate program URL
+  const getProgramUrl = useMemo(() => {
+    // Use programParam directly as it's already in the correct slug format (kebab-case) from URL
+    // This ensures URLs like /vi/programs/undergraduate/computer-science/7480101
+    const categoryKey = categoryEntry?.[0];
+    let categorySlug = programParam;
+    
+    // Fallback: If programParam is not available, create kebab-case slug from category key
+    if (!categorySlug && categoryKey) {
+      categorySlug = camelToKebab(categoryKey);
+    }
+    
+    return (programItem: Program) => {
+      // Use program code as slug (e.g., "7480101")
+      const programSlug = slugify(programItem.code) || slugify(programItem.title);
+      return `/${locale}/programs/${levelParam}/${categorySlug}/${programSlug}`;
+    };
+  }, [categoryEntry, programParam, levelParam, locale]);
+
   return (
     <motion.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.2 }}
     >
-      <section className="bg-black text-white">
+      <section className="bg-[#fff7f3] text-[#ba4911]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <motion.nav
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex flex-wrap items-center gap-3 text-sm text-white/80"
+            className="flex flex-wrap items-center gap-3 text-sm text-[#ba4911]/80"
           >
             {breadcrumbs.map((item, index) => (
               <span key={`${item}-${index}`} className="flex items-center gap-3">
-                {index > 0 && <span className="text-white/50">›</span>}
+                {index > 0 && <span className="text-[#ba4911]/40">›</span>}
                 <span className="uppercase tracking-[0.2em] text-xs">{item}</span>
               </span>
             ))}
@@ -211,18 +267,18 @@ export default function ProgramListPage() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="space-y-8"
             >
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/90">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#ba4911]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#ba4911]">
                 {heroBadge}
               </span>
               <div className="space-y-4">
-                <h1 className="text-4xl font-bold leading-tight md:text-6xl">{heroTitle}</h1>
-                <p className="text-lg text-white/80 md:text-xl">{heroTagline}</p>
+                <h1 className="text-4xl font-bold leading-tight md:text-6xl text-[#ba4911]">{heroTitle}</h1>
+                <p className="text-lg text-[#ba4911]/80 md:text-xl">{heroTagline}</p>
               </div>
               <div className="flex flex-wrap gap-2">
                 {featureList.slice(0, 4).map((feature) => (
                   <span
                     key={`feature-${feature}`}
-                    className="rounded-full border border-white/30 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/80"
+                    className="rounded-full border border-[#ba4911]/30 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#ba4911]/80"
                   >
                     {feature}
                   </span>
@@ -231,14 +287,14 @@ export default function ProgramListPage() {
 
               <div className="mt-10 grid gap-6 sm:grid-cols-3">
                 {shared.actions.map((action) => (
-                  <div key={action.label} className="flex flex-col justify-between border-b border-white/30 pb-4">
-                    <span className="text-sm font-semibold text-white">{action.label}</span>
+                  <div key={action.label} className="flex flex-col justify-between border-b border-[#ba4911]/30 pb-4">
+                    <span className="text-sm font-semibold text-[#ba4911]">{action.label}</span>
                     {action.description && (
-                      <span className="text-xs text-white/70">{action.description}</span>
+                      <span className="text-xs text-[#ba4911]/70">{action.description}</span>
                     )}
                   </div>
                 ))}
-                <Button size="lg" className="h-full w-full bg-primary text-white hover:bg-primary/90">
+                <Button size="lg" className="h-full w-full bg-[#ba4911] text-white hover:bg-[#ba4911]/90">
                   {shared.applyLabel}
                 </Button>
               </div>
@@ -248,7 +304,7 @@ export default function ProgramListPage() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[20rem] overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl sm:h-[24rem]"
+              className="relative h-[20rem] overflow-hidden rounded-3xl border border-[#ba4911]/10 bg-[#ffe9df] shadow-2xl sm:h-[24rem]"
             >
               <Image
                 src={heroImage}
@@ -257,7 +313,7 @@ export default function ProgramListPage() {
                 priority
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-black/20" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#ba4911]/60 via-transparent to-[#ba4911]/20" />
             </motion.div>
           </div>
         </div>
@@ -383,6 +439,104 @@ export default function ProgramListPage() {
           </div>
         </div>
       </section>
+      {otherPrograms.length > 0 && (
+        <section className="bg-white py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              <div className="space-y-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+                  {t("relatedPrograms")}
+                </p>
+                <h3 className="text-2xl font-semibold text-foreground md:text-3xl lg:text-4xl">
+                  {t("exploreOtherPrograms")}
+                </h3>
+                <p className="text-base text-muted-foreground md:text-lg max-w-3xl">
+                  {t("exploreOtherProgramsDescription")}
+                </p>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+              >
+                {otherPrograms.map((programItem, index) => {
+                  const programUrl = getProgramUrl(programItem);
+                  const programFeatures = programItem.features
+                    ? programItem.features.split(",").map((f) => f.trim()).filter(Boolean)
+                    : [];
+
+                  return (
+                    <motion.div
+                      key={`program-${programItem.code}-${index}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      whileHover={{ y: -4 }}
+                      className="group"
+                    >
+                      <Link
+                        href={programUrl}
+                        className="block h-full rounded-2xl border border-border/60 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-lg"
+                      >
+                        <div className="flex h-full flex-col space-y-4">
+                          <div className="space-y-2">
+                            {programItem.code && (
+                              <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                                {programItem.code}
+                              </span>
+                            )}
+                            <h4 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                              {programItem.title}
+                            </h4>
+                            {programItem.description && (
+                              <p className="text-sm text-muted-foreground line-clamp-2">
+                                {programItem.description}
+                              </p>
+                            )}
+                          </div>
+
+                          {programFeatures.length > 0 && (
+                            <div className="flex flex-wrap gap-2">
+                              {programFeatures.slice(0, 3).map((feature, featureIndex) => (
+                                <span
+                                  key={`feature-${featureIndex}`}
+                                  className="rounded-full bg-muted/60 px-2.5 py-1 text-xs font-medium text-muted-foreground"
+                                >
+                                  {feature}
+                                </span>
+                              ))}
+                              {programFeatures.length > 3 && (
+                                <span className="rounded-full bg-muted/60 px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                                  +{programFeatures.length - 3}
+                                </span>
+                              )}
+                            </div>
+                          )}
+
+                          <div className="mt-auto flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
+                            <span>{t("viewDetails")}</span>
+                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                          </div>
+                        </div>
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
+      )}
     </motion.main>
   );
 }

@@ -179,14 +179,14 @@ const Header = () => {
           >
             <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-3">
               <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-                <a 
+                <a
                   href={`tel:${t("phone")}`}
                   className="flex items-center gap-2 font-semibold hover:text-[#ba4911]/80 transition-colors cursor-pointer"
                 >
                   <Phone className="h-3.5 w-3.5" />
                   {t("phone")}
                 </a>
-                <a 
+                <a
                   href={`mailto:${t("email")}`}
                   className="flex items-center gap-2 font-semibold hover:text-[#ba4911]/80 transition-colors cursor-pointer"
                 >
@@ -259,7 +259,15 @@ const Header = () => {
                   variant="ghost"
                   size="icon"
                   className="hover:bg-[#ba4911]/10 md:hover:bg-[#ba4911]/80 md:bg-[#ba4911] md:text-white cursor-pointer flex items-center justify-center w-10 h-10 sm:w-auto sm:h-auto md:px-5 md:py-3 rounded-full gap-2"
-                  onClick={toggleMenu}
+                  onClick={() => {
+                    // Khi mở menu thì scroll về đầu trang
+                    toggleMenu();
+                    setTimeout(() => {
+                      if (typeof window !== "undefined") {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                    }, 10); // delay nhẹ để menu state chuyển trước
+                  }}
                   aria-expanded={isMenuOpen}
                   aria-label="Toggle menu"
                 >
